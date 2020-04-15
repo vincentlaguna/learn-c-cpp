@@ -10,6 +10,7 @@ What I have learned in C:
 - External Static Variables
 - While and For statement (loops)
 - Symbolic constants - #define
+- Basic i/o echo using getchar() and putchar()
 - 
 
 What I have learned in C++:
