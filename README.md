@@ -12,6 +12,7 @@ What I have learned in C:
 - Symbolic constants - #define
 - Basic i/o echo using getchar() and putchar()
 - How to create a "bare-bones" version on the UNIX wc command
+- Loop through arrays, create array counter
 - 
 
 What I have learned in C++:
