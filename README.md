@@ -11,6 +11,7 @@ What I have learned in C:
 - While and For statement (loops)
 - Symbolic constants - #define
 - Basic i/o echo using getchar() and putchar()
+- How to create a "bare-bones" version on the UNIX wc command
 - 
 
 What I have learned in C++:
