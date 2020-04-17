@@ -17,4 +17,6 @@ What I have learned in C++:
 
 - Code and compile simple Hello World! statement
 - Declaring and initializing variables
-- Chaining ouptuts, arithmetic operators, user input (cin),
+- Chaining ouptuts, arithmetic operators, user input (cin)
+- How to solve for Quadratic formula using C++
+- 
