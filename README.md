@@ -24,4 +24,6 @@ What I have learned in C++:
 - Declaring and initializing variables
 - Chaining ouptuts, arithmetic operators, user input (cin)
 - How to solve for Quadratic formula using C++
+- Conditionals and Switch statements
+- Create Space Weight calculator using Switch statement
 - 
