@@ -13,6 +13,7 @@ What I have learned in C:
 - Basic i/o echo using getchar() and putchar()
 - How to create a "bare-bones" version on the UNIX wc command
 - Loop through arrays, create array counter
+- Basic Functions, create simple integer power function
 - 
 
 What I have learned in C++:
