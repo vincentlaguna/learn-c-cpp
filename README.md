@@ -15,6 +15,7 @@ What I have learned in C:
 - Loop through arrays, create array counter
 - Basic Functions, create simple integer power function
 - Function Prototype, parameter - argument/formal argument - actual argument
+- Call by value instead of call by reference
 - 
 
 What I have learned in C++:
