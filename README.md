@@ -14,6 +14,7 @@ What I have learned in C:
 - How to create a "bare-bones" version on the UNIX wc command
 - Loop through arrays, create array counter
 - Basic Functions, create simple integer power function
+- Function Prototype, parameter - argument/formal argument - actual argument
 - 
 
 What I have learned in C++:
