@@ -26,4 +26,3 @@ What I have learned in C++:
 - How to solve for Quadratic formula using C++
 - Conditionals and Switch statements
 - Create Space Weight calculator using Switch statement
-- 
