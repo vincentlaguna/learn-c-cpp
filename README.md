@@ -6,7 +6,7 @@ What I have learned in C:
 
 - Code and compile simple Hello World! statement
 - Variables can be local and global (local: automatic and internal)
-- Global variables are "External" and not recommended
+- Global variables are "External"
 - External Static Variables
 - While and For statement (loops)
 - Symbolic constants - #define
