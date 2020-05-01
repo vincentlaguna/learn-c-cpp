@@ -16,6 +16,7 @@ What I have learned in C:
 - Basic Functions, create simple integer power function
 - Function Prototype, parameter - argument/formal argument - actual argument
 - Call by value instead of call by reference
+- FizzBuzz (without use of examples)
 - 
 
 What I have learned in C++:
@@ -26,3 +27,5 @@ What I have learned in C++:
 - How to solve for Quadratic formula using C++
 - Conditionals and Switch statements
 - Create Space Weight calculator using Switch statement
+- FizzBuzz (without looking up examples)
+- 
