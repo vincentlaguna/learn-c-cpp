@@ -18,6 +18,7 @@ What I have learned in C:
 - Call by value instead of call by reference
 - FizzBuzz (without use of examples)
 - Referencing Source and Header files from Main
+- Type-Casting, implicit/explicit
 - 
 
 What I have learned in C++:
