@@ -19,7 +19,7 @@ What I have learned in C:
 - FizzBuzz (without use of examples)
 - Referencing Source and Header files from Main
 - Type-Casting, implicit/explicit
-- 
+- Sizeof()
 
 What I have learned in C++:
 
