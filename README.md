@@ -30,5 +30,5 @@ What I have learned in C++:
 - Conditionals and Switch statements
 - Create Space Weight calculator using Switch statement
 - FizzBuzz (without looking up examples)
-- Vectors and associated functions
+- Vectors and associated functions for accessing and manipulating the elements
 - 
