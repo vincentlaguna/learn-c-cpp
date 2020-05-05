@@ -20,6 +20,8 @@ What I have learned in C:
 - Referencing Source and Header files from Main
 - Type-Casting, implicit/explicit
 - Sizeof()
+- Nested for-loops
+- 
 
 What I have learned in C++:
 
@@ -31,5 +33,5 @@ What I have learned in C++:
 - Create Space Weight calculator using Switch statement
 - FizzBuzz (without looking up examples)
 - Vectors and associated functions for accessing and manipulating the elements
-- Basic Functions with parameters
+- Basic Functions with parameters for function input values (arguments)
 - 
