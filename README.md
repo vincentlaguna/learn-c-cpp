@@ -31,4 +31,5 @@ What I have learned in C++:
 - Create Space Weight calculator using Switch statement
 - FizzBuzz (without looking up examples)
 - Vectors and associated functions for accessing and manipulating the elements
+- Basic Functions
 - 
