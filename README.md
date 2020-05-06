@@ -20,7 +20,7 @@ What I have learned in C:
 - Referencing Source and Header files from Main
 - Type-Casting, implicit/explicit
 - Sizeof()
-- Nested for-loops
+- Nested for-loops, multiple initialization in a for-loops
 - 
 
 What I have learned in C++:
