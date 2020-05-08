@@ -34,4 +34,5 @@ What I have learned in C++:
 - FizzBuzz (without looking up examples)
 - Vectors and associated functions for accessing and manipulating the elements
 - Basic Functions with parameters for function input values (arguments)
+- Palindrome function
 - 
