@@ -35,4 +35,6 @@ What I have learned in C++:
 - Vectors and associated functions for accessing and manipulating the elements
 - Basic Functions with parameters for function input values (arguments)
 - Palindrome function
+- Inline functions defined in the header files
+- Funtion overloading and function templates
 - 
