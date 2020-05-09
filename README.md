@@ -21,6 +21,7 @@ What I have learned in C:
 - Type-Casting, implicit/explicit
 - Sizeof()
 - Nested for-loops, multiple initialization in a for-loops
+- Using scientific notation, create an electron charge calculation
 - 
 
 What I have learned in C++:
