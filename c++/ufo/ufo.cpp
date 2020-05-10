@@ -7,6 +7,13 @@
 //                                                      //
 //////////////////////////////////////////////////////////
 
+//======================================================//
+//                  UFO: The Game                       //
+//======================================================//
+
+// Instructions: save your friend from alien abduction 
+// by guessing the letters in the codeword.
+
 #include <iostream>
 #include "ufo_functions.hpp"
 
