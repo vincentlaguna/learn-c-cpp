@@ -108,3 +108,14 @@ void end_game(std::string answer, std::string codeword) {
     std::cout << "Oh no! The UFO just flew away with another person!\n";
   }
 }
+
+void display_status(std::vector<char> incorrect, std::string answer) {
+  for (int i = 0; i < incorrect.size(); i++) {
+    std::cout << "\nIncorrect guesses: \n";
+    std::cout << incorrect[i] << ' ';
+    }
+    std::cout << "Codeword: \n";
+  for (int i = 0; i < answer.length(); i++) {
+    std::cout << answer[i] << ' ';
+  }
+} 

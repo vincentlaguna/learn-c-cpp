@@ -22,8 +22,12 @@ int main() {
   std::string codeword = "codecademy";
   std::string answer = "__________";
   greet();
-  
+  bool guess = false;
+  std::vector<char> incorrect;
+
   while (answer != codeword && misses < 7) {
+    display_misses(misses);
+    display_status(incorrect, answer);
     misses++;
     end_game(answer, codeword);
   }
