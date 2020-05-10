@@ -18,15 +18,18 @@
 #include "ufo_functions.hpp"
 
 int main() {
-  int misses = 0;
+  greet();
   std::string codeword = "codecademy";
   std::string answer = "__________";
-  bool guess = false;
+  int misses = 0;
   std::vector<char> incorrect;
-  char letter = ' ';
-  greet();
+  bool guess = false;
+  char letter;
+  
   
   while (answer != codeword && misses < 7) {
+    display_misses(misses);
+    display_status(incorrect, answer);
     std::cout << "\n\nPlease enter your guess: ";
     std::cin >> letter;
     for (int i = 0; i < codeword.length(); i++) {
@@ -42,9 +45,7 @@ int main() {
         misses++;
       }
     }
-    display_misses(misses);
-    display_status(incorrect, answer);
-    end_game(answer, codeword);
     guess = false;
   }
+  end_game(answer, codeword);
 }

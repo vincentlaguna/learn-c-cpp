@@ -8,6 +8,25 @@ void greet() {
   std::cout << "Instructions: save your friend from alien abduction by guessing the letters in the codeword.\n";
 }
 
+void display_status(std::vector<char> incorrect, std::string answer) {
+  for (int i = 0; i < incorrect.size(); i++) {
+    std::cout << "\nIncorrect guesses: \n";
+    std::cout << incorrect[i] << ' ';
+    }
+    std::cout << "Codeword: \n";
+  for (int i = 0; i < answer.length(); i++) {
+    std::cout << answer[i] << ' ';
+  }
+}
+
+void end_game(std::string answer, std::string codeword) {
+  if (answer == codeword) {
+    std::cout << "Hooray! You saved the person and earned a medal of honor!\n";
+  } else {
+    std::cout << "Oh no! The UFO just flew away with another person!\n";
+  }
+}
+
 void display_misses(int misses) {
   if (misses == 0 || misses == 1) {
     std::cout << "                 .                            \n";
@@ -100,22 +119,3 @@ void display_misses(int misses) {
     std::cout << "         /               \\                   \n";
   }
 }
-
-void end_game(std::string answer, std::string codeword) {
-  if (answer == codeword) {
-    std::cout << "Hooray! You saved the person and earned a medal of honor!\n";
-  } else {
-    std::cout << "Oh no! The UFO just flew away with another person!\n";
-  }
-}
-
-void display_status(std::vector<char> incorrect, std::string answer) {
-  for (int i = 0; i < incorrect.size(); i++) {
-    std::cout << "\nIncorrect guesses: \n";
-    std::cout << incorrect[i] << ' ';
-    }
-    std::cout << "Codeword: \n";
-  for (int i = 0; i < answer.length(); i++) {
-    std::cout << answer[i] << ' ';
-  }
-} 
