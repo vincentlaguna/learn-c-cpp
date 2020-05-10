@@ -18,5 +18,14 @@
 #include "ufo_functions.hpp"
 
 int main() {
+  int misses = 0;
+  std::string codeword = "codecademy";
+  std::string answer = "__________";
+  greet();
   
+  while (answer != codeword && misses < 7) {
+    misses++;
+    }
+    end_game(answer, codeword);
+  }
 }
