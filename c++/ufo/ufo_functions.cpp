@@ -1,4 +1,4 @@
-#include <iosteam>
+#include <iostream>
 #include <vector>
 // Define functions
 void greet() {
@@ -9,7 +9,7 @@ void greet() {
 }
 
 void display_misses(int misses) {
-  if (misses == 0) || (misses == 1) {
+  if (misses == 0 || misses == 1) {
     std::cout << "                 .                            \n";
     std::cout << "                 |                            \n";
     std::cout << "              .-\"^\"-.                       \n";
