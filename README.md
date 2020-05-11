@@ -39,3 +39,5 @@ What I have learned in C++:
 - Inline functions defined in the header files
 - Funtion overloading and function templates
 - Codecademy UFO game
+- Introduction to Classes and Objects
+- 
