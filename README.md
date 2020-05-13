@@ -23,7 +23,7 @@ What I have learned in C:
 - Nested for-loops, multiple initialization in a for-loops
 - Using scientific notation, create an electron charge calculation
 - Function conventions
-- Function call by value,
+- Function call by value and by reference
 - 
 
 What I have learned in C++:
