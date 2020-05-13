@@ -24,6 +24,8 @@ What I have learned in C:
 - Using scientific notation, create an electron charge calculation
 - Function conventions
 - Function call by value and by reference
+- Passing arguments to the main method using argc, argv
+- Introduction to pointers
 - 
 
 What I have learned in C++:

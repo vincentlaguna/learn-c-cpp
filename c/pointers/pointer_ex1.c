@@ -10,13 +10,15 @@ from the pointer
 */
 #include <stdio.h>
 
-char pAddress* = &data;
-
 int main(void)
 {
-  char data = 100;
+  char data = 100;//1.
+  char* pAddress = &data;//3.
+  char value = *pAddress;
+  printf("The value of data is [%d]\n", data);//1.
+  printf("The address of variable data is [%p]\n", &data);//2.
+  printf("The read value of data is [%d]\n", value);//4.
+  *pAddress = 65;
   printf("The value of data is [%d]\n", data);
-  printf("The address of data is [%p]\n", data);
-  printf("The value of data is [%p]\n", &data);
   return 0;
 }
