@@ -45,4 +45,4 @@ What I have learned in C++:
 - Funtion overloading and function templates
 - Codecademy UFO game
 - Introduction to Classes and Objects
-- 
+- Constructor basics
