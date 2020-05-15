@@ -26,6 +26,7 @@ What I have learned in C:
 - Function call by value and by reference
 - Passing arguments to the main method using argc, argv
 - Introduction to pointers
+- Static Storage Class
 - Unit test example
 - 
 
