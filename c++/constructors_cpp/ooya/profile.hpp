@@ -13,4 +13,5 @@ public:
   Profile(std::string name, int age, std::string city, std::string country, 
   std::string pronouns);
   std::string view_profile();
+  void add_hobby(std::string new_hobby);
 };
