@@ -2,6 +2,5 @@
 #include "profile.hpp"
 
 int main() {
-  Profile tyler;
-  tyler.name = "Tyler Durden";
+  Profile tyler("Tyler Durden", 34, "LA", "USA", "he/him");
 }
