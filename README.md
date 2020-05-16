@@ -47,4 +47,6 @@ What I have learned in C++:
 - Codecademy UFO game
 - Introduction to Classes and Objects
 - Constructor and Destructor basics
+- Pass by Reference and Pass by Value
+- Referencing and De-Referencing pointers
 - 
