@@ -11,3 +11,10 @@ std::string new_country, std::string new_pronouns) {
   country = new_country;
   pronouns = new_pronouns;
 }
+
+std::string Profile::view_profile() {
+  std::string bio = "\nName: " + name;
+  bio += "\nAge: " + std::to_string(age);
+  bio += "\nPronouns: " + pronouns;
+  return bio;
+}
