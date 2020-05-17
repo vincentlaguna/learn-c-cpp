@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+/*
 typedef struct
 {
   float x;
@@ -22,5 +22,20 @@ int main(void)
   Color c = { 255, 128 };
   
   float x = p.X;
-  //c.Blue = 255;
+  c.Blue = 255;
+}
+*/
+
+typedef struct
+{
+  short first; // xx
+  short third; // xx
+  int second; // xxxx
+} Layout;
+
+int main(void)
+{
+  printf("short [%d] bytes\n", (int) sizeof(short));
+  printf("int [%d] bytes\n", (int) sizeof(int));
+  printf("struct [%d] bytes\n", (int) sizeof(Layout));
 }

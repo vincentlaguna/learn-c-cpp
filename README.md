@@ -29,6 +29,7 @@ What I have learned in C:
 - Static Storage Class
 - Unit test example
 - Structs and Typedef basics
+- Unions and Enums
 - 
 
 What I have learned in C++:
