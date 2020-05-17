@@ -28,7 +28,8 @@ What I have learned in C:
 - Introduction to pointers
 - Static Storage Class
 - Unit test example
-- Typedef
+- Structs and Typedef basics
+- 
 
 What I have learned in C++:
 
