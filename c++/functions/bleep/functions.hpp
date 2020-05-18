@@ -1,0 +1,2 @@
+void bleep();
+void blocker();
