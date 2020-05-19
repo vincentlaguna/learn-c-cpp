@@ -19,7 +19,7 @@ What I have learned in C:
 - FizzBuzz (without use of examples)
 - Referencing Source and Header files from Main
 - Type-Casting, implicit/explicit
-- Sizeof()
+- Sizeof() and passing arrays to functions using pointers
 - Nested for-loops, multiple initialization in a for-loops
 - Using scientific notation, create an electron charge calculation
 - Function conventions
@@ -30,6 +30,7 @@ What I have learned in C:
 - Unit test example
 - Structs and Typedef basics
 - Unions and Enums
+- Ternary operator expressions
 - 
 
 What I have learned in C++:
