@@ -31,6 +31,7 @@ What I have learned in C:
 - Structs and Typedef basics
 - Unions and Enums
 - Ternary operator expressions
+- Function pointers
 - 
 
 What I have learned in C++:
