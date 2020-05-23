@@ -32,7 +32,7 @@ What I have learned in C:
 - Unions and Enums
 - Ternary operator expressions
 - Function pointers
-- Array of pointers, pointer to an array,
+- Array of pointers, pointer to an array, function pointer as argument
 - 
 
 What I have learned in C++:
