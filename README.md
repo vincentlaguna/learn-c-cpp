@@ -55,4 +55,5 @@ What I have learned in C++:
 - Constructor and Destructor basics
 - Pass by Reference and Pass by Value
 - Referencing and De-Referencing pointers
+- Using pointer to pointers inside an array to sort min/max elements
 - Memory management
