@@ -33,6 +33,7 @@ What I have learned in C:
 - Ternary operator expressions
 - Function pointers
 - Array of pointers, pointer to an array, function pointer as argument
+- Introduction to bitwise operators
 - 
 
 What I have learned in C++:
