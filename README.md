@@ -31,9 +31,10 @@ What I have learned in C:
 - Structs and Typedef basics
 - Unions and Enums
 - Ternary operator expressions
-- Function pointers
+- Function pointers basics
 - Array of pointers, pointer to an array, function pointer as argument
 - Introduction to bitwise operators
+- Introduction to memory management; malloc, free function
 - 
 
 What I have learned in C++:
