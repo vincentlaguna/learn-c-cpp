@@ -16,5 +16,7 @@ int main(void)
   {
     printf("[%d]\n", *p);
   }
+  printf("sizeof(numbers) [%d]\nsizeof(p) [%d]\n", 
+  (int) sizeof(numbers), (int) sizeof(p));
   return 0;
 }
