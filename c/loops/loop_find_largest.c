@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int * Print(int *begin, int *end)
+int *Print(int *begin, int *end)
 {
   if(begin == end) 
     return 0;
@@ -17,7 +17,6 @@ int * Print(int *begin, int *end)
     }
     return largest;
 }
-
 
 int main(void)
 {
