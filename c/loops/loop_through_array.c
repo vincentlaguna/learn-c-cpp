@@ -10,5 +10,11 @@ int main(void)
   {
     printf("[%d]\n", p[i]);
   }
+  int *end = p + size;
+  
+  for(; p != end; ++p)
+  {
+    printf("[%d]\n", *p);
+  }
   return 0;
 }
