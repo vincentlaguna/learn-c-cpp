@@ -32,6 +32,7 @@ What I have learned in C:
 - Unions and Enums
 - Ternary operator expressions
 - Function pointers basics
+- Find largest element in an array
 - Array of pointers, pointer to an array, function pointer as argument
 - Introduction to bitwise operators
 - Introduction to memory management; malloc, free function
