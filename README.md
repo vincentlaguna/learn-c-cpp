@@ -36,6 +36,7 @@ What I have learned in C:
 - Array of pointers, pointer to an array, function pointer as argument
 - Introduction to bitwise operators
 - Introduction to memory management; malloc, free function
+- Callbacks through function pointers
 - 
 
 What I have learned in C++:
