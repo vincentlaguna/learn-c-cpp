@@ -37,6 +37,7 @@ What I have learned in C:
 - Introduction to bitwise operators
 - Introduction to memory management; malloc, free function
 - Callbacks through function pointers
+- Returning a function pointer from a function
 - 
 
 What I have learned in C++:
