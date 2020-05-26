@@ -61,3 +61,4 @@ What I have learned in C++:
 - Referencing and De-Referencing pointers
 - Using pointer to pointers inside an array to sort min/max elements
 - Memory management
+- Callback implementation
