@@ -1,10 +1,13 @@
-#include "unity.h"
-#include "example1.h"
+#include "Unity/src/unity.h"
+#include <stdio.h>
+#include <stdint.h>
+
+int8_t AverageThreeBytes(int8_t a, int8_t b, int8_t c);
 
 void test_AverageThreeBytes_should_AverageMidRangeValues(void)
 {
   TEST_ASSERT_EQUAL_HEX(40, AverageThreeBytes(30, 40, 50));
-  TEST_ASSERT_EQUAL_HEX(40, AverageThreeBytes(10, 70, 50));
+  TEST_ASSERT_EQUAL_HEX(40, AverageThreeBytes(10, 70, 40));
   TEST_ASSERT_EQUAL_HEX(33, AverageThreeBytes(33, 33, 33));
 }
 
@@ -19,6 +22,6 @@ int main(void)
 {
   UNITY_BEGIN();
   RUN_TEST(test_AverageThreeBytes_should_AverageMidRangeValues);
-  RUN_TEST(test_AverageThreeBytes_should_AverageHighValues());
+  RUN_TEST(test_AverageThreeBytes_should_AverageHighValues);
   return UNITY_END();
 }
