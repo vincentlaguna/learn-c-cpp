@@ -25,3 +25,12 @@ int main(void)
   RUN_TEST(test_AverageThreeBytes_should_AverageHighValues);
   return UNITY_END();
 }
+
+void setUp()
+{
+  printf("Test has initialized...\n");
+}
+void tearDown()
+{
+  printf("Test has completed.\n");
+}
