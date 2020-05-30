@@ -39,6 +39,7 @@ What I have learned in C:
 - Callbacks through function pointers
 - Returning a function pointer from a function
 - Iterating through for-loops to find primes
+- Evaluate and return the length characters in a message
 - 
 
 What I have learned in C++:
