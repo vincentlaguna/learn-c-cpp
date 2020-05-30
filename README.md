@@ -38,6 +38,7 @@ What I have learned in C:
 - Introduction to memory management; malloc, free function
 - Callbacks through function pointers
 - Returning a function pointer from a function
+- Iterating through for-loops to find primes
 - 
 
 What I have learned in C++:

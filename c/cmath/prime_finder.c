@@ -1,23 +1,32 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
 
 int main(void)
 {
-  int primes[100] = {2, 3};
+  int p;
+  int i;
+  int primes[50] = {0};
+  int primeIndex = 2;
+  // Hard-code prime numbers
+  primes[0] = 2;
+  primes[1] = 3;
+  bool isPrime;
   
-  
-  for(int i = 0; i < 100; i++)
+  for(p = 5; p <= 100; p += 2)
   {
-   for(int j = 0; j < 100; j++)
-   {
-     for(int k = 0; k < 100; k++)
-     {
-       printf("[%d][%d][%d]\n", i, j, k);
-       if((p / primes[i]) >= primes[i])
-       {
-         break;
-       }
-     }
-   }
+   isPrime = true;
+   for(i = 1; isPrime && p / primes[i] >= primes[i]; ++i)
+     if (p % primes[i] == 0)
+      isPrime = false;
+    if(isPrime == true)
+    {
+      primes[primeIndex] = p;
+      ++primeIndex;
+    }
   }
+  for(i = 0; i < primeIndex; ++i)
+    printf("[%i] ", primes[i]);
+    printf("\n");
   return 0;
 }
