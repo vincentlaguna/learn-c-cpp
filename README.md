@@ -40,6 +40,7 @@ What I have learned in C:
 - Returning a function pointer from a function
 - Iterating through for-loops to find primes
 - Evaluate and return the length characters in a message
+- Using nested for-loops for calculating rainfall averages
 - 
 
 What I have learned in C++:
