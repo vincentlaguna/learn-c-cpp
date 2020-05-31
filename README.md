@@ -41,6 +41,7 @@ What I have learned in C:
 - Iterating through for-loops to find primes
 - Evaluate and return the length characters in a message
 - Using nested for-loops for calculating rainfall averages
+- Nested structures and array of structures
 - 
 
 What I have learned in C++:
