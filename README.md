@@ -42,6 +42,7 @@ What I have learned in C:
 - Evaluate and return the length characters in a message
 - Using nested for-loops for calculating rainfall averages
 - Nested structures and array of structures
+- Structure variable assignment
 - 
 
 What I have learned in C++:
