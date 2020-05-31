@@ -4,14 +4,14 @@
 
 int main(void)
 {
-  int p;
-  int i;
-  int primes[50] = {0};
-  int primeIndex = 2;
+  int p; // Our first counter to iterate through range
+  int i; // Our second counter to iterate through 
+  int primes[50] = {0}; // Array of primes
+  int primeIndex = 2; 
   // Hard-code prime numbers
   primes[0] = 2;
   primes[1] = 3;
-  bool isPrime;
+  bool isPrime; // Boolean switch
   
   for(p = 5; p <= 100; p += 2)
   {
