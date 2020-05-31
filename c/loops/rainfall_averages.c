@@ -31,18 +31,19 @@ int main(void)
      {
        subTotal += rain[year][month];
      }
-     printf("[%5d] %15.1f\n", 2010 + year, subTotal);
+     printf("[%5d ] %15.1f\n", 2010 + year, subTotal);
+     total += subTotal;
    }
+  printf("\nThe yearly average is [%.1f] inches.\n\n", total / year);
+  printf("MONTHLY AVERAGES:\n\n");
+  printf(" Jan  Feb  Mar  Apr  May  Jun  Jul  Aug  Sep  Oct  Nov  Dec\n");
   
-  /*
-  printf("[%d]\t[%f]\n", 2010 + 1, avgyr);
-  printf("The yearly average is [%f] inches.\n", yearsavg);
-  printf("MMONTHLY AVERAGES:\n");
-  printf("Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec\n");
-  printf("[%f]", monthavg);
-  printf("The average rainfall for [%d] is: [%f]\n", year, avgfloat);
-  printf("The average rainfall for the month of [%s] is: [%f]\n", month, monthavg);
-  printf("The total rainfall for the year [%d] is: [%f]\n", year, total);
-  */
+  for(month = 0; month < MONTHS; month++)
+  {
+    for(year = 0, subTotal = 0; year < YEARS; year++)
+      subTotal = rain[year][month];
+      printf("%4.1f ", subTotal / YEARS);
+  }
+  printf("\n\n");
   return 0;
 }
