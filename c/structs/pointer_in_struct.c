@@ -34,7 +34,7 @@ struct student
 struct student stu1 = {"Tanuman",12,16};  
 struct student *stu2;  
 
-int main()  
+int main() // Note* (*) parenthesis required for using . operator 
 {
   stu2 = &stu1; // g Structure variable to another 
   printf("\n Name of student %s ",(*stu2).name);  
