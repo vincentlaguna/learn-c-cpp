@@ -44,6 +44,7 @@ What I have learned in C:
 - Nested structures and array of structures
 - Structure variable assignment
 - Pointer-type variables in structures
+- Passing struct pointers to functions
 - Bisectional search algorithm
 - 
 
