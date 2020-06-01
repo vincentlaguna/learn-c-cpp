@@ -30,15 +30,20 @@ int main(void)
     printf("Your secret number was [%d]!\n", guess);
     guessed = true;
     }
-    else if(input == 'h')
+    // else if(tries > 4)
+    // {
+    //   printf("Im out of guesses, sorry... Let's try again!\n");
+    //   break;
+    // }
+    else if((input == 'h')) //&& (tries <= 4))
     {
       low = guess;
-      tries++;
+      //tries++;
     }
-    else if(input == 'l')
+    else if((input == 'l')) //&& (tries <= 4))
     {
       high = guess;
-      tries++;
+      //tries++;
     }
     else
     {
