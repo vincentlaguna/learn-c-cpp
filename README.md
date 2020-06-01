@@ -43,6 +43,7 @@ What I have learned in C:
 - Using nested for-loops for calculating rainfall averages
 - Nested structures and array of structures
 - Structure variable assignment
+- Pointer-type variables in structures
 - 
 
 What I have learned in C++:
