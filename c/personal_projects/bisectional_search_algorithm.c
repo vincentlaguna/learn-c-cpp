@@ -14,6 +14,7 @@ int main(void)
   char lower = 'l';
   int high = 100;
   int low = 0;
+  int tries;
   
   printf("Think of a number between 0 and 100...\n");
   
@@ -24,10 +25,24 @@ int main(void)
     printf("(Press 'c' if correct, 'h' if higher or 'l' if lower)> ");
     scanf("%c", &input);
       
-    if(input == 'c')
+    if((input == 'c')) //&& (tries <= 4))
     {
     printf("Your secret number was [%d]!\n", guess);
     guessed = true;
+    }
+    else if(input == 'h')
+    {
+      low = guess;
+      tries++;
+    }
+    else if(input == 'l')
+    {
+      high = guess;
+      tries++;
+    }
+    else
+    {
+      printf("\nYou have entered the wrong input! Please try again...\n");
     }
   }
   return 0;
