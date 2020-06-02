@@ -46,6 +46,7 @@ What I have learned in C:
 - Pointer-type variables in structures
 - Passing struct pointers to functions
 - Bisectional search algorithm
+- Computing compound interest program exercise
 - 
 
 What I have learned in C++:
