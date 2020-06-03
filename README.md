@@ -47,6 +47,7 @@ What I have learned in C:
 - Passing struct pointers to functions
 - Bisectional search algorithm
 - Computing compound interest program exercise
+- Modifying structure members inside a function
 - 
 
 What I have learned in C++:
