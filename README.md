@@ -48,6 +48,7 @@ What I have learned in C:
 - Bisectional search algorithm
 - Computing compound interest program exercise
 - Modifying structure members inside a function
+- Returning a structure from a function
 - 
 
 What I have learned in C++:
