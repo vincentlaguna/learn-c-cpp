@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 struct node
 {
@@ -27,7 +28,7 @@ int main(void)
         temp = (struct node*)malloc(sizeof(struct node));
         temp -> next = NULL;
         fflush(stdin);
-        printf("Enter the name ->");
+        printf("Enter the name -> \n");
         gets(temp -> name);
         fflush(stdin);
         if(!head)
@@ -51,7 +52,7 @@ int main(void)
         }
         break;
       default:
-        break;
+      break;
     }
   }
   while(choice != 3);
