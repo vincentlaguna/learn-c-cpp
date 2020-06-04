@@ -49,6 +49,7 @@ What I have learned in C:
 - Computing compound interest program exercise
 - Modifying structure members inside a function
 - Returning a structure from a function
+- Self-referential structures and linked lists basics
 - 
 
 What I have learned in C++:
