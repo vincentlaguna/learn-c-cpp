@@ -11,7 +11,7 @@ void markBoard(char mark);
 
 int main(void)
 { 
-  
+  displayBoard();
   return 0;
 }
 
@@ -65,6 +65,21 @@ int checkForWin()
 
 void displayBoard()
 {
+  system("clear");
+  printf("\n\n\tTic Tac Toe\n\n");
+  printf("Player 1 [x]  -  Player 2 [0]\n\n\n"); 
+  
+  printf("___|___|___\n");
+  printf(" %c | %c | %c\n", square[1], square[2], square[3]);
+  
+  printf("___|___|___\n");
+  printf("   |   |   \n");
+  
+  printf(" %c | %c | %c\n", square[4], square[5], square[6]);
+  printf("   |   |   \n");
+  
+  printf("___|___|___\n");
+  printf(" %c | %c | %c\n", square[7], square[8], square[9]);
   
 }
 
