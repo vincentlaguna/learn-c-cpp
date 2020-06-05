@@ -50,6 +50,7 @@ What I have learned in C:
 - Modifying structure members inside a function
 - Returning a structure from a function
 - Self-referential structures and linked lists basics
+- Variable length arrays
 - 
 
 What I have learned in C++:

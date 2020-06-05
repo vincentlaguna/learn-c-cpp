@@ -9,12 +9,13 @@ int main(void)
   scanf("%d", &n);
   
   int a[n];
+  
   printf("Enter [%d] Numbers: ", n);
   for(i = 0; i < n; ++i)
     scanf("%d", &a[i]);
     
   printf("Reverse order: ");
-  for(i = n -1; i >= n; i--)
+  for(i = n - 1; i >= 0; i--)
     printf(" %d", a[i]);
   printf("\n");
   return 0;
