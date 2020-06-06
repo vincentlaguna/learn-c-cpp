@@ -51,6 +51,7 @@ What I have learned in C:
 - Returning a structure from a function
 - Self-referential structures and linked lists basics
 - Variable length arrays and string functions
+- Experimenting and implementing bubble sort and quick sort algorithms (basic)
 - 
 
 What I have learned in C++:
