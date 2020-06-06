@@ -27,26 +27,33 @@ int main(void)
   printf("\n");
   printf("------------------------------------------------------\n");
   
-  printf("\n\nSorts the strings of an array using bubble sort");
+  printf("\n\nSorts the strings of an array using bubble sort\n");
   
   printf("Input number of strings: ");
   scanf("%d", &n);
   
   printf("Input string [%d] -> ", n);
   
-  for(i = 0; i <= n; i++)
+  for(i = 0; i < n; i++)
   {
     scanf("%s", name[i]);
   }
-  
+  // bubble sort alogorithm
   for(i = 1; i <= n; i++)
     for(j = 0; j <= n-i; j++)
       if(strcmp(name[j], name[j+1]) > 0)
       {
-        strcmp(temp, name[j]);
-        strncpy(name[j], name[j+1]);
-        strncpy(name[j+1], temp);
+        strncpy(temp, name[j], sizeof(temp) - 1);
+        strncpy(name[j], name[j+1], sizeof(name[j]) - 1);
+        strncpy(name[j+1], temp, sizeof(name[j] + 1) - 1);
       }
+  
+  printf("The strings appear after sorting: \n");
+  
+  for(i = 0; i <= n; i++)
+  {
+    printf("%s\n", name[i]);
+  }
   
   return 0;
 }
