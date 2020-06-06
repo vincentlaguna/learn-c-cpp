@@ -11,7 +11,36 @@ void markBoard(char mark);
 
 int main(void)
 { 
-  displayBoard();
+  int gameStatus;
+  char mark;
+  player = 1;
+  
+  do
+  {
+    displayBoard();
+    // change turns
+    player = (player % 2) ? 1 : 2;
+    // get input from user
+    printf("Player %d, Enter a Number: ", player);
+    scanf("%d", &choice);
+    // set the correct character based on player turn
+    mark = (player == 1) ? 'X' : 'O';
+    // set board based on user choice or invalid choice
+    markBoard(mark);
+    
+    gameStatus = checkForWin();
+    player++;
+  }
+  while(gameStatus == -1);
+  
+  if(gameStatus == 1)
+  {
+   printf("===>\aPlayer %d win ", --player);
+  }
+  else
+  {
+    printf("===>\aGame draw");
+  }
   return 0;
 }
 
@@ -136,5 +165,11 @@ void markBoard(char mark)
   else if(choice == 9 && square[9] == '9')
   {
     square[9] = mark;
+  }
+  else
+  {
+    printf("Invalid move ");
+    player--;
+    getchar();
   }
 }
