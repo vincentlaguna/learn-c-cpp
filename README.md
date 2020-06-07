@@ -52,6 +52,8 @@ What I have learned in C:
 - Self-referential structures and linked lists basics
 - Variable length arrays and string functions
 - Experimenting and implementing bubble sort and quick sort algorithms (basic)
+- Stream and system oriented data files
+- Basic file operations using FILE
 - 
 
 What I have learned in C++:
