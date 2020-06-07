@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 union bookInfo
 {
@@ -25,8 +26,8 @@ int main(void)
   printf("Year -> %d\n", book1.info.year);
   
   fflush(stdin);
-  printf("Enter name of book ->");
-  gets(book1.info.name); // watch why this fails
+  printf("Enter name of book -> ");
+  scanf("%s", book1.info.name); // watch why this fails
   
   printf("Name of the book is -> %s\n", book1.info.name);
   printf("Year -> %d", book1.info.year);
