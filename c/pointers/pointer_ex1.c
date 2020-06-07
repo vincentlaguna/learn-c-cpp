@@ -8,17 +8,30 @@ from the pointer
 6. Perform a write operation on the pointer to store the value 65
 7. Print the value of the variable defined in step 1
 */
+
 #include <stdio.h>
 
 int main(void)
 {
-  char data = 100;//1.
-  char* pAddress = &data;//3.
+  char data = 100; // 1.
+  char* pAddress = &data;// 3.
   char value = *pAddress;
+  int count = 10;
+  int *int_ptr;
+  int_ptr = &count;
+  int x;
+  x = *int_ptr;
+  
   printf("The value of data is [%d]\n", data);//1.
   printf("The address of variable data is [%p]\n", &data);//2.
   printf("The read value of data is [%d]\n", value);//4.
   *pAddress = 65;
   printf("The value of data is [%d]\n", data);
+  
+  printf("count = [%i], x = [%i]\n", count, x);
+  printf("Address of count = [%p]\n", &count); 
+  printf("Address of &x = [%p]\n", &x);
+  printf("Address int_ptr = [%p]\n", (void*) &int_ptr);
+  printf("Address *int_ptr = [%p]\n", int_ptr);
   return 0;
 }
