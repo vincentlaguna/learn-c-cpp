@@ -27,10 +27,10 @@ int main(void)
   
   fflush(stdin);
   printf("Enter name of book -> ");
-  scanf("%s", book1.info.name); // watch why this fails
+  scanf("%s", book1.info.name); // watch behavior 
   
   printf("Name of the book is -> %s\n", book1.info.name);
-  printf("Year -> %d", book1.info.year);
+  printf("Year -> %d\n", book1.info.year); // watch result change
   getchar();
   
   return 0;
