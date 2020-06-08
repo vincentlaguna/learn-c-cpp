@@ -22,16 +22,19 @@ int main(void)
   int x;
   x = *int_ptr;
   
-  printf("The value of data is [%d]\n", data);//1.
+  printf("\nThe value of data is [%d]\n", data);//1.
   printf("The address of variable data is [%p]\n", &data);//2.
   printf("The read value of data is [%d]\n", value);//4.
   *pAddress = 65;
-  printf("The value of data is [%d]\n", data);
+  printf("The value of data is [%d]\n\n", data);
   
   printf("count = [%i], x = [%i]\n", count, x);
   printf("Address of count = [%p]\n", &count); 
   printf("Address of &x = [%p]\n", &x);
   printf("Address int_ptr = [%p]\n", (void*) &int_ptr);
   printf("Address *int_ptr = [%p]\n", int_ptr);
+  printf("Size of int_ptr = [%d] (bytes)\n", (int) sizeof(int_ptr));
+  printf("Size of count = [%ld] (bytes)\n\n", sizeof(count));
+  
   return 0;
 }
