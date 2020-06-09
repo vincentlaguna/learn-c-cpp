@@ -5,15 +5,15 @@
 #define MAX_NUMBER 100
 // Prototypes
 void initialize_number_generator(void);
-void read_guesses(int secret_number);
 int new_secret_number(void);
+void read_guesses(int secret_number);
 
 int main(void)
 {
   char command;
   int secret_number;
   
-  printf("Guess the secret number between 1 and %d.\n", MAX_NUMBER);
+  printf("Guess the secret number between 1 and %d.\n\n", MAX_NUMBER);
   initialize_number_generator();
   do {
     secret_number = new_secret_number();
@@ -57,8 +57,6 @@ void read_guesses(int secret_number)
       printf("Too low, try again.\n");
     }
     else
-    {
       printf("Too high, try again.\n");
-    }
   }
 }
