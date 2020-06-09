@@ -54,6 +54,7 @@ What I have learned in C:
 - Experimenting and implementing bubble sort and quick sort algorithms (basic)
 - Stream and system oriented data files
 - Basic file operations using FILE
+- Started Raspberry Pi projects in C
 - 
 
 What I have learned in C++:
