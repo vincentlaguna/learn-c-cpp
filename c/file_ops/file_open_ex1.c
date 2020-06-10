@@ -3,7 +3,7 @@
 int main(void)
 {
   FILE *fp;
-  fp = fopen("./modify_me.txt", "r+");
+  fp = fopen("../file_ops/modify_me.txt", "r+");
   
   if(!fp)
   {
