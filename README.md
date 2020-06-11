@@ -55,6 +55,7 @@ What I have learned in C:
 - Stream and system oriented data files
 - Basic file operations using FILE
 - Started Raspberry Pi projects in C
+- Reverse array through the use of pointers
 - 
 
 What I have learned in C++:
