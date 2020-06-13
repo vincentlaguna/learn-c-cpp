@@ -58,6 +58,8 @@ What I have learned in C:
 - Reverse array through the use of pointers
 - Pointer pass by reference
 - Dynamic memory allocation at runtime basics
+- Releasing memory from the heap (always, preferable in function where allocated)
+- Malloc, calloc and realloc
 - 
 
 What I have learned in C++:
