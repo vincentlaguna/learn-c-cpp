@@ -1,16 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main(void)
 {
-  char *str;
-  str = (char*) malloc(15); // Initial memory allocation
+  char *str = NULL;
+  str = (char*) malloc(15 * sizeof(char)); // Initial memory allocation
   strcpy(str, "Vincent");
-  printf("String = %s, Address = [%u]\n", str, str);
+  printf("String = %s, Address = [%p]\n", str, str);
   
-  str = (char*) realloc(str, 25); // Reallocating memory
+  str = (char*) realloc(str, 25 * sizeof(char)); // Reallocating memory
   strcat(str, ".com");
-  printf("String = %s, Address = [%u]\n", str, str);
+  printf("String = %s, Address = [%p]\n", str, str);
   
   free(str); // Memory is free!
   
