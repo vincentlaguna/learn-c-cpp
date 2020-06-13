@@ -1,4 +1,5 @@
 // Finds the largest and smallest elements in an array
+// Produces segmentation fault, needs fixing!!!
 #include <stdio.h>
 
 #define N 10

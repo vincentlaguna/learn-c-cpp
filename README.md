@@ -56,6 +56,7 @@ What I have learned in C:
 - Basic file operations using FILE
 - Started Raspberry Pi projects in C
 - Reverse array through the use of pointers
+- Pointer pass by reference
 - 
 
 What I have learned in C++:
