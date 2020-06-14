@@ -38,7 +38,7 @@ int main(void)
   return 0;
 }
 
-void square(int *x) // Address not changes, just value
+void square(int *x) // Address does not change, just value
 {
   *x = (*x) * (*x); // De-reference pointer so the value is changed
 }
