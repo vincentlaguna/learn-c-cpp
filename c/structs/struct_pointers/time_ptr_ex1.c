@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+struct date
+{
+  int month;
+  int day;
+  int year;
+};
+  
 int main(void)
 {
-  struct date
-  {
-    int month;
-    int day;
-    int year;
-  };
-
   struct date today; 
   struct date *datePtr;
   datePtr = &today;
