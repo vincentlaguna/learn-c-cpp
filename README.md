@@ -60,6 +60,7 @@ What I have learned in C:
 - Dynamic memory allocation at runtime basics
 - Releasing memory from the heap (always, preferable in function where allocated)
 - Malloc, calloc and realloc
+- Structure pointers (basics)
 - 
 
 What I have learned in C++:
