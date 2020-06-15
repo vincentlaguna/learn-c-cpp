@@ -1,13 +1,16 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-struct Time
+int main(void)
+{
+  struct Time
 {
   struct Date
   {
     int date;
     int month;
     int year;
-  } dob; // Variable instance of Time.Date declared
+  } now; // Variable instance of Time.Date declared
   // (does not exist outside of Date struct)
   
   int hour;
@@ -15,8 +18,9 @@ struct Time
   int seconds;
 };
 
-int main(void)
-{
+  struct Date *nowPtr;
+  nowPtr = now;
+  nowPtr->date = 07;
   // code implementation to be completed...
   return 0;
 }
