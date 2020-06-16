@@ -19,7 +19,7 @@ int main(void)
 };
 
   struct Date *nowPtr;
-  nowPtr = now;
+  nowPtr = &now;
   nowPtr->date = 07;
   // code implementation to be completed...
   return 0;
