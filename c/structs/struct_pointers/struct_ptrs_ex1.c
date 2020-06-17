@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void readItem(struct item *i);
-void printItem(struct item *i);
-
 struct item
 {
   char *itemName;
@@ -11,6 +8,9 @@ struct item
   float price;
   float amount;
 };
+
+void readItem(struct item *i);
+void printItem(struct item *i);
 
 int main(void)
 {
@@ -24,7 +24,7 @@ int main(void)
   readItem(pItem);
   printItem(pItem);
   
-  free(pItem);
+  free(pItem->itemName);
   return 0;
 }
 
