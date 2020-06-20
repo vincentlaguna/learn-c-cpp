@@ -61,6 +61,7 @@ What I have learned in C:
 - Releasing memory from the heap (always, preferable in function where allocated)
 - Malloc, calloc and realloc
 - Structure pointers (basics)
+- Reading characters and strings from a .txt file
 - 
 
 What I have learned in C++:
