@@ -63,6 +63,7 @@ What I have learned in C:
 - Structure pointers (basics)
 - Reading characters and strings from a .txt file
 - Writing characters and strings to a .txt file
+- Writing formatted output to a file
 - 
 
 What I have learned in C++:
