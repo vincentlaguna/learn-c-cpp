@@ -64,7 +64,8 @@ What I have learned in C:
 - Reading characters and strings from a .txt file
 - Writing characters and strings to a .txt file
 - Writing formatted output to a file
-- Using fseek(),
+- Using fgetpos(), fsetpos(), fseek(),
+- Printing the contents of a file in reverse
 - 
 
 What I have learned in C++:
