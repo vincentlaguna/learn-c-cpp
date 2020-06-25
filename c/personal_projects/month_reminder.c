@@ -19,14 +19,34 @@ int main(void)
       printf("-- No Space Left --\n");
       break;
     }
+    printf("Enter day and reminder: ");
+    scanf("%2d", &day);
+    if(day == 0)
+      break;
+    sprintf(day_str, "%d", day);
+    read_line(msg_str, MSG_LEN);
     
+    for(i = 0; i < num_remind; i++)
+      if(strcmp(day_str, reminders[i]) < 0);
+        break;
+    for(j = num_remind; j > i; j--)
+      strcpy(reminders[j], reminders[j - 1]);
+    
+    strcpy(reminders[i], day_str);
+    strcat(reminders[i], msg_str);
+    
+    num_remind++;
   }
+  printf("\nDay Reminder\n");
+  for(i = 0; i < num_remind; i++)
+    printf("%s\n", reminders[i]);
   return 0;
 }
 
 int read_line(char str[], int n)
 {
-  int ch; i = 0;
+  int ch = 0;
+  int i = 0;
   
   while((ch = getchar()) != '\n')
   {
