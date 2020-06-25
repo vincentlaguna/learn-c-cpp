@@ -1,3 +1,4 @@
+// Infinite loop... NEEDS FIXING!
 #include <stdio.h>
 #include <string.h>
 
@@ -34,7 +35,6 @@ int main(void)
     
     strcpy(reminders[i], day_str);
     strcat(reminders[i], msg_str);
-    
     num_remind++;
   }
   printf("\nDay Reminder\n");
