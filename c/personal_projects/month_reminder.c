@@ -23,11 +23,11 @@ int main(void)
     scanf("%2d", &day);
     if(day == 0)
       break;
-    sprintf(day_str, "%d", day);
+    sprintf(day_str, "%2d", day);
     read_line(msg_str, MSG_LEN);
     
     for(i = 0; i < num_remind; i++)
-      if(strcmp(day_str, reminders[i]) < 0);
+      if(strcmp(day_str, reminders[i]) < 0)
         break;
     for(j = num_remind; j > i; j--)
       strcpy(reminders[j], reminders[j - 1]);
@@ -49,12 +49,8 @@ int read_line(char str[], int n)
   int i = 0;
   
   while((ch = getchar()) != '\n')
-  {
     if(i < n)
-    {
       str[i++] = ch;
-    }
-  }
   str[i] = '\0';
   return i;
 }
