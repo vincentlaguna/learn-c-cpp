@@ -20,3 +20,8 @@ int main(void)
   
   return 0;
 }
+/*
+typedef int(*ptr_to_int_fun)(void);
+char *p;
+= (ptr_to_int_fun) p;
+*/
