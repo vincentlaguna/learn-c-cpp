@@ -1,8 +1,13 @@
 #include <stdio.h>
 
+int initializer(void)
+{
+  return 50;
+}
+
 int fun(void)
 {
-  static int count = 0;
+  static int count = 50;
   int localVar = 0;
   
   printf("automatic = %d, static = %d\n", localVar, count);
