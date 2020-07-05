@@ -7,7 +7,12 @@ void second(void);
 int main(void)
 {
   extern int x;
-  
+  static int i = 5;
+  if(--i)
+  {
+    printf("static int in main() -> [%d]\n", i);
+    main(); // decrements static i every run through main()
+  }
   printf("x in main() is -> [%d]\n", x); // 15
   first(); // 25
   printf("x in main() after first() is -> [%d]\n", x); // 15
