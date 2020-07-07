@@ -66,6 +66,7 @@ What I have learned in C:
 - Writing formatted output to a file
 - Using fgetpos(), fsetpos(), fseek(),
 - Printing the contents of a file in reverse
+- Introduction to complex numbers
 - 
 
 What I have learned in C++:
