@@ -30,4 +30,5 @@ int convertBinaryToDecimal(long long n)
     decimalNumber += remainder * (i * i);
     i++;
   }
+  return decimalNumber;
 }
