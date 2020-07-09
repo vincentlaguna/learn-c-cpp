@@ -14,7 +14,11 @@ int main(void)
   short int z2 = 61;
   short int z3 = 0;
   
-  w3 = w1 & w2;
+  short int c1 = 147;
+  short int c2 = 61;
+  short int temp = 0;
+  
+  w3 = w1 & w2; // AND
   //w3 = w1 & 3; // Will set all the bits in w3 to 0, except the right-most 2 bits
   printf("%d\n", w3);
   
@@ -23,7 +27,7 @@ int main(void)
   //----------------
   //0000000000001001 = Decimal 9
   
-  x3 = x1 | x2;
+  x3 = x1 | x2; // OR
   printf("%d\n", x3);
   
   //10010011 // Binary 147
@@ -31,13 +35,16 @@ int main(void)
   //----------------
   //10111111 = Decimal 191
   
-  z3 = z1 ^ z2;
-  printf("%d\n", z3);
+  //temp = c1;
+  //c1 = c2;
+  //c2 = temp; // Following is the same using exclusive OR:
   
-  //10010011 // Binary 147
-  //00111101 // Binary 61
-  //----------------
-  //10101110 = Decimal 174
+  c1 ^= c2;
+  c2 ^= c1;
+  c1 ^= c2;
+  
+  printf("%d %d\n", c1, c2);
+  
   
   return 0;
 }
