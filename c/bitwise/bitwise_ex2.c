@@ -45,6 +45,8 @@ int main(void)
   
   printf("%d %d\n", c1, c2);
   
+  // Next is one's compliment:
+  // Code it!
   
   return 0;
 }
