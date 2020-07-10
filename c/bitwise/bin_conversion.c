@@ -1,3 +1,37 @@
+/**************************************************************
+* NOTES:                                                      *
+*                                                             *
+* -Remember that reading values from right to left:           *
+*                                                             *
+* 1st position value = 2^0 (i.e. one)                         *
+* 2nd position value = 2^1 (i.e. two)                         *
+* 3rd position value = 2^2 (i.e. four)                        *
+* 4th position value = 2^3 (i.e. eight)                       *
+* 5th position value = 2^4 (i.e. sixteen)                     * 
+* etc...                                                      *
+*                                                             *
+* -for each digit; multiply the digit by it's position value  *
+* -add up all the products to get the final result            *
+*                                                             *
+* Example: Binary value of 01101001 is decimal 105. See below *
+*                                                             *
+*  128   64   32   16   8   4   2   1                         *
+* --------------------------------------------                *
+*  0     1    1    0    1   0   0   1                         *
+*                                                             *
+*                                   1x1 = 1                   *
+*                               0x2     = 0                   *
+*                           0x4         = 0                   *
+*                       1x8             = 8                   *
+*                  0x16                 = 0                   *
+*             1x32                      = 32                  *
+*        1x64                           = 64                  *
+*  0x128                                = 0                   *
+* -------------------------------------_______                *
+*                                       = 105                 *    
+*                                                             *
+**************************************************************/
+
 #include <stdio.h>
 #include <math.h>
 #include <stddef.h>
