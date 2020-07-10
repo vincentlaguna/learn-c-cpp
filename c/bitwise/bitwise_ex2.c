@@ -28,6 +28,7 @@ int main(void)
   signed int comp2 = 154;
   signed int result2 = 0;
   
+  
   and3 = and1 & and2; // AND
   //and3 = and1 & 3; // Will set all the bits in w3 to 0, except the right-most 2 bits
   printf("25 & 77 -> %d\n", and3);
@@ -89,6 +90,18 @@ int main(void)
   //01100100 + 1 = 155, 01100101
   result2 = ~(comp2);
   printf("2's compliment on 154 -> %d\n", result2);
+  
+  //One's comliment operator: ~ (useful when you do not know the qty 
+  //you are dealing with in an operation)
+  //To set the low-order bit of an int called w1 to 0, you can AND w1 with an 
+  //int consisting of all 1's except for a single 0 in the rightmost bit:
+  int w1;
+  w1 &= 0xFFFFFFFE;
+  printf("normal int -> %x\n", w1);
+  //works fine on machines in which an int is represented by 32 bits...
+  //if you replace the preceding statement with:
+  w1 &= ~1;
+  printf("using 1's compliment for portabilty -> %x\n", w1);
   
   return 0;
 }
