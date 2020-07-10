@@ -4,6 +4,25 @@ long long convertDecimalToBinary(int n);
 
 int main(void)
 {
+  int num1 = 0;
+  int num2 = 0;
+  long long b_num1 = 0;
+  long long b_num2 = 0;
+  
+  int d_numLeftShiftResult = 0;
+  
+  long long b_numComplimentResult = 0;
+  long long b_num2ComplimentResult = 0;
+  long long b_num1ANDnum2Result = 0;
+  long long b_num1ORnum2Result = 0;
+  long long b_num1EXORnum2REsult = 0;
+  long long b_num1LeftShiftResult = 0;
+  
+  printf("Enter an integer (number input): ");
+  scanf("%d", &num1);
+  
+  printf("Enter another integer (bit position): ");
+  scanf("%d", &num2);
   return 0;  
 }
 
