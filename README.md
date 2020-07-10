@@ -36,6 +36,7 @@ What I have learned in C:
 - Array of pointers, pointer to an array, function pointer as argument
 - Introduction to bitwise operators
 - Converting binary to decimal, to Hexadecimal and back
+- Using a number's compliment with bitwise ~(n)
 - Introduction to memory management; malloc, free function
 - Callbacks through function pointers
 - Returning a function pointer from a function
