@@ -8,5 +8,8 @@ int main(void)
   
   flags = flags | mask; // 1011 1111;
   
+  // Turning OFF (clearing bits) using AND
+  flags = flags & ~(mask); // 0000 1001
+  
   return 0;
 }
