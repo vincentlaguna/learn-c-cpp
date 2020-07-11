@@ -18,6 +18,5 @@ int main(void)
   if((flags & mask) == mask)
     printf("%x %x\n", flags, mask);
     printf("%d %d\n", flags, mask);
-  
   return 0;
 }
