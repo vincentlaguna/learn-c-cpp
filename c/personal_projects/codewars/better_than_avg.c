@@ -26,4 +26,4 @@ Test(better_than_average, ex_tests) {
   cr_assert(better_than_average(cp1, 2, 5));
   cr_assert(better_than_average(cp2, 8, 75));
   cr_assert_not(better_than_average(cp3, 9, 9));
-}
+} // finish next kata
