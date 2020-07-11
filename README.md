@@ -37,6 +37,8 @@ What I have learned in C:
 - Introduction to bitwise operators
 - Converting binary to decimal, to Hexadecimal and back
 - Using a number's compliment with bitwise ~(n)
+- Checking the value of a bit
+- Setting, toggling and clearing of bits through bit manipulation
 - Introduction to memory management; malloc, free function
 - Callbacks through function pointers
 - Returning a function pointer from a function
