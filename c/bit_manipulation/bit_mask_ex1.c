@@ -6,6 +6,7 @@ int main(void)
   int flags = 15; // 0000 1111
   int mask = 182; // 1011 0110
   
+  // Turning Bits ON (Setting Bits) using OR
   flags = flags | mask; // 1011 1111;
   
   // Turning OFF (clearing bits) using AND
@@ -18,5 +19,6 @@ int main(void)
   if((flags & mask) == mask)
     printf("%x %x\n", flags, mask);
     printf("%d %d\n", flags, mask);
+    
   return 0;
 }
