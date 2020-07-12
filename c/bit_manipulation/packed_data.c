@@ -33,11 +33,43 @@ void show_settings(const struct box_properties *pb);
 
 int main(void)
 {
+  // Create and initialize box_properties structure
+  struct box_properties box = {true, YELLOW, true, GREEN, DASHED};
+  
+  printf("Original box settings: \n");
+  show_settings(&box);
+  
+  box.opaque = false;
+  box.fill_color = WHITE;
+  box.border_color = MAGENTA;
+  box.border_style = SOLID;
+  
+  printf("\nModified box settings: \n");
+  show_settings(&box);
   
   return 0;
 }
 
 void show_settings(const struct box_properties *pb)
 {
-  
+  printf("Box is -> %s\n", pb -> opaque == true ? "opaque" : "transparent");
+  printf("The fill color is -> %s\n", colors[pb -> fill_color]);
+  printf("Border -> %s\n", pb -> show_border == true ? "shown" : "not shown");
+  printf("The border color is -> %s\n", colors[pb -> border_color]);
+  printf("The border style is -> ");
+
+  switch(pb -> border_style)
+  {
+    case SOLID:
+      printf("solid.\n");
+      break;
+    case DOTTED:
+      printf("dotted.\n");
+      break;
+    case DASHED:
+      printf("dashed.\n");
+      break;
+    default:
+      printf("unknown type.\n");
+  }
 }
