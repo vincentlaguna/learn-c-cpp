@@ -9,5 +9,15 @@
 
 int main(void)
 {
+  int num, position, newNum, bitStatus;
+  
+  printf("Enter any number: \n");
+  scanf("%d", &num);
+  
+  printf("Enter nth bit position to check and set (0-31): \n");
+  scanf("%d", &position);
+  // Right-shift num, position times and perform bitwise AND with 1
+  bitStatus = (num >> position) & 1;
+  printf("The %d bit is set to %d\n", position, bitStatus);
   return 0;
 }
