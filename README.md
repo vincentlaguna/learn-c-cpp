@@ -71,6 +71,7 @@ What I have learned in C:
 - Using fgetpos(), fsetpos(), fseek(),
 - Printing the contents of a file in reverse
 - Introduction to complex numbers
+- Goto functions
 - 
 
 What I have learned in C++:
