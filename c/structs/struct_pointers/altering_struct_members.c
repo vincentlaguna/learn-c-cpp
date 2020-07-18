@@ -12,6 +12,8 @@ typedef struct
 // DataSet_t = convention for "typedefs", for enums: DataSet_e
 DataSet_t data;
 
+void displayMemberElements(DataSet_t *pData);
+
 int main(void)
 {   
     
@@ -20,12 +22,24 @@ int main(void)
     data.data3  = 0x22;
     data.data4  = 0xABCD;
     
-    printf("data.data1 = %d\n", data.data1);
+    printf("data.data1 = %X\n", data.data1);
     
     DataSet_t *pData;
     pData = &data;
     
     pData->data1 = 0x55;
     
+    printf("After structure member has been modified -> %X\n", data.data1);
+    
+    displayMemberElements(&data);
+    
     return 0;
+}
+
+void displayMemberElements(DataSet_t *pData)
+{
+    printf("data1 -> %X\n", pData->data1);
+    printf("data2 -> %X\n", pData->data2);
+    printf("data3 -> %X\n", pData->data3);
+    printf("data4 -> %X\n", pData->data4);
 }
