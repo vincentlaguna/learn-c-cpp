@@ -14,14 +14,14 @@
 
 typedef struct
 {
-  uint32_t crc;
-  uint32_t status;
-  uint32_t payload;
-  uint32_t bat;
-  uint32_t sensor;
-  uint32_t longAddr;
-  uint32_t shortAddr;
-  uint32_t addrMode;
+  uint32_t crc        :2;
+  uint32_t status     :1;
+  uint32_t payload    :12;
+  uint32_t bat        :3;
+  uint32_t sensor     :3;
+  uint32_t longAddr   :8;
+  uint32_t shortAddr  :2;
+  uint32_t addrMode   :1;
 }Packet_t;
 
 int main(void)
@@ -41,14 +41,14 @@ int main(void)
   packet.shortAddr  = (uint8_t)((packetValue >> 29) & 0x3);
   packet.addrMode   = (uint8_t)((packetValue >> 31) & 0x3);
   
-  printf("crc       : [%x]\n", packet.crc);
-  printf("status    : [%x]\n", packet.status);
-  printf("payload   : [%x]\n", packet.payload);
-  printf("bat       : [%x]\n", packet.bat);
-  printf("sensor    : [%x]\n", packet.sensor);
-  printf("longAddr  : [%x]\n", packet.longAddr);
-  printf("shortAddr : [%x]\n", packet.shortAddr);
-  printf("addrMode  : [%x]\n", packet.addrMode);
+  printf("crc       : [ %#x ]\n", packet.crc);
+  printf("status    : [ %#x ]\n", packet.status);
+  printf("payload   : [ %#x ]\n", packet.payload);
+  printf("bat       : [ %#x ]\n", packet.bat);
+  printf("sensor    : [ %#x ]\n", packet.sensor);
+  printf("longAddr  : [ %#x ]\n", packet.longAddr);
+  printf("shortAddr : [ %#x ]\n", packet.shortAddr);
+  printf("addrMode  : [ %#x ]\n", packet.addrMode);
   
   printf("Size of structure is -> %ld\n", sizeof(Packet_t));
   
