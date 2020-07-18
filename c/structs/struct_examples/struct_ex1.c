@@ -1,17 +1,19 @@
 #include <stdio.h>
 #include <stdint.h>
 
-struct DataSet
+typedef struct
 {
     char data1;
     int data2;
     char data3;
     short data4;
-}__attribute__((packed)); // Notice the size go from 12 bytes to 4 with "packed"
+}DataSet_t; 
+// __attribute__((packed)); // Notice the size go from 12 bytes to 4 with "packed"
+// DataSet_t = convention for "typedefs", for enums: DataSet_e
+DataSet_t data;
 
 int main(void)
 {   
-    struct DataSet data;
     
     data.data1  = 0x11;
     data.data2  = 0xFFFFEEEE;
@@ -20,7 +22,7 @@ int main(void)
     
     uint8_t *ptr;
     ptr = (uint8_t*)&data; // struct DataSet*
-    uint32_t totalSize = sizeof(struct DataSet);
+    uint32_t totalSize = sizeof(DataSet_t);
     
     printf("Memory Address          Content \n");
     printf("================================\n");
@@ -31,7 +33,7 @@ int main(void)
         ptr++;
     }
     
-    printf("Total memory consumed by this struct variable -> [%lu]\n", sizeof(struct DataSet));
+    printf("Total memory consumed by this struct variable -> [%lu]\n", sizeof(DataSet_t));
     
     return 0;
 }
