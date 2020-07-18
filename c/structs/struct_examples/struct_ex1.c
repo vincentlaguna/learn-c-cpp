@@ -31,5 +31,7 @@ int main(void)
         ptr++;
     }
     
+    printf("Total memory consumed by this struct variable -> [%lu]\n", sizeof(struct DataSet));
+    
     return 0;
 }
