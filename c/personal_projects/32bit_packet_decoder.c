@@ -27,7 +27,7 @@ int main(void)
 {
   uint32_t packetValue;
   printf("Enter 32-bit Packet Value: ");
-  scanf("%u", &packetValue);
+  scanf("%x", &packetValue);
   
   Packet_t packet;
   
@@ -40,7 +40,7 @@ int main(void)
   packet.shortAddr  = (uint8_t)((packetValue >> 29) & 0x3);
   packet.addrMode   = (uint8_t)((packetValue >> 31) & 0x3);
   
-  printf("crc       : [%x] %u\n", packet.crc);
+  printf("crc       : [%x]\n", packet.crc);
   printf("status    : [%x]\n", packet.status);
   printf("payload   : [%x]\n", packet.payload);
   printf("bat       : [%x]\n", packet.bat);
@@ -48,6 +48,11 @@ int main(void)
   printf("longAddr  : [%x]\n", packet.longAddr);
   printf("shortAddr : [%x]\n", packet.shortAddr);
   printf("addrMode  : [%x]\n", packet.addrMode);
+  
+  printf("Size of structure is -> %ld\n", sizeof(Packet_t));
+  
+  while(getchar() != '\n')
+  getchar();
   
   return 0;
 }
