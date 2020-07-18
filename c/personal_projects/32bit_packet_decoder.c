@@ -13,14 +13,14 @@
 
 typedef struct
 {
-  uint8_t crc;
-  uint8_t status;
-  uint16_t payload;
-  uint8_t bat;
-  uint8_t sensor;
-  uint8_t longAddr;
-  uint8_t shortAddr;
-  uint8_t addrMode;
+  uint8_t   crc;
+  uint8_t   status;
+  uint16_t  payload;
+  uint8_t   bat;
+  uint8_t   sensor;
+  uint8_t   longAddr;
+  uint8_t   shortAddr;
+  uint8_t   addrMode;
 }Packet_t;
 
 int main(void)
