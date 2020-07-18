@@ -7,20 +7,21 @@
 *      1            2           8         3       3       12       1       2   *
 *                                                                              *
 ********************************************************************************/
+// Second working iteration optimized using bit-field
 
 #include <stdio.h>
 #include <stdint.h>
 
 typedef struct
 {
-  uint8_t   crc;
-  uint8_t   status;
-  uint16_t  payload;
-  uint8_t   bat;
-  uint8_t   sensor;
-  uint8_t   longAddr;
-  uint8_t   shortAddr;
-  uint8_t   addrMode;
+  uint32_t crc;
+  uint32_t status;
+  uint32_t payload;
+  uint32_t bat;
+  uint32_t sensor;
+  uint32_t longAddr;
+  uint32_t shortAddr;
+  uint32_t addrMode;
 }Packet_t;
 
 int main(void)
