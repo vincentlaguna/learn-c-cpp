@@ -36,7 +36,7 @@ int main(void)
     return 0;
 }
 
-void displayMemberElements(DataSet_t *pData)
+void displayMemberElements(DataSet_t *pData) // Pass by reference
 {
     printf("data1 -> %X\n", pData->data1);
     printf("data2 -> %X\n", pData->data2);
