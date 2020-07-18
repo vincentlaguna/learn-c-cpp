@@ -6,8 +6,8 @@ struct DataSet
     char data1;
     int data2;
     char data3;
-    short data4;    
-};
+    short data4;
+}__attribute__((packed)); // Notice the size go from 12 bytes to 4 with "packed"
 
 int main(void)
 {   

@@ -72,6 +72,7 @@ What I have learned in C:
 - Printing the contents of a file in reverse
 - Introduction to complex numbers
 - Goto functions
+- Using the "packed" attribute for struct size reduction
 - 
 
 What I have learned in C++:
