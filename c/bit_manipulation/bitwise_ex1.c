@@ -1,9 +1,10 @@
 #include <stdio.h>
+#include <stdint.h>
 
 int main(void)
 {
-  unsigned int a = 60; // 0011 1100
-  unsigned int b = 13; // 0000 1101
+  uint8_t a = 60; // 0011 1100 //60
+  uint8_t b = 13; // 0000 1101 //13
   int result = 0;
   
   //result = a & b;
@@ -14,9 +15,9 @@ int main(void)
   // 0011 0001 = 49
   //result = ~a;
   // 1100 0011 = -61
-  //result = a << 4;
+  //result = a << b;
   // 0011 1100 0000 = 960
-  result = a >> 4;
+  result = a >> b;
   // 0000 0011 = 3 (bit loss)
   printf("result is : [%d]\n", result);
   return 0;
