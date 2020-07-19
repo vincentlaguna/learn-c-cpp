@@ -73,6 +73,7 @@ What I have learned in C:
 - Introduction to complex numbers
 - Goto functions
 - Using the "packed" attribute for struct size reduction
+- Nesting a struct inside a union
 - 
 
 What I have learned in C++:
