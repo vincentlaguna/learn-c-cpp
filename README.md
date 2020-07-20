@@ -74,6 +74,7 @@ What I have learned in C:
 - Goto functions
 - Using the "packed" attribute for struct size reduction
 - Nesting a struct inside a union
+- Using Goto and set jump instructions
 - 
 
 What I have learned in C++:
