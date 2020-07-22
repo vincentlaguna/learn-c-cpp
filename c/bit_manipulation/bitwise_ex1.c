@@ -1,5 +1,21 @@
+/* Examples:
+  // Set/Clear Bits
+  mask = 0b00001000;
+  uint8_t x = x | mask;
+  x = x & ~mask; // clear bit
+  // Read Bits
+  if((x & mask))
+    // bit 3 is 1
+  else
+    // bit 3 is 0
+  // Invert Bits
+  x = x ^ mask;
+*/
 #include <stdio.h>
 #include <stdint.h>
+#define MASK(x) ((unsigned char)(1<<x))
+// In Port B: Set bits 2 and 5, Clear bits 0, 3, and 7
+//            If bit 4 is high, then invert bit 1
 
 int main(void)
 {
@@ -20,18 +36,6 @@ int main(void)
   result = a >> b;
   // 0000 0011 = 3 (bit loss)
   printf("result is : [%d]\n", result);
-  
-  // Set/Clear Bits
-  mask = 0b00001000;
-  uint8_t x = x | mask;
-  x = x & ~mask; // clear bit
-  // Read Bits
-  if((x & mask))
-    // bit 3 is 1
-  else
-    // bit 3 is 0
-  // Invert Bits
-  x = x ^ mask;
   
   return 0;
 }
