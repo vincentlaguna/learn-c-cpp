@@ -37,12 +37,15 @@ int main(void)
   result = a >> b;
   // 0000 0011 = 3 (bit loss)
   printf("result is : [%d]\n", result);
+  manage_port_B();
   
   return 0;
 }
 
 void manage_port_B(void)
 {
+  int PTBD[] = {1,0,0,1,1,1,0,1};
+  printf("PTBD value -> %s\n", PTBD);
   uint8_t temp;
   temp = PTBD; // freeze PTBD's value                  00000100
   temp = temp | (MASK(2) | MASK(5)); //              | 00100000
@@ -51,4 +54,8 @@ void manage_port_B(void)
   //                                                  00000001  
   temp = temp & ~(MASK(0) | MASK(3) | MASK(7)); //  | 00001000
   //                                                = 10001001
+  if(temp & MASK(4))
+    temp = temp ^ MASK(1);
+  PTBD = temp; // Commit the changes in PTBD
+  printf("Modified PTBD value -> %s\n", PTBD);
 }
