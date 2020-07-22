@@ -24,7 +24,14 @@ int main(void)
   // Set/Clear Bits
   mask = 0b00001000;
   uint8_t x = x | mask;
-  x = x & ~mask;
+  x = x & ~mask; // clear bit
+  // Read Bits
+  if((x & mask))
+    // bit 3 is 1
+  else
+    // bit 3 is 0
+  // Invert Bits
+  x = x ^ mask;
   
   return 0;
 }
