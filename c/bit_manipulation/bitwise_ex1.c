@@ -16,6 +16,7 @@
 #define MASK(x) ((unsigned char)(1<<x))
 // In Port B: Set bits 2 and 5, Clear bits 0, 3, and 7
 //            If bit 4 is high, then invert bit 1
+void manage_port_B(void);
 
 int main(void)
 {
@@ -38,4 +39,9 @@ int main(void)
   printf("result is : [%d]\n", result);
   
   return 0;
+}
+
+void manage_port_B(void)
+{
+  
 }
