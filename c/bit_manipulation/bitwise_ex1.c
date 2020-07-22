@@ -43,5 +43,12 @@ int main(void)
 
 void manage_port_B(void)
 {
+  uint8_t temp;
+  temp = PTBD; // freeze PTBD's value                  00000100
+  temp = temp | (MASK(2) | MASK(5)); //              | 00100000
+  //                                                 = 00100100
   
+  //                                                  00000001  
+  temp = temp & ~(MASK(0) | MASK(3) | MASK(7)); //  | 00001000
+  //                                                = 10001001
 }
