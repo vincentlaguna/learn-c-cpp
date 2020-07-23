@@ -54,7 +54,8 @@ What I have learned in C:
 - Modifying structure members inside a function
 - Returning a structure from a function
 - Self-referential structures and linked lists basics
-- Variable length arrays and string functions
+- Variable length arrays
+- String functions
 - Experimenting and implementing bubble sort and quick sort algorithms (basic)
 - Stream and system oriented data files
 - Basic file operations using FILE
