@@ -1,8 +1,12 @@
 #include <stdio.h>
 #include <stdint.h>
 
+void array_display(uint8_t *pArray, nItems);
+
 int main(void)
 {
+  uint32_t nItems = sizeof(someData) / sizeof(someData[0]);
+  
   uint8_t someData[10] = {0xff, 0xff, 0xff, 0xff, 0xff, 
                           0xff, 0xff, 0xff, 0xff, 0xff};
                           
@@ -14,18 +18,25 @@ int main(void)
   printf("After : 2nd data item = %x\n", *(someData+1));
   // Loop through the elements of the array
   printf("Elements of the array, modified 2nd element: \n");
-  for(uint32_t i = 0; i < 10; i++)
-  {
-    printf("%x\t", someData[i]);
-  }
+  
+  array_display(someData, nItems);
+  
   printf("\n");
   
   *(someData + 2) = 0x33;
   
-  for(uint32_t i = 0; i < 10; i++)
-  {
-    printf("%x\t", someData[i]);
-  }
+  array_display(someData, nItems);
+  
   printf("\n");
+  
   return 0;
+}
+
+void array_display(uint8_t *pArray, uint32_t nItems)
+{
+  // Display contents of received array:
+  for(uint32_t i = 0; i < nItems; i++)
+  {
+    printf("%x\t", pArray[i]);
+  }
 }
