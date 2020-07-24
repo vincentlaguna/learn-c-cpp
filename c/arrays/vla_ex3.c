@@ -13,14 +13,14 @@ int main(void)
   // Same as someData[1] = 0x9 (pointing to second element in array)
   printf("After : 2nd data item = %x\n", *(someData+1));
   // Loop through the elements of the array
-  printf("Elements of the array, modified element: \n");
+  printf("Elements of the array, modified 2nd element: \n");
   for(uint32_t i = 0; i < 10; i++)
   {
     printf("%x\t", someData[i]);
   }
   printf("\n");
   
-  someData[2] = 0x33;
+  *(someData + 2) = 0x33;
   
   for(uint32_t i = 0; i < 10; i++)
   {
