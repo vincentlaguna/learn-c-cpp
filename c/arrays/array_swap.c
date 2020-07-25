@@ -34,15 +34,18 @@ int main(void)
     scanf("%d", &array2[i]);
   }
   printf("Contents of array before swap -> \n");
-  display_array(array1, nItem1)
+  display_array(array1, nItem1);
+  printf("\n");
+  display_array(array2, nItem2);
+  printf("\n");
   return 0;
 }
 
-void display_array(int32_t *pArray1, uint32_t nitem)
+void display_array(uint32_t *pArray1, uint32_t nitem)
 {
   for(uint32_t i = 0; i < nitem; i++)
   {
-    printf("%d ", *(pArray1 + i));
+    printf("%4d ", *(pArray1 + i));
     
   }
 }
