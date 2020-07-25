@@ -39,8 +39,13 @@ int main(void)
   printf("\n");
   display_array(array2, nItem2);
   printf("\n");
+  
   printf("Contents of arrays after swap -> \n");
   swap_arrays(array1, array2, nItem1, nItem2);
+  display_array(array1, nItem1);
+  printf("\n");
+  display_array(array2, nItem2);
+  printf("\n");
   
   return 0;
 }
@@ -61,5 +66,11 @@ void swap_arrays(int32_t *array1, int32_t *array2, uint32_t nitem1, uint32_t nit
 
 void wait_for_user_input(void)
 {
+  printf("Press Enter key to exit this application");
   
+  while(getchar() != '\n')
+  {
+    // Just read the input buffer and do nothing
+  }
+  getchar();
 }
