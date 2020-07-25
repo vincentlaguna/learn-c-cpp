@@ -25,6 +25,28 @@ int delete_record(STUDENT_INFO_t *record, int8_t max_records);
 // Starting point of this program
 int main(void)
 {
+  int8_t menu_code;
+  int8_t app_continue;
+  
+  printf("Student record management program\n");
+  
+  while(app_continue)
+  {
+    // 1. display menu
+    display_menu();
+    // read menu code
+    read_menu_code();
+    
+    if(menu_code)
+    {
+      decode_menu_code(menu_code);
+    }
+    else // end the application if menu code = 0
+    {
+      app_continue = 0;
+      printf("Exiting the application\n");
+    }
+  }
   return 0;
 }
 
