@@ -39,6 +39,9 @@ int main(void)
   printf("\n");
   display_array(array2, nItem2);
   printf("\n");
+  printf("Contents of arrays after swap -> \n");
+  swap_arrays(array1, array2, nItem1, nItem2);
+  
   return 0;
 }
 
