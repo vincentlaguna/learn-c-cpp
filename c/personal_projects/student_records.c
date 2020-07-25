@@ -20,7 +20,9 @@ int read_menu_code(void);
 void decode_menu_code(int8_t menu_code);
 void display_all_records(STUDENT_INFO_t *record, int8_t max_records);
 int check_roll_number(int roll_number, STUDENT_INFO_t *record, int8_t max_records);
-
+int add_new_record(STUDENT_INFO_t *record, int8_t max_records);
+int delete_record(STUDENT_INFO_t *record, int8_t max_records);
+// Starting point of this program
 int main(void)
 {
   return 0;
@@ -47,6 +49,16 @@ void display_all_records(STUDENT_INFO_t *record, int8_t max_records)
 }
 
 int check_roll_number(int roll_number, STUDENT_INFO_t *record, int8_t max_records)
+{
+  
+}
+
+int add_new_record(STUDENT_INFO_t *record, int8_t max_records)
+{
+  
+}
+
+int delete_record(STUDENT_INFO_t *record, int8_t max_records)
 {
   
 }
