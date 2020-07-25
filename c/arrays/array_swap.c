@@ -61,7 +61,14 @@ void display_array(uint32_t *pArray1, uint32_t nitem)
 
 void swap_arrays(int32_t *array1, int32_t *array2, uint32_t nitem1, uint32_t nitem2)
 {
+  uint32_t len = nitem1 < nitem2 ? nitem1 : nitem2;
   
+  for(uint32_t i = 0; i < len; i++)
+  {
+    int32_t temp = array1[i];
+    array1[i] = array2[i];
+    array2[i] = temp;
+  }
 }
 
 void wait_for_user_input(void)
