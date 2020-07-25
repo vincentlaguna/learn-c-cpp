@@ -3,6 +3,7 @@
 
 void wait_for_user_input(void);
 void display_array(uint32_t *pArray1, uint32_t nitem);
+void swap_arrays(int32_t *array1, int32_t *array2, uint32_t nitem1, uint32_t nitem2);
 
 int main(void)
 {
@@ -48,6 +49,11 @@ void display_array(uint32_t *pArray1, uint32_t nitem)
     printf("%4d ", *(pArray1 + i));
     
   }
+}
+
+void swap_arrays(int32_t *array1, int32_t *array2, uint32_t nitem1, uint32_t nitem2)
+{
+  
 }
 
 void wait_for_user_input(void)
