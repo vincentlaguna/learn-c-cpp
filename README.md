@@ -76,6 +76,7 @@ What I have learned in C:
 - Using the "packed" attribute for struct size reduction
 - Nesting a struct inside a union
 - Using Goto and set jump instructions
+- String literals and string constants
 - 
 
 What I have learned in C++:
