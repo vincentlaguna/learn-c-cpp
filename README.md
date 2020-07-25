@@ -77,6 +77,7 @@ What I have learned in C:
 - Nesting a struct inside a union
 - Using Goto and set jump instructions
 - String literals and string constants
+- Inputting strings with whitespace using scan set
 - 
 
 What I have learned in C++:
