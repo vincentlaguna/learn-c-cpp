@@ -49,10 +49,13 @@ int main(void)
   }
   return 0;
 }
-
+// Display the menu to the user
 void display_menu(void)
 {
-  
+  printf("Display all records -> 1\n");
+  printf("Add new record      -> 2\n");
+  printf("Delete a record     -> 3\n");
+  printf("Exit Application    -> 5\n");
 }
 
 int read_menu_code(void)
