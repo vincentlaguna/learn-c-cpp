@@ -91,7 +91,22 @@ void decode_menu_code(int8_t menu_code)
 
 void display_all_records(STUDENT_INFO_t *record, int8_t max_records)
 {
+  int record_found = 0;
   
+  for(int i = 0; i < max_records; i++)
+  {
+    if(record[i].rollNumber)
+    {
+      record_found = 1;
+      printf("######################\n",);
+      printf("Roll Number       : %u\n", record[i].rollNumber);
+      printf("Student Semester  : %u\n", record[i].semester);
+      printf("Student DOB       : %u\n", record[i].dob);
+      printf("Student branch    : %u\n", record[i].branch);
+      printf("Student name      : %u\n", record[i].name);
+      printf("######################\n");
+    }
+  }
 }
 
 int check_roll_number(int roll_number, STUDENT_INFO_t *record, int8_t max_records)

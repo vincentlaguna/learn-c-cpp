@@ -69,7 +69,7 @@ What I have learned in C:
 - Reading characters and strings from a .txt file
 - Writing characters and strings to a .txt file
 - Writing formatted output to a file
-- Using fgetpos(), fsetpos(), fseek(),
+- Using fgetpos(), fsetpos(), fseek()
 - Printing the contents of a file in reverse
 - Introduction to complex numbers
 - Goto functions
