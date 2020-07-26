@@ -13,6 +13,7 @@ int main(void)
   printf("(ex.) Area of circle -> %f\n", area_circle);
   
   //#undef AREA_CIRCLE // -> will override previous #define AREA_CIRCLE
+  //#ifndef AREA_TRIANGLE // -> will run only if AREA_TRIANGLE is not defined
   #ifdef AREA_CIRCLE
     float radius = 0;
     printf("\nYou have now entered the circle area calculation program\n");
