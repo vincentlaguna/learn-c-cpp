@@ -5,15 +5,20 @@
 #define AREA_CIRCLE
 #define AREA_TRIANGLE
 
-
+// Using #error/#warning for compilation termination with error messages
+//#if !defined(AREA_CIRCLE) && !defined(AREA_TRIANGLE)
+//  #error "No macros defined!"
+//  #warning "No macros defined, consider yourself warned."
+//#endif
+  
 int main(void)
 {
   float area_circle; 
   area_circle = AREA_OF_CIRCLE(1+1);
   printf("(ex.) Area of circle -> %f\n", area_circle);
-  // Using defined instead of nested #ifdefs/#endifs
+  // Using defined with logical operatorsinstead of using nested #ifdefs/#endifs
   #if defined(AREA_CIRCLE) && defined(AREA_TRIANGLE)
-    printf("\n**This is the area calculation program for both circle and triangle**\n");
+      printf("\n**This is the area calculation program for both circle and triangle**\n");
   #endif
   //#undef AREA_CIRCLE // -> will override previous #define AREA_CIRCLE
   //#ifndef AREA_TRIANGLE // -> will run only if AREA_TRIANGLE is not defined

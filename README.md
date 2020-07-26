@@ -81,6 +81,7 @@ What I have learned in C:
 - Pre-processor defines, conditional defines and macros
 - More on conditional compilation: #ifdef, #ifndef, #else, #elif, #undef
 - Implementing logical operators for using "defined"
+- Using #error/#warning for compilation termination with error/warning messages
 - 
 
 What I have learned in C++:
