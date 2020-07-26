@@ -7,7 +7,7 @@ typedef struct
   int   rollNumber;
   char  name[100];
   char  branch[50];
-  char  dob[15];
+  int   dob;
   int   semester;
 }STUDENT_INFO_t;
 // Max record this program can store
@@ -35,7 +35,7 @@ int main(void)
     // 1. display menu
     display_menu();
     // read menu code
-    read_menu_code();
+    menu_code = read_menu_code();
     
     if(menu_code)
     {
@@ -56,6 +56,7 @@ void display_menu(void)
   printf("Add new record      -> 2\n");
   printf("Delete a record     -> 3\n");
   printf("Exit Application    -> 0\n");
+  printf("Enter your option here: ");
 }
 // Read the menu code entered by user and return menu code
 int read_menu_code(void)
@@ -98,12 +99,12 @@ void display_all_records(STUDENT_INFO_t *record, int8_t max_records)
     if(record[i].rollNumber)
     {
       record_found = 1;
-      printf("######################\n",);
-      printf("Roll Number       : %u\n", record[i].rollNumber);
-      printf("Student Semester  : %u\n", record[i].semester);
-      printf("Student DOB       : %u\n", record[i].dob);
-      printf("Student branch    : %u\n", record[i].branch);
-      printf("Student name      : %u\n", record[i].name);
+      printf("######################\n");
+      printf("Roll Number       : %d\n", record[i].rollNumber);
+      printf("Student Semester  : %d\n", record[i].semester);
+      printf("Student DOB       : %d\n", record[i].dob);
+      printf("Student branch    : %s\n", record[i].branch);
+      printf("Student name      : %s\n", record[i].name);
       printf("######################\n");
     }
   }
@@ -115,9 +116,9 @@ int check_roll_number(int roll_number, STUDENT_INFO_t *record, int8_t max_record
 {
   int exists = 0;
   
-  for(int i = o; i < max_records; i++)
+  for(int i = 0; i < max_records; i++)
   {
-    if(record[i].roll_number == rollNumber)
+    if(record[i].rollNumber == roll_number)
     {
       exists = 1;
       break;
@@ -125,13 +126,64 @@ int check_roll_number(int roll_number, STUDENT_INFO_t *record, int8_t max_record
   }
   return exists;
 }
-
+// Add new record by information given, identify element prior
 int add_new_record(STUDENT_INFO_t *record, int8_t max_records)
 {
+  int add_status = 0;
+  int exists = 0;
+  int roll_number;
+  int i;
   
+  for(i = 0; i < max_records; i++)
+  {
+    if(!record[i].rollNumber) // Add the record
+    {
+      printf("Add the roll number: ");
+      scanf("%d", &roll_number);
+      exists = check_roll_number(roll_number, students, max_records);
+      if(!exists)
+      {
+        add_status = 1; // Adding new record
+        record[i].rollNumber = roll_number;
+        printf("Enter the student's semester    : ");
+        scanf("%d", &record[i].semester);
+        printf("Enter the student's DOB         : ");
+        scanf("%d", &record[i].dob);
+        getchar();
+        printf("Enter the student's branch      : ");
+        scanf("%50[^\n]", record[i].branch);
+        getchar();
+        printf("Enter the student's name        : ");
+        scanf("%50[^\n]", record[i].name);
+      }
+      else
+      {
+        printf("Roll number already exists!\n");
+      }
+      break;
+    }
+  }
+  if(i == max_records)
+    printf("No space available!\n");
+  return add_status;
 }
-
+// Delete a record
 int delete_record(STUDENT_INFO_t *record, int8_t max_records)
 {
+  int8_t delete_flag = 0;
+  int roll_number;
   
+  printf("Enter the roll number of the student: ");
+  scanf("%d", &roll_number);
+  
+  for(int i = 0; i < max_records; i++)
+  {
+    if(roll_number == record[i].rollNumber)
+    {
+      delete_flag = 1;
+      memset(&record[i], 0, sizeof(STUDENT_INFO_t));
+      break;
+    }
+  }
+  return delete_flag;
 }

@@ -78,6 +78,7 @@ What I have learned in C:
 - Using Goto and set jump instructions
 - String literals and string constants
 - Inputting strings with whitespace using scan set
+- Pre-processor defines, conditional defines and macros
 - 
 
 What I have learned in C++:
