@@ -88,7 +88,7 @@ void decode_menu_code(int8_t menu_code)
         printf("Invalid input\n");
   }
 }
-
+// Display all the records entered by user
 void display_all_records(STUDENT_INFO_t *record, int8_t max_records)
 {
   int record_found = 0;
@@ -107,11 +107,23 @@ void display_all_records(STUDENT_INFO_t *record, int8_t max_records)
       printf("######################\n");
     }
   }
+  if(!record_found)
+    printf("No records found");
 }
-
+// Iterates and mathes roll numbers of the record elements one by one
 int check_roll_number(int roll_number, STUDENT_INFO_t *record, int8_t max_records)
 {
+  int exists = 0;
   
+  for(int i = o; i < max_records; i++)
+  {
+    if(record[i].roll_number == rollNumber)
+    {
+      exists = 1;
+      break;
+    }
+  }
+  return exists;
 }
 
 int add_new_record(STUDENT_INFO_t *record, int8_t max_records)
