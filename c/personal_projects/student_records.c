@@ -33,7 +33,7 @@ int main(void)
   while(app_continue)
   {
     display_menu();
-    menu_code();
+    menu_code = read_menu_code();
     
     if(menu_code)
       decode_menu_code(menu_code);
@@ -45,3 +45,71 @@ int main(void)
   }
   return 0;
 }
+
+void display_menu(void)
+{
+  printf("Display all records   -->1\n");
+  printf("Add new record        -->2\n");
+  printf("Delete a record       -->3\n");
+  printf("Exit Application      -->4\n");
+  printf("Enter your option here:");
+}
+
+int read_menu_code(void)
+{
+  int input;
+  scanf("%d", &input);
+  return input;
+}
+
+void decode_menu_code(int8_t menu_code)
+{
+  int8_t ret;
+  
+  switch(menu_code)
+  {
+    case 1:
+      printf("Displaying all of the student records: \n");
+      display_all_records(students, max_record);
+      break;
+    case 2:
+      printf("Add a new record: \n
+      ret = add_new_record(students, max_record);
+      !ret ? printf("Record add not successfull.\n") : printf("Record added successfully\n");
+      break:
+    case 3:
+      printf("Delete a record: \n");
+      ret = delete_record(students, max_record);
+      !ret ? printf("Record delete not successfull.\n") : printf("Record deleted successfully\n");
+      break;
+      default:
+        printf("Invalid input!\n");
+  }
+}
+
+void display_all_records(STUDENT_INFO_t *record, int8_t max_record)
+{
+  int record_found = 0;
+  
+  for(int i = 0; i < max_record; i++)
+  {
+    if(record[i].rollNumber)
+    {
+      record_found = 1;
+      // Display the record
+      printf("********************************\n");
+      printf("Roll Number                 : %d\n", record[i].rollNumber);
+      printf("Student Semester            : %d\n", record[i].semester);
+      printf("Student DOB                 : %d\n", record[i].dob);
+      printf("Student Branch              : %s\n", record[i].branch);
+      printf("Student Name                : %s\n", record[i].name);
+      printf("********************************\n");
+    }
+  }
+  if(!record_found)
+    printf("No record found!\n");
+}
+
+int check_roll_number(STUDENT_INFO_t *record, int8_t max_record);
+int add_new_record(STUDENT_INFO_t *record, int8_t max_record);
+int delete_record(STUDENT_INFO_t *record, int8_t max_record);
