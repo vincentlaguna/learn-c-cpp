@@ -12,6 +12,7 @@ int main(void)
   area_circle = AREA_OF_CIRCLE(1+1);
   printf("(ex.) Area of circle -> %f\n", area_circle);
   
+  //#undef AREA_CIRCLE // -> will override previous #define AREA_CIRCLE
   #ifdef AREA_CIRCLE
     float radius = 0;
     printf("\nYou have now entered the circle area calculation program\n");

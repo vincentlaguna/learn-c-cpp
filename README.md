@@ -79,6 +79,7 @@ What I have learned in C:
 - String literals and string constants
 - Inputting strings with whitespace using scan set
 - Pre-processor defines, conditional defines and macros
+- More on conditional compilation: #ifdef, #ifndef, #else, #elif, #undef
 - 
 
 What I have learned in C++:
