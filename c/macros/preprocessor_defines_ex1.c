@@ -11,7 +11,10 @@ int main(void)
   float area_circle; 
   area_circle = AREA_OF_CIRCLE(1+1);
   printf("(ex.) Area of circle -> %f\n", area_circle);
-  
+  // Using defined instead of nested #ifdefs/#endifs
+  #if defined(AREA_CIRCLE) && defined(AREA_TRIANGLE)
+    printf("\n**This is the area calculation program for both circle and triangle**\n");
+  #endif
   //#undef AREA_CIRCLE // -> will override previous #define AREA_CIRCLE
   //#ifndef AREA_TRIANGLE // -> will run only if AREA_TRIANGLE is not defined
   #ifdef AREA_CIRCLE

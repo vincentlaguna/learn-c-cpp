@@ -80,6 +80,7 @@ What I have learned in C:
 - Inputting strings with whitespace using scan set
 - Pre-processor defines, conditional defines and macros
 - More on conditional compilation: #ifdef, #ifndef, #else, #elif, #undef
+- Implementing logical operators for using "defined"
 - 
 
 What I have learned in C++:
