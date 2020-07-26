@@ -55,17 +55,38 @@ void display_menu(void)
   printf("Display all records -> 1\n");
   printf("Add new record      -> 2\n");
   printf("Delete a record     -> 3\n");
-  printf("Exit Application    -> 5\n");
+  printf("Exit Application    -> 0\n");
 }
-
+// Read the menu code entered by user and return menu code
 int read_menu_code(void)
 {
-  
+  int input;
+  scanf("%d", &input);
+  return input;
 }
-
+// Decode the menu
 void decode_menu_code(int8_t menu_code)
 {
-  
+  int8_t ret;
+  switch(menu_code)
+  {
+    case 1:
+      printf("Displaying all student records -> \n");
+      display_all_records(students, max_records);
+      break;
+    case 2:
+      printf("Add a new record -> \n");
+      ret = add_new_record(students, max_records);
+      !ret ? printf("Record add unsuccessful\n") : printf("Record added successfully!\n");
+      break;
+    case 3:
+      printf("Delete a record -> ");
+      ret = delete_record(students, max_records);
+      ret ? printf("Record deleted successfully!\n") : printf("Record not found\n");
+      break;
+      default:
+        printf("Invalid input\n");
+  }
 }
 
 void display_all_records(STUDENT_INFO_t *record, int8_t max_records)
