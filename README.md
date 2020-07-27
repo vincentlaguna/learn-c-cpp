@@ -82,6 +82,7 @@ What I have learned in C:
 - More on conditional compilation: #ifdef, #ifndef, #else, #elif, #undef
 - Implementing logical operators for using "defined"
 - Using #error/#warning for compilation termination with error/warning messages
+- Advanced char functions
 - 
 
 What I have learned in C++:
