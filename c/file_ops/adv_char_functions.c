@@ -24,5 +24,15 @@ int main(int argc, char *argv[])
     exit(EXIT_FAILURE);
   }
   
+  while(ch != EOF) // Start reading characters until EOF
+  {
+    if(ch == ' ' || ch == '\n')
+      wrd++;
+    else
+      charctr++;
+    ch = getc(fp);  
+  }
+   
+  
   return 0;
 }
