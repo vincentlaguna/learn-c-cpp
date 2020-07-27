@@ -10,7 +10,19 @@ int main(int argc, char *argv[])
   
   if(argc == 1) // Check if the first argument passes a file
     fp = stdin;
-  else if(arg == 2) // If we have 2 arguments, we will open up our file
+  else if(argv == 2) // If we have 2 arguments, we will open up our file
+  {
+    if((fp = fopen(argv[1], "r")) == NULL) // Correctly handle NULL file
+    {
+      fprintf(stderr, "Cannot open %s!\n", argv[1]);
+      exit(EXIT_FAILURE);
+    }
+  }
+  else
+  {
+    fprintf(stderr, "Usage: %s [filename]\n", argv[0]);
+    exit(EXIT_FAILURE);
+  }
   
   return 0;
 }
