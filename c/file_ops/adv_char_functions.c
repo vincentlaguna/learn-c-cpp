@@ -24,6 +24,8 @@ int main(int argc, char *argv[])
     exit(EXIT_FAILURE);
   }
   
+  ch = getc(fp);
+  
   while(ch != EOF) // Start reading characters until EOF
   {
     if(ch == ' ' || ch == '\n')
@@ -32,7 +34,11 @@ int main(int argc, char *argv[])
       charctr++;
     ch = getc(fp);  
   }
-   
+  
+  printf("\nThe number of words in the file are -> %d\n", wrd - 1);
+  printf("The number of characters in the file are -> %d\n\n", charctr - 1);
+  
+  fclose(fp);
   
   return 0;
 }
