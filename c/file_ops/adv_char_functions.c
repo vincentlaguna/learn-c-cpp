@@ -8,7 +8,8 @@ int main(int argc, char *argv[])
   int wrd = 1;
   int charctr = 1;
   
-  
+  if(argc == 1) // Check if the first argument passes a file
+    fp = stdin;
   
   return 0;
 }
