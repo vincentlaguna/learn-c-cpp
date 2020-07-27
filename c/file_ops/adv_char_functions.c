@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
   
   if(argc == 1) // Check if the first argument passes a file
     fp = stdin;
+  else if(arg == 2) // If we have 2 arguments, we will open up our file
   
   return 0;
 }
