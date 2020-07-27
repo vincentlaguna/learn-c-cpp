@@ -3,8 +3,8 @@
 
 int main(int argc, char *argv[])
 {
-  FILE *fp;
-  char ch;
+  FILE *fp = NULL;
+  char ch = '\0';
   int wrd = 1;
   int charctr = 1;
   
