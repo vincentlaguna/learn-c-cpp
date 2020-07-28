@@ -13,6 +13,13 @@ int main(void)
   scanf("%s", path); // Not &path, because it is already a reference to that address
   
   fPtr = fopen(path, "r");
+  
+  if(fPtr == NULL) // fopen() return NULL if unable to open file in given mode
+  {
+    printf("\nUnable to open file!\n");
+    printf("Please check whether file exists and you have read privileges\n");
+    exit(EXIT_FAILURE);
+  }
   return 0;
 }
 
