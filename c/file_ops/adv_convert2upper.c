@@ -44,6 +44,15 @@ void convertCase(FILE *fptr, const char *path)
   {
     // If current character is uppercase = toggle to lowercase and viceversa
     if(isupper(ch))
-      ch
+      ch = tolower(ch);
+    else if(islower(ch))
+      ch = toupper(ch);
+    
+    fputc(ch, dest); // Print toggled character to destination file
   }
+  // Close all files to release resource
+  fclose(fptr);
+  fclose(dest);
+  
+  remove(path); // Delete original source file
 }
