@@ -30,4 +30,20 @@ void convertCase(FILE *fptr, const char *path)
 {
   FILE *dest = NULL; // Create temp file
   char ch = '\0'; // NULL character
+  
+  dest = fopen("tempo.txt", "w"); // Temp file to store result in
+  
+  if(dest == NULL) // If unable to create temp file
+  {
+    printf("Unable to create temporary file.");
+    fclose(fptr);
+    exit(EXIT_FAILURE);
+  }
+  
+  while((ch = fgetc(fptr)) != EOF) // Repeat until the end of the file
+  {
+    // If current character is uppercase = toggle to lowercase and viceversa
+    if(isupper(ch))
+      ch
+  }
 }
