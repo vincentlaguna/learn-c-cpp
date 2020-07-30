@@ -1,16 +1,17 @@
 // Function Definitions
+#include "stack.h"
 
 void make_empty(void)
 {
   
 }
 
-int is_empty(void)
+bool is_empty(void)
 {
   
 }
 
-int is_full(void)
+bool is_full(void)
 {
   
 }
