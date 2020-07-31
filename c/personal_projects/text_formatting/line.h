@@ -1,3 +1,8 @@
+#ifndef LINE_H
+#define LINE_H
+// clear_line(void);
+void clear_line(void);
+
 /* Contextual design without implementation:
 for(;;)
 {
