@@ -83,6 +83,7 @@ What I have learned in C:
 - Implementing logical operators for using "defined"
 - Using #error/#warning for compilation termination with error/warning messages
 - Advanced char functions
+- Text Formatting using multiple source and header files
 - 
 
 What I have learned in C++:
