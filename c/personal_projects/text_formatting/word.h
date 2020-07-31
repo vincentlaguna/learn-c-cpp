@@ -7,4 +7,8 @@
 * Makes word empty if no word could be read because of EOF.            *
 * Truncates the word if it's length exceeds len.                       *
 *                                                                      *
-************************************************************************
+***********************************************************************/
+
+void read_word(char *word, int len);
+
+#endif
