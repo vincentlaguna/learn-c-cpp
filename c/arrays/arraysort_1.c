@@ -18,8 +18,8 @@ int main(void)
     printf(" %3d", numbers[x]);
   printf("\n");
   // Sort the array
-  for(outer = 0; outer < SIZE; outer++);
-    for(inner = outer + 1; inner < SIZE; inner++)
+  for(outer = 0; outer < SIZE; outer++)
+    for(inner = outer+1; inner < SIZE; inner++)
     {
       if(numbers[outer] > numbers[inner])
       {
@@ -28,5 +28,11 @@ int main(void)
         numbers[outer] = temp;
       }
     }
+    // Displays the sorted array
+    printf("\nSorted Array -> \n\n");
+    for(x = 0; x < SIZE; x++)
+      printf(" %3d", numbers[x]);
+    printf("\n");
+    
   return 0;
 }
