@@ -32,6 +32,5 @@ int main(void)
 
 int compare(const void *a, const void *b)
 {
-  int x;
   return(*(int *)a - *(int *)b);
 }
