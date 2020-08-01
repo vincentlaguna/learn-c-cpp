@@ -33,7 +33,7 @@ int space_remaining(void)
   return MAX_LINE_LEN - line_len;
 }
 
-void write_line(void)
+void write_line(void) // Writes line with justification
 {
   int extra_spaces, spaces_to_insert, i, j;
   extra_spaces = MAX_LINE_LEN - line_len;
