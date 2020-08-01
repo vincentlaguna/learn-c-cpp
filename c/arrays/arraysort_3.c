@@ -19,11 +19,19 @@ int main(void)
   for(x = 0; x < SIZE; x++)
     printf(" %3d", numbers[x]);
   putchar('\n');
-  
+  // Sort the array
+  qsort(numbers, SIZE, sizeof(int), compare);
+  // Display the sorted array
+  puts("\nSorted Array -> \n");
+  for(x = 0; x < SIZE; x++)
+    printf(" %3d", numbers[x]);
+  putchar('\n');
+
   return 0;
 }
 
 int compare(const void *a, const void *b)
 {
-  
+  int x;
+  return(*(int *)a - *(int *)b);
 }
