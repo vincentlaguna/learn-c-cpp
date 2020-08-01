@@ -8,15 +8,25 @@ int main(void)
 {
   int numbers[SIZE];
   int x, outer, inner, temp;
-  // populate the array
+  // Populate the array
   srand((unsigned)time(NULL));
   
   for(x = 0; x < SIZE; x++)
     numbers[x] = rand() % 100 + 1;
-  // display the unsorted array
+  // Display the unsorted array
   for(x = 0; x < SIZE; x++)
     printf(" %3d", numbers[x]);
   printf("\n");
-
+  // Sort the array
+  for(outer = 0; outer < SIZE; outer++);
+    for(inner = outer + 1; inner < SIZE; inner++)
+    {
+      if(numbers[outer] > numbers[inner])
+      {
+        temp = numbers[inner];
+        numbers[inner] = numbers[outer];
+        numbers[outer] = temp;
+      }
+    }
   return 0;
 }
