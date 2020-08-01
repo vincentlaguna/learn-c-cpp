@@ -12,6 +12,14 @@ int main(void)
   int x;
   srand((unsigned)time(NULL));
   // Populate the array
+  for(x = 0; x < SIZE; x++)
+    numbers[x] = rand() % 100 + 1;
+  // Display the unsorted array
+  puts("Unsorted Array -> \n");
+  for(x = 0; x < SIZE; x++)
+    printf(" %3d", numbers[x]);
+  putchar('\n');
+  
   return 0;
 }
 
