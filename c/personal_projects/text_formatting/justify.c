@@ -14,7 +14,7 @@ int main(void)
   
   for(;;)
   {
-    // Main is telling read_word to truncate any words that exceed 21 characters
+    // Main is telling read_word() to truncate any words that exceed 21 characters
     read_word(word, MAX_WORD_LEN); 
     word_len = strlen(word);
     
