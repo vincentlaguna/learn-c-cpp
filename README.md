@@ -84,6 +84,7 @@ What I have learned in C:
 - Using #error/#warning for compilation termination with error/warning messages
 - Advanced char functions
 - Text Formatting using multiple source and header files
+- Using Makefiles and Make utility for multiple src/.h/.o files
 - 
 
 What I have learned in C++:

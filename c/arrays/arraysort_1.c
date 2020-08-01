@@ -6,5 +6,8 @@
 
 int main(void)
 {
+  int numbers[SIZE];
+  int x, outer, inner, temp;
+  
   return 0;
 }
