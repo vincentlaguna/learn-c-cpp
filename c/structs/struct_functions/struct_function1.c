@@ -14,6 +14,11 @@ void showStruct(struct person p);
 
 int main(void)
 {
+  strcpy(author.name, "Dan Gookin");
+  author.age = 54;
+  author.i1 = 287.5;
+  showStruct(author);
+  
   return(0);
 }
 
