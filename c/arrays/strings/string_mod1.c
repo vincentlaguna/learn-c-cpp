@@ -18,5 +18,11 @@ int main(void)
 
 void modify(char *s)
 {
-  
+  while(*s)
+  {
+    *s = toupper(*s);
+    if(*s == ' ')
+      *s = '_';
+    s++;
+  }
 }
