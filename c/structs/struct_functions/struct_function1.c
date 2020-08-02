@@ -8,18 +8,32 @@ struct person
   float iq;
 };
 
-struct person author;
-
+struct person fetchStruct(void);
 void showStruct(struct person p);
 
 int main(void)
 {
+/* Pre-modification:
+  strcpy(author.name, "Dan Gookin");
+  author.age = 54;
+  author.iq = 287.5;
+  showStruct(author);
+*/
+  // Modified:
+  showStruct(fetchStruct());
+  return(0);
+}
+
+struct person fetchStruct(void)
+{
+  static struct person author;
+  
   strcpy(author.name, "Dan Gookin");
   author.age = 54;
   author.iq = 287.5;
   showStruct(author);
   
-  return(0);
+  return(author);
 }
 
 void showStruct(struct person p)
