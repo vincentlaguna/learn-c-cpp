@@ -49,6 +49,7 @@ What I have learned in C:
 - Structure variable assignment
 - Pointer-type variables in structures
 - Passing struct pointers to functions
+- Modifying array elements within a structure
 - Bisectional search algorithm
 - Computing compound interest program exercise
 - Modifying structure members inside a function
