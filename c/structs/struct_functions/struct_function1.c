@@ -16,7 +16,7 @@ int main(void)
 {
   strcpy(author.name, "Dan Gookin");
   author.age = 54;
-  author.i1 = 287.5;
+  author.iq = 287.5;
   showStruct(author);
   
   return(0);
@@ -24,5 +24,6 @@ int main(void)
 
 void showStruct(struct person p)
 {
-  
+  printf("Author %s is %d years old\n", p.name, p.age);
+  printf("%s has an IQ of %.1f\n", p.name, p.iq);
 }
