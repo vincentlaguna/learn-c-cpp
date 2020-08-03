@@ -2,7 +2,7 @@
 
 int main(void)
 {
-  char *string = "Greetings from the digital realm!\n";
+  char string[] = "Greetings from the digital realm!\n";
   char *s;
   s = string;
   
