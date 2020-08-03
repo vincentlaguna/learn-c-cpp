@@ -3,11 +3,12 @@
 int main(void)
 {
   char *string = "Greetings from the digital realm!\n";
+  char *s;
+  s = string;
   
-  while(*string != '\0')
+  while(*s)
   {
-    putchar(*string);
-    string++;
+    putchar(*s++);
   }
   return(0);
 }
