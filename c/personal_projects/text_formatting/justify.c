@@ -1,5 +1,4 @@
 // Formats a file of text
-#include <string.h>
 #include "line.h"
 #include "word.h"
 
@@ -7,7 +6,7 @@
 
 int main(void)
 {
-  char word[MAX_WORD_LEN+2];
+  char word[MAX_WORD_LEN+1];
   int word_len;
   
   clear_line();
