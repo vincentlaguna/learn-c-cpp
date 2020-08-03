@@ -23,4 +23,5 @@ void read_word(char *word, int len)
     ch = read_char();
   }
   word[pos] = '\0'; // Ending with NULL character making it a string
+  return pos;
 }
