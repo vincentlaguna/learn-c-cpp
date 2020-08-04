@@ -65,7 +65,7 @@ What I have learned in C:
 - Pointer pass by reference
 - Dynamic memory allocation at runtime basics
 - Releasing memory from the heap (always, preferable in function where allocated)
-- Malloc, calloc and realloc
+- Malloc, calloc and realloc and freeing pointers with allocated memory
 - Structure pointers (basics)
 - Reading characters and strings from a .txt file
 - Writing characters and strings to a .txt file
