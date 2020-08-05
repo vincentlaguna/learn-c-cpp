@@ -17,6 +17,18 @@ int main(void)
     printf("Please check whether the file exists and you have read/write permissions!\n");
     exit(EXIT_FAILURE);
   }
+  // File open success message
+  printf("File opened successfully. Reading integers from file -> ...");
+  // Read an integer and store read status in success. (Initial read)
+  success = fscanf(fPtrIn, "%d", &num);
+  
+  do
+  {
+    if(isPrime(num))
+      printf("Prime number found: %d\n", num);
+    else if(isEven(num))
+      printf("Even number found: %d\n", num);
+  }
   
   return(1);
 }
