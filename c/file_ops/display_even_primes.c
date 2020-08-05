@@ -28,17 +28,37 @@ int main(void)
       printf("Prime number found: %d\n", num);
     else if(isEven(num))
       printf("Even number found: %d\n", num);
+    else
+      printf("Odd number found: %d\n", num);
+    // read an integer and store read status in success
+    success = fscanf(fPtrIn, "%d", &num);
   }
+  while(success != -1);
   
-  return(1);
+  fclose(fPtrIn);
+  
+  return(0);
 }
-
-int isEven(const int)
+// Check whether a given number is even or not.
+// The function will return 1 if odd, otherwise it will return 0.
+int isEven(const int num)
 {
-  
+  return !(num & 1);
 }
-
-int isPrime(const int)
+// Check whether a number is prime. 1 = true, otherwise 0
+int isPrime(const int num)
 {
-  
+  int i = 0;
+  // Only positive integers are prime
+  if(num < 0)
+    return 0;
+  for(i = 2; i <= num / 2; i++)
+  {
+    // If the number is divisible by any number other than one and self = not prime
+    if(num % i == 0)
+    {
+      return 0;
+    }
+  }
+  return 1;
 }
