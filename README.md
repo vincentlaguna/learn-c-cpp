@@ -86,6 +86,7 @@ What I have learned in C:
 - Advanced char functions
 - Text Formatting using multiple source and header files
 - Using Makefiles and Make utility for multiple src/.h/.o files
+- Using FILE pointers for text formatting
 - 
 
 What I have learned in C++:
