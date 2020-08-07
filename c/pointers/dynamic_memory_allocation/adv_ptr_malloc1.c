@@ -35,6 +35,12 @@ int main(void)
   // Output the results
   for(x = 0; x < 7; x++)
     printf("%d\n", *(storage + 1));
-    
+  // Release the allocated memory
+  free(storage);
+  storage = NULL;
+  puts("Memory freed!");
+  // It is unnecessary to free() storage before a program quits,
+  // but if you plan on re-using the pointer, or it's allocated within
+  // a function, do free() it and assign it to the symbolic constant NULL
   return(0);
 }
