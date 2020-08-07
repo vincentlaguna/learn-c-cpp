@@ -63,6 +63,9 @@ What I have learned in C:
 - Started Raspberry Pi projects in C
 - Reverse array through the use of pointers
 - Pointer pass by reference
+
+Intermediate Concepts in C:
+
 - Dynamic memory allocation at runtime basics
 - Releasing memory from the heap (always, preferable in function where allocated)
 - Malloc, calloc and realloc and freeing pointers with allocated memory
@@ -87,7 +90,8 @@ What I have learned in C:
 - Text Formatting using multiple source and header files
 - Using Makefiles and Make utility for multiple src/.h/.o files
 - Using FILE pointers for text manipulation
-- Recursion in funtions
+- Recursion in functions
+- Variadic functions
 - 
 
 What I have learned in C++:
