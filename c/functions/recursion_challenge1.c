@@ -1,11 +1,13 @@
 #include <stdio.h>
 
 int sumOfRange(int n1);
+int findGCD(int num1, int num2);
 
 int main(void)
 {
   int n1 = 0;
   int sum = 0;
+  
   
   printf("\n\nRecursion: Calculate the sum of numbers from 1 to n: \n");
   printf("----------------------------------------------------\n");
@@ -24,4 +26,9 @@ int sumOfRange(int n1)
   result = n1 + sumOfRange(n1 - 1);
   printf(" + %d", n1);
   return result;
+}
+
+int findGCD(int num1, int num2)
+{
+  
 }
