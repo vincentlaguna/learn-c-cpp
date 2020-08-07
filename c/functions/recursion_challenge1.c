@@ -2,6 +2,7 @@
 
 int sumOfRange(int n1);
 int findGCD(int a, int b);
+char * reverse(char *str);
 
 int main(void)
 {
@@ -10,6 +11,8 @@ int main(void)
   int num1 = 0;
   int num2 = 0;
   int gcd = 0;
+  char str[100];
+  char *rev = NULL;
   // Sum of numbers recursion function
   printf("\n\nRecursion: Calculate the sum of numbers from 1 to n: \n");
   printf("----------------------------------------------------\n");
@@ -25,6 +28,14 @@ int main(void)
   scanf("%d", &num2);
   gcd = findGCD(num1, num2);
   printf("\nThe GCD of numbers %d and %d -> %d\n\n", num1, num2, gcd);
+  // Reverse a string using recursion
+  printf("\nRecursion: Reversing an input string: \n");
+  printf("----------------------------------------------------\n");
+  printf("\nEnter the string to reverse: ");
+  scanf("%s", str);
+  printf("\nThe original string is - > %s\n\n", str);
+  rev = reverse(str);
+  printf("\nThe reversed string is -> %s\n\n", rev);
   
   return(0);
 }
@@ -49,4 +60,20 @@ int findGCD(int a, int b)
     return findGCD(a, b - a);
   }
   return a;
+}
+
+char * reverse(char *str)
+{
+  static int i = 0;
+  static int j = 0;
+  static char rev[100];
+  
+  if(*str)
+  {
+    printf("Iteration %d = %s\n", j++, str);
+    reverse(str + 1);
+    rev[i++] = *str;
+    printf("%d = %c \n", i, *str);
+  }
+  return rev;
 }
