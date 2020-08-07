@@ -1,19 +1,31 @@
 #include <stdio.h>
 
 int sumOfRange(int n1);
-int findGCD(int num1, int num2);
+int findGCD(int a, int b);
 
 int main(void)
 {
   int n1 = 0;
   int sum = 0;
-  
-  
+  int num1 = 0;
+  int num2 = 0;
+  int gcd = 0;
+  // Sum of numbers recursion function
   printf("\n\nRecursion: Calculate the sum of numbers from 1 to n: \n");
   printf("----------------------------------------------------\n");
   printf("\nInput the last number of the range starting from 1: ");
   scanf("%d", &n1);
-  printf("\nThe sum of numbers from 1 to %d -> %d\n\n", n1, sumOfRange(n1));
+  printf("\n\nThe sum of numbers from 1 to %d -> %d\n\n", n1, sumOfRange(n1));
+  // Find GCD recursion function
+  printf("\nRecursion: Find the GCD of 2 numbers: \n");
+  printf("----------------------------------------------------\n");
+  printf("\nInput the first number: ");
+  scanf("%d", &num1);
+  printf("\nInput the second number: ");
+  scanf("%d", &num2);
+  gcd = findGCD(num1, num2);
+  printf("\nThe GCD of numbers %d and %d -> %d\n\n", num1, num2, gcd);
+  
   return(0);
 }
 
@@ -28,7 +40,13 @@ int sumOfRange(int n1)
   return result;
 }
 
-int findGCD(int num1, int num2)
+int findGCD(int a, int b)
 {
-  
+  while(a !=b)
+  {
+    if(a > b)
+      return findGCD(a - b, b);
+    return findGCD(a, b - a);
+  }
+  return a;
 }
