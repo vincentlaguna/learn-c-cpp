@@ -17,12 +17,13 @@ int main(void)
 int addingNumbers(int nHowMany, ...)
 {
   int nSum = 0;
+  // Taken from <stdarg.h> = va_start is your starting pointer
   va_list intArgumentPointer;
   va_start(intArgumentPointer, nHowMany);
   
   for(int i = 0; i < nHowMany; i++)
-    nSum += va_arg(intArgumentPointer, int);
-  va_end(intArgumentPointer);
+    nSum += va_arg(intArgumentPointer, int); // va_arg to access argument list
+  va_end(intArgumentPointer); // End going through the list
   
   return nSum;
 }
