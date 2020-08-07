@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int sumOfRange(void);
+int sumOfRange(int n1);
 
 int main(void)
 {
@@ -11,11 +11,13 @@ int main(void)
   printf("----------------------------------------------------\n");
   printf("\nInput the last number of the range starting from 1: ");
   scanf("%d", &n1);
-  
+  sumOfRange(n1);
+  printf("\nThe sum of numbers from 1 to %d -> %d\n\n", n1, sum);
   return(0);
 }
 
-int sumOfRange(void)
+int sumOfRange(int n1)
 {
+  int result = 0;
   
 }
