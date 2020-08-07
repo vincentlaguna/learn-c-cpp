@@ -92,6 +92,7 @@ Intermediate Concepts in C:
 - Using FILE pointers for text manipulation
 - Recursion in functions
 - Variadic functions
+- Allocating memory inside structures and accessing buffers
 - 
 
 What I have learned in C++:
