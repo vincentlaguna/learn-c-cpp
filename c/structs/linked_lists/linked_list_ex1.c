@@ -33,11 +33,6 @@ char *input(void)
 
 int main(void)
 {
-  return(0);
-}
-
-int main(void)
-{
   struct item
   {
     int id;
@@ -63,5 +58,12 @@ int main(void)
   printf("Price: ");
   strcpy(temp, input());
   current->price = strtof(temp, NULL);
-  
+  // Don't forget to initialize the pointer!
+  current->next = NULL;
+  // Output the contents
+  printf("%d: %s for %.2f/pound\n",
+          current->id,
+          current->name,
+          current->price);
+  return(0);
 }
