@@ -50,7 +50,7 @@ void output(struct item *s)
 
 int main(void)
 {
-  struct item *first, *current;
+  struct item *first, *current, *temp;
   int x;
   // Build a linked list with 5 items
   for(x = 0; x < 5; x++)
@@ -89,8 +89,12 @@ int main(void)
       exit(1);
     }
   }
+  // Save the current->next pointer
+  temp = current->next;
   // Refocus the next pointer to reference struct 4 instead of 3
-  current->next = (current->next)->next;
+  current->next = temp->next;
+  // Free the storage!
+  free(temp);
   // Output the updated list
   output(first);
   
