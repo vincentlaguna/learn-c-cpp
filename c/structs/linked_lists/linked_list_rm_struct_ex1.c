@@ -79,7 +79,7 @@ int main(void)
   puts("\nRemoving the fourth record...\n");
   current = first;
   // Locate the third structure to remove the fourth
-  while(current->id != 2)
+  while(current->id != 2) // Change to 3 to remove the final structure
   {
     current = current->next;
     // Always test with pointers!

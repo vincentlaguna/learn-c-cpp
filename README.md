@@ -94,6 +94,7 @@ Intermediate Concepts in C:
 - Variadic functions
 - Allocating memory inside structures and accessing buffers
 - Linked lists using pointers in structures and allocating memory
+- Adding and removing structures from a linked lists
 - 
 
 What I have learned in C++:
