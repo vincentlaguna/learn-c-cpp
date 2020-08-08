@@ -33,7 +33,11 @@ int main(void)
   fread(toRead, sizeof(struct human), 1, fp);
   // Close the file
   fclose(fp);
-  
+  // Output the results
+  puts("\nData read: ");
+  printf("\nName -> %sProfession -> %sAge -> %d\n\n",
+          toRead->name, toRead->profession, toRead->age);
+          
   exit(0);
 }
   

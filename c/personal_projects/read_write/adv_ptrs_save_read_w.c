@@ -6,7 +6,7 @@ int main(void)
   struct human
   {
     char name[32];
-    char profession[64];
+    char profession[32];
     int age;
   } *toWrite;
   
