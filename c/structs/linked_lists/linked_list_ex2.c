@@ -50,4 +50,17 @@ struct item *allocate(void)
     fprintf(stderr, "Unable to allocate memory.\n");
     exit(1);
   }
+  return(p);
+}
+// Fill the structure
+void fill(struct item *s, int i)
+{
+  char temp[SIZE];
+  
+  s->id = i;
+  printf("Record %d Fruit: ", i);
+  strcpy(s->name, input());
+  printf("Price: ");
+  strcpy(temp, input());
+  s->price = strtof(temp, NULL);
 }
