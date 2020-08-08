@@ -54,4 +54,14 @@ int main(void)
     fprintf(stderr, "Unable to allocate memory.\n");
     exit(1);
   }
+  // The first structure is now the current structure
+  current = first;
+  // Fill the structure
+  current->id = 1;
+  printf("Record %d Fruit: ", current->id);
+  strcpy(current->name, input());
+  printf("Price: ");
+  strcpy(temp, input());
+  current->price = strtof(temp, NULL);
+  
 }
