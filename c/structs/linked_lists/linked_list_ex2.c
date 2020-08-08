@@ -63,4 +63,22 @@ void fill(struct item *s, int i)
   printf("Price: ");
   strcpy(temp, input());
   s->price = strtof(temp, NULL);
+  // The 'next' member if filled in the main function
+}
+// Output the list
+void output(struct item *s)
+{
+  while(s != NULL)
+  {
+    printf("%d: %S for %.2f/pound\n",
+            s->id,
+            s->name,
+            s->price);
+    s = s->next;
+  }
+}
+
+int main(void)
+{
+  
 }
