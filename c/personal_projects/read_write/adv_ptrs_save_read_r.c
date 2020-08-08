@@ -36,7 +36,9 @@ int main(void)
   // Output the results
   puts("\nData read: ");
   printf("\nName -> %sProfession -> %sAge -> %d\n\n",
-          toRead->name, toRead->profession, toRead->age);
+          toRead->name,
+          toRead->profession, 
+          toRead->age);
           
   exit(0);
 }

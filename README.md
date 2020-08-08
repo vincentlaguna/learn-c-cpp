@@ -93,6 +93,7 @@ Intermediate Concepts in C:
 - Recursion in functions
 - Variadic functions
 - Allocating memory inside structures and accessing buffers
+- Linked lists using pointers in structures and allocating memory
 - 
 
 What I have learned in C++:
