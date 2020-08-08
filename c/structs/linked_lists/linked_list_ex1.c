@@ -38,7 +38,7 @@ int main(void)
     int id;
     char name[SIZE];
     float price;
-    struct item *next;
+    struct item *next; // Pointer to another structure
   };
   struct item *first, *current;
   char temp[SIZE];
