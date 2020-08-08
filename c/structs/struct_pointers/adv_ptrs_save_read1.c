@@ -37,7 +37,7 @@ int main(void)
   
   if(r2 == NULL)
   {
-    fprintf(stderr, "Unable to allocate structure memory!\n");
+    fprintf(stderr, "Input Error\n");
     exit(1);
   }
   printf("How are old are you? ");
@@ -47,7 +47,7 @@ int main(void)
   
   if(fp == NULL)
   {
-    fprintf(stderr, "Unable to allocate structure memory!\n");
+    fprintf(stderr, "Unable to create file.\n");
     exit(1);
   }
   // Write the structure
@@ -55,5 +55,6 @@ int main(void)
   // Close the file
   fclose(fp);
   printf("Data written to %s\n", filename);
+  
   return(0);
 }
