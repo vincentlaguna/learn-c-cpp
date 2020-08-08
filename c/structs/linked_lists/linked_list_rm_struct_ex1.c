@@ -35,16 +35,17 @@ void fill(struct item *s, int i)
   s->price = prices[i];
 }
 // Output the list
-void ouput(struct item *s)
+void output(struct item *s)
 {
   while(s != NULL)
   {
     printf("%d: %s for $%.2f/pound\n",
             s->id,
-            s->name;
+            s->name,
             s->price);
     s = s->next;
   }
+  putchar('\n');
 }
 
 int main(void)
@@ -72,10 +73,10 @@ int main(void)
   // Cap the final structure
   current->next = NULL;
   // Output the list
-  puts("Original List -> ");
+  puts("\nOriginal List -> \n");
   output(first);
   // Remove the fourth structure from the list
-  puts("Removing the fourth record...");
+  puts("\nRemoving the fourth record...\n");
   current = first;
   // Locate the third structure to remove the fourth
   while(current->id != 2)
