@@ -70,7 +70,7 @@ void output(struct item *s)
 {
   while(s != NULL)
   {
-    printf("%d: %S for %.2f/pound\n",
+    printf("%d: %s for %.2f/pound\n",
             s->id,
             s->name,
             s->price);
@@ -80,5 +80,30 @@ void output(struct item *s)
 
 int main(void)
 {
+  struct item *first, *current;
+  int x;
+  // This linked list has (5) items
+  for(x = 0; x < 5; x++)
+  {
+    // Allocate initial structure
+    if(x == 0)
+    {
+      first = allocate();
+      current = first;
+    }
+    else
+    {
+      // Set the next structure link
+      current->next = allocate();
+      // Make the next structure the current structure
+      current = current->next;
+    }
+    fill(current, x + 1);
+  }
+  // Cap the final structure
+  current->next = NULL;
+  // Output the list
+  output(first);
   
+  return(0);
 }
