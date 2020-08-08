@@ -80,7 +80,7 @@ int main(void)
   {
     current = current->next;
     // Verify pointer
-    if(current != NULL)
+    if(current == NULL)
     {
       fprintf(stderr, "Structure out of bounds!.\n");
       exit(1);
