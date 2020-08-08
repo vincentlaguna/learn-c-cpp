@@ -63,7 +63,7 @@ int main(void)
     {
       // Set the next structure link
       current->next = allocate();
-      // Make the next structure the current
+      // Make the next structure the current structure
       current = current->next;
     }
     fill(current, x);
