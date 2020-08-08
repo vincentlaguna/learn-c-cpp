@@ -33,6 +33,18 @@ void fill(struct item *s, int i)
   s->name = fruit[i];
   s->price = prices[i];
 }
+// Output the list
+void output(struct item *s)
+{
+  while(s != NULL)
+  {
+    printf("%d: %s for %.2f/pound\n",
+            s->id,
+            s->name,
+            s->price);
+    s = s->next;
+  }
+}
 
 int main(void)
 {
