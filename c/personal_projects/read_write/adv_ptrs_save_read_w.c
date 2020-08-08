@@ -32,7 +32,7 @@ int main(void)
     exit(1);
   }
   printf("What is your profession? ");
-  r2 = fgets(toWrite->profession, 64, stdin);
+  r2 = fgets(toWrite->profession, 32, stdin);
   
   if(r2 == NULL)
   {
