@@ -15,7 +15,7 @@ struct item
 struct item *allocate(void)
 {
   struct item *p;
-  p = (struct item *)malloc(sizeof(struct item) * 1)
+  p = (struct item *)malloc(sizeof(struct item) * 1);
   // Validate memory allocation
   if(p == NULL)
   {
@@ -25,8 +25,9 @@ struct item *allocate(void)
   return(p);
 }
 // Fill the structure
-void fill(struct item *s int i)
-char *fruit[] = {"apples", "bananas", "grapes", "strawberries", "watermelon"};
+void fill(struct item *s, int i)
+{
+  char *fruit[] = {"apples", "bananas", "grapes", "strawberries", "watermelon"};
   float prices[] = {1.20, 2.58, 2.09, 2.40, 0.51};
   
   s->id = i;
@@ -77,8 +78,12 @@ int main(void)
     fprintf(stderr, "Error creating file.\n");
     exit(1);
   }
-  // Write the 5 structures
-  fwrite(first, sizeof(struct item), 5, fp);
+  // Second write the 5 structures
+  while(current != NULL)
+  {
+    fwrite(first, sizeof(struct item), 5, fp);
+    current = current->next;  
+  }
   // Close the file
   fclose(fp);
   puts("Successfully saved!\n");
