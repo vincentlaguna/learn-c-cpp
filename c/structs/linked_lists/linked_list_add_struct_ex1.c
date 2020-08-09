@@ -76,7 +76,7 @@ int main(void)
   puts("Inserting a new structure...");
   current = first;
   // Locate the 2nd structure
-  while(current->id != 1)
+  while(current->id != 4) // For the last of the list
   {
     current = current->next;
     // Verify pointer
@@ -93,9 +93,10 @@ int main(void)
   strcpy(temp->name, "apricots");
   temp->price = 1.36;
   // Reference the following structure
-  temp->next = current->next;
+  temp->next = current->next // temp->next = first; // For resetting the start
+  // of the list
   // Update the current structure
-  current->next = temp;
+  current->next = temp; // first = temp; // To reset the first pointer
   // Output the updated list
   output(first);
   
