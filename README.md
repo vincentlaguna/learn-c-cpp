@@ -95,6 +95,7 @@ Intermediate Concepts in C:
 - Allocating memory inside structures and accessing buffers
 - Linked lists using pointers in structures and allocating memory
 - Adding and removing structures from a linked lists
+- Double-linked lists
 - 
 
 What I have learned in C++:
