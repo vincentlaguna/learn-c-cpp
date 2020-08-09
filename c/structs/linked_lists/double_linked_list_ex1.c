@@ -4,7 +4,8 @@
 
 #define SIZE 16
 // Define the structure externally
-struct item{
+struct item
+{
   int id;
   char name[SIZE];
   float price;
@@ -15,6 +16,7 @@ struct item{
 struct item *allocate(void)
 {
   struct item *p;
+  p = (struct item *)malloc(sizeof(struct item) * 1);
   // Validate memory allocation
   if(p == NULL)
   {
@@ -62,6 +64,7 @@ void output_backward(struct item *s)
 int main(void)
 {
   struct item *first, *last, *current, *temp;
+  int x;
   // Build a linked list with 5 items
   for(x = 0; x < 5; x++)
   {
@@ -86,5 +89,15 @@ int main(void)
     }
   }
   // Cap the final structure
+  current->next = NULL;
+  // Set the last pointer
+  last = current;
+  // Output the list forward
+  puts("Forward List -> ");
+  output_forward(first);
+  //Output the list backward
+  puts("Backward list -> ");
+  output_backward(last);
+  
   return(0);
 }
