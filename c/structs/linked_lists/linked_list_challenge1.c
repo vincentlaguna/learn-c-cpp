@@ -68,6 +68,56 @@ void fill(struct family *s)
   s->age = strtod(temp, NULL);
   putchar('\n');
 }
+// Output the list
+int output(struct family *s)
+{
+  int count = 0;
+  // Check for empty list
+  if(s == NULL)
+  {
+    puts("List is empty");
+  }
+  //Output all records
+  else
+  {
+    while(s != NULL)
+    {
+      printf("%d: %s, your %s, is %d years old.\n",
+              count + 1,
+              s->name,
+              s->relationship,
+              s->age);
+      s = s->next;
+      count++;
+    }
+  }
+  putchar('\n');
+  return(count);
+}
+// Save the linked list
+void save(struct family *s)
+{
+  FILE *fp;
+  int records;
+  int x;
+  // Confirm the list isn't empty
+  if(s == NULL)
+  {
+    puts("List is empty.\n");
+    return;
+  }
+  // Count the number of records
+  records = output(s);
+  printf("%d records to save...", records);
+  // Open the file
+  fp = fopen(filename, "w");
+  // Validate file
+  if(fp == NULL)
+  {
+    fprintf(stderr, "Unable to create %s\n\n", filename);
+    return; // Don't quit on this error
+  }
+}
 int main(void)
 {
   struct family *first, *current;
