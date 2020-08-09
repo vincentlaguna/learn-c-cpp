@@ -81,7 +81,7 @@ int main(void)
   // Second write the 5 structures
   while(current != NULL)
   {
-    fwrite(first, sizeof(struct item), 1, fp);
+    fwrite(current, sizeof(struct item), 1, fp);
     current = current->next;  
   }
   // Close the file
