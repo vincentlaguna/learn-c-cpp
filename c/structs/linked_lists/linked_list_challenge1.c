@@ -213,14 +213,67 @@ int main(void)
       // Delete a record
       case 'D':
       case 'd':
+        if(first == NULL)
+        {
+          puts("Nothing to delete.\n");
+          break;
+        }
+        else
+        {
+          // Output the list
+          r = output(first);
+          // Prompt
+          printf("Remove record 1 to %d? ", r);
+          record = strtod(input(), NULL);
+          if(record < 1 || record > r)
+          {
+            puts("value out of range.\n");
+            break;
+          }
+          printf("Removing record %d...", record);
+          // Test for first record
+          if(record == 1)
+          {
+            // Check to see if only record
+              if(first->next == NULL)
+              {
+                free(first);
+                first = NULL;
+              }
+              else
+              {
+                temp = first;
+                first = first->next;
+                free(temp);
+              }
+              puts("Done!\n");
+              break;
+            }
+            // Record to delete isn't first record = Visit previous record
+            while(record - 2)
+            {
+              current = current->next;
+              record--;
+            }
+            // Save the next record
+            temp = current->next;
+            // Reset the current record pointer
+            current->next = temp->next;
+            // Free the removed structure
+            free(temp);
+            puts("Deleted.\n");
+        }
         break;
       // List all records
       case 'L':
       case 'l':
+        output(first);
         break;
       // Open/Retrieve existing records
       case 'O':
       case 'o':
+        first = allocate();
+        open(first);
         break;
       // Save all records
       case 'S':
