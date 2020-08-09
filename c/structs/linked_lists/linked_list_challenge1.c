@@ -117,7 +117,47 @@ void save(struct family *s)
     fprintf(stderr, "Unable to create %s\n\n", filename);
     return; // Don't quit on this error
   }
+  // Save all the records
+  for(x = 0; x < records; x++)
+  {
+    fwrite(s, sizeof(struct family), 1, fp);
+    // Okay to change s here
+    s = s->next;
+  }
+  printf("%d records written...", records);
+  // Close the file
+  fclose(fp);
+  puts("Done!");
 }
+// Read the linked list from a file
+void open(struct family *s)
+{
+  FILE *fp;
+  int records;
+  // Open the file
+  fp = fopen(filename, "r");
+  // Validate file
+  if(fp == NULL)
+  {
+    fprintf(stderr, "Unable to read from %s", filename);
+    return; // Also don't quit on this error
+  }
+  printf("Opening file %s...", filename);
+  // Retrieve the records
+  records = 1;
+  // Allocate first structure
+  while(1)
+  {
+    fread(s, sizeof(struct family), 1, fp);
+    // NULL pointer is saved
+    if(s->next == NULL)
+      break;
+    s->next = allocate();
+    s = s->next;
+    records++;
+  }
+}
+
 int main(void)
 {
   struct family *first, *current;
