@@ -9,7 +9,7 @@ enum {FALSE, TRUE};
 struct family
 {
   char name[SIZE];
-  Char relationship[SIZE];
+  char relationship[SIZE];
   int age;
   struct family *next;
 };
@@ -159,13 +159,13 @@ void open(struct family *s)
   printf("%d records read...", records);
   // Close the file
   fclose(fp);
-  puts("Done!\");
+  puts("Done!\n");
 }
 
 int main(void)
 {
-  struct family *first, *current;
-  int done;
+  struct family *first, *current, *temp;
+  int done, r, record;
   char command[SIZE];
   // Initialize first record to NULL
   first = NULL;
@@ -277,7 +277,8 @@ int main(void)
         break;
       // Save all records
       case 'S':
-      case 's':
+      //case 's':
+        save(first);
         break;
       // Quit the program
       case 'Q':
