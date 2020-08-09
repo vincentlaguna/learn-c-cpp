@@ -156,6 +156,10 @@ void open(struct family *s)
     s = s->next;
     records++;
   }
+  printf("%d records read...", records);
+  // Close the file
+  fclose(fp);
+  puts("Done!\");
 }
 
 int main(void)
@@ -189,6 +193,22 @@ int main(void)
       // Add a record
       case 'A':
       case 's':
+        // Check to see if first record is initialized
+        if(first == NULL)
+        {
+          current = allocate();
+          first = current;
+          fill(current);
+        }
+        else
+        {
+          while(current->next)
+            current = current->next;
+          current->next = allocate();
+          current = current->next;
+          fill(current);
+        }
+        current->next = NULL;
         break;
       // Delete a record
       case 'D':
