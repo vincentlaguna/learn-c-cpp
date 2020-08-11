@@ -15,6 +15,10 @@ int main(void)
   record1.letterGrade = 'B';
   record1.roundGrade = 87;
   record1.exactGrade = 86.50;
-  
+  // Display values
+  printf("Union record1 values example\n");
+  printf("Letter grade -> %c\n\n", record1.letterGrade);
+  printf("Rounded grade -> %d\n\n", record1.roundGrade);
+  printf("Exact grade -> %.2f\n\n", record1.exactGrade);
   return(0);
 }
