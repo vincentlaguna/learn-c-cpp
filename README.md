@@ -97,6 +97,7 @@ Intermediate Concepts in C:
 - Adding and removing structures from a linked lists
 - Double-linked lists
 - Saving and reading linked-lists to and from a file
+- Examples of union-member access by reference
 - 
 
 What I have learned in C++:
