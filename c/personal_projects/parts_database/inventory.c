@@ -13,3 +13,22 @@ stuct part
 } inventory[MAX_PARTS];
 // Number of parts currently stored
 int num_parts = 0;
+
+/****************************************************************************
+ * main: Prompts the user to enter an operation code, then calls a function *
+ *       to perform the requested action. Repeats until the user enters the *
+ *       the command 'q'. Prints an error message if the user enters an     *
+ *       illegal code.                                                      *
+ * **************************************************************************/
+ 
+ int main(void)
+ {
+   char code;
+   // Main loop
+   for(;;)
+   {
+     printf("Enter operation code: ");
+     scanf("%c", &code);
+     while()
+   }
+ }
