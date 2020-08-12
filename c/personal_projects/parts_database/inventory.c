@@ -29,6 +29,7 @@ int num_parts = 0;
    {
      printf("Enter operation code: ");
      scanf("%c", &code);
-     while()
+     // Skips to end of line
+     while(getchar() != '\n')
    }
  }
