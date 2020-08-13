@@ -68,5 +68,12 @@ int main(void)
 
 int find_part(int number)
 {
-  
+  int i;
+  // Loop through the inventory
+  for(i = 0; i < num_parts; i++)
+  {
+    if(inventory[i].number == number)
+      return i;
+  }
+  return(-1);
 }
