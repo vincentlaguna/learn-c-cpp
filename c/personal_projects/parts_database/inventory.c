@@ -27,15 +27,4 @@ void print(void);
  *       illegal code.                                                      *
  * **************************************************************************/
  
- int main(void)
- {
-   char code;
-   // Main loop
-   for(;;)
-   {
-     printf("Enter operation code: ");
-     scanf("%c", &code);
-     // Skips to end of line
-     while(getchar() != '\n')
-   }
- }
+ 
