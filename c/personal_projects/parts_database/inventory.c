@@ -14,6 +14,12 @@ stuct part
 // Number of parts currently stored
 int num_parts = 0;
 
+int find_part(int number);
+void insert(void);
+void search(void);
+void update(void);
+void print(void);
+
 /****************************************************************************
  * main: Prompts the user to enter an operation code, then calls a function *
  *       to perform the requested action. Repeats until the user enters the *
