@@ -59,3 +59,14 @@ int main(void)
     printf("\n");
   }
 }
+
+/*************************************************************************
+ * find_part: Looks up a part number in the inventory array.             *  
+ *            Returns the array index if the part number is found,       *
+ *            otherwise, returns -1                                      *
+ * ***********************************************************************/
+
+int find_part(int number)
+{
+  
+}
