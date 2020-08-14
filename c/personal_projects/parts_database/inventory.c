@@ -110,3 +110,11 @@ void insert(void)
   scanf("%d", inventory[num_parts].on_hand);
   num_parts++;
 }
+
+/*************************************************************
+ * insert: Prompts the user to enter a part number, then  *
+ *               *
+ *            *
+ *              *
+ *                                                      *
+ *************************************************************/
