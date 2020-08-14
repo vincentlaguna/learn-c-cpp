@@ -77,3 +77,24 @@ int find_part(int number)
   }
   return(-1);
 }
+
+/*************************************************************
+ * insert: Prompts the user for information about a new part *
+ *         and then inserts the part into the database.      *
+ *         Prints an error message and returns prematurely   *
+ *         if the part already exists or the database is     *
+ *         full.                                             *
+ *************************************************************/
+ 
+void insert(void)
+{
+  int part_number;
+  
+  if(num_parts == MAX_PARTS)
+  {
+    printf("Database if full; can't add more parts.\n");
+    return;
+  }
+  printf("Enter part number: ");
+  scanf("%d", &part_number);
+}
