@@ -97,4 +97,13 @@ void insert(void)
   }
   printf("Enter part number: ");
   scanf("%d", &part_number);
+  
+  if(find_part(part_number) >= 0)
+  {
+    printf("Part already exists.\n");
+    return;
+  }
+  inventory[num_parts].number = part_number;
+  printf("Enter part name: ");
+  read_line(inventory[num_parts].name, NAME_LEN);
 }
