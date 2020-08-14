@@ -112,8 +112,8 @@ void insert(void)
 }
 
 /*************************************************************
- * insert: Prompts the user to enter a part number, then  *
- *               *
+ * insert: Prompts the user to enter a part number, then     *
+ *         looks up the part in the database.       *
  *            *
  *              *
  *                                                      *
