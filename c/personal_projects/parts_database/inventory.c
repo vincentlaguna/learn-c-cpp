@@ -106,4 +106,7 @@ void insert(void)
   inventory[num_parts].number = part_number;
   printf("Enter part name: ");
   read_line(inventory[num_parts].name, NAME_LEN);
+  printf("Enter quantity on hand: ");
+  scanf("%d", inventory[num_parts].on_hand);
+  num_parts++;
 }
