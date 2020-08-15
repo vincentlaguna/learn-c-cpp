@@ -166,3 +166,23 @@ void update(void)
     printf("Part not found.\n");
   }
 }
+
+/*************************************************************
+ * print: Prints a listing of all the parts in the database, *
+ *        showing the part number, part name, and quantity   *
+ *        on hand. Parts are printed in the order in which   *
+ *        they were entered into the database.               *
+ *************************************************************/
+
+void print(void)
+{
+  int i;
+  printf("Part Number   Part Name                   "
+         "Quantity on Hand\n");
+  
+  for(i = 0; i < num_parts; i++)
+  {
+    printf("%7d       %-25s%lld\n", inventory[i].number,
+           inventory[i].name, inventory[i].on_hand);
+  }
+}
