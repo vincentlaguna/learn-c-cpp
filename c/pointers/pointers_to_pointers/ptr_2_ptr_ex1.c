@@ -7,6 +7,13 @@ int main(void)
 {
   int *numbers;
   int x;
+  fill(&numbers);
+  
+  for(x = 0; x < 4; x++)
+  {
+    printf("%d\n", *(numbers + x));
+  }
+  putchar('\n');
   return(0);
 }
 
@@ -21,7 +28,7 @@ void fill(int **n)
   }
   for(x = 0; x < 4; x++)
   {
-    *(*n + x) = *(x + 1) * 11;
+    *(*n + x) = (x + 1) * 11;
   }
   putchar('\n');
 }
