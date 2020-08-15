@@ -14,6 +14,20 @@ int main(void)
   {
     printf("%s\n", weekdays[x]);
   }
+  // Bubble sort the array
+  for(x = 0; x < 6; x++)
+  {
+    for(y = x + 1; y < 7; y++)
+    {
+      // Sort alphabetically
+      if(strcmp(weekdays[x], weekdays[y]) > 0)
+      {
+        temp = weekdays[x];
+        weekdays[x] = weekdays[y];
+        weekdays[y] = temp;
+      }
+    }
+  }
   putchar('\n');
   return(0);
 }
