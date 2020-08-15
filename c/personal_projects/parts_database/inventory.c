@@ -130,7 +130,18 @@ void search(void)
   if(i >= 0)
   {
     printf("Part name -> %s\n", inventory[i].name);
-    
+    printf("Quantity on hand -> %d\n", inventory[i].on_hand);
   }
-  
+  else
+  {
+    printf("Part not found.\n");
+  }
 }
+
+/*************************************************************
+ * update: Prompts the user to enter a part number, prints   *
+ *         an error message if part doesn't exists;          *
+ *         otherwise, prompts the user to enter change in    *
+ *         quantity, updates the database.                   *
+ *************************************************************/
+
