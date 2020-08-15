@@ -5,7 +5,7 @@
 #define NAME_LEN 25
 #define MAX_PARTS 100
 
-stuct part
+struct part
 {
   int number;
   char name[NAME_LEN + 1];
@@ -40,7 +40,7 @@ int main(void)
     switch(code)
     {
       case 'i':
-        inser();
+        insert();
         break;
       case 's':
         search();
@@ -107,7 +107,7 @@ void insert(void)
   printf("Enter part name: ");
   read_line(inventory[num_parts].name, NAME_LEN);
   printf("Enter quantity on hand: ");
-  scanf("%d", inventory[num_parts].on_hand);
+  scanf("%d", &inventory[num_parts].on_hand);
   num_parts++;
 }
 
@@ -177,7 +177,7 @@ void update(void)
 void print(void)
 {
   int i;
-  printf("Part Number   Part Name                   "
+  printf(" Part Number Part Name            "
          "Quantity on Hand\n");
   
   for(i = 0; i < num_parts; i++)
