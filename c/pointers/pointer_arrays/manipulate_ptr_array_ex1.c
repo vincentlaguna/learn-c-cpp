@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 void get_input(char **b);
-
+// Solution 2 = Array notation
 // Create the array of pointers and output the results
 int main(void)
 {
