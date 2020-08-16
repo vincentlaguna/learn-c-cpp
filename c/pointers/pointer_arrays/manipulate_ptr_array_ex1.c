@@ -18,8 +18,8 @@ int main(void)
   // Read the names
   for(x = 0; x < 5; x++)
   {
-    printf("Name #%d: %s\n", x++);
-    get_input(names[x]); // get_input(names + x); // Solution 1
+    printf("Name #%d: %s", x + 1);
+    get_input(&names[x]); // get_input(names + x); // Solution 1
   }
   // Output the results
   for(x = 0; x < 5; x++)
@@ -38,10 +38,19 @@ void get_input(char **b)
   if(*b == NULL)
   {
     fprintf(stderr, "Unable to allocate memory.\n");
-    return(1);
+    exit(1);
   }
   // Read in the text
   fgets(*b, 16, stdin);
   // Remove the newline
-  
+  for(x = 0; x < 16; x++)
+  {
+    // Search for newline
+    if(*(*b) == '\n')
+    {
+      // Replace with NULL character
+      *(*b + x) = '\0';
+      break; // Exit the loop
+    }
+  }
 }
