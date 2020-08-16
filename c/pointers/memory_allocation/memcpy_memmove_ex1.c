@@ -4,6 +4,7 @@
 
 int main(void)
 {
+  /* First example of copying an array of integers
   int a[] = {100, 101, 102, 103};
   int b[4];
   int x;
@@ -14,5 +15,6 @@ int main(void)
   {
     printf("%d. -> %d = %d\n",x, a[x], b[x]);
   }
+  */
   return(0);
 }
