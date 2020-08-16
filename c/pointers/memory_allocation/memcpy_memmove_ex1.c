@@ -13,7 +13,14 @@ int main(void)
   printf("Name -> %s, Age -> %d\n", man.name, man.age);
   unsigned char *buffer;
   int x;
-  
+  // Allocate the unsigned buffer
+  buffer = (unsigned char *)malloc(sizeof(struct person));
+  // Validate memory allocation for buffer
+  if(buffer == NULL)
+  {
+    fprintf(stderr, "Unable to allocate memory.\n");
+    exit(1);
+  }
 
   /* First example of copying an array of integers
   int a[] = {100, 101, 102, 103};
