@@ -19,12 +19,12 @@ int main(void)
   for(x = 0; x < 5; x++)
   {
     printf("Name #%d: %s\n", x++);
-    get_input(names[x]);
+    get_input(names[x]); // get_input(names + x); // Solution 1
   }
   // Output the results
   for(x = 0; x < 5; x++)
   {
-    printf("%s\n", names[x]);
+    printf("%s\n", names[x]); // printf("%s\n", *(names + x));
   }
   return(0);
 }
@@ -35,5 +35,13 @@ void get_input(char **b)
   // Allocate the buffer
   *b = (char *)malloc(sizeof(char) * 16);
   // Validate memory allocation
-  if()
+  if(*b == NULL)
+  {
+    fprintf(stderr, "Unable to allocate memory.\n");
+    return(1);
+  }
+  // Read in the text
+  fgets(*b, 16, stdin);
+  // Remove the newline
+  
 }
