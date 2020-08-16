@@ -41,17 +41,17 @@ int main(void)
   }
   putchar('\n');
 
-  /* First example of copying an array of integers
+  // First example of copying an array of integers
   int a[] = {100, 101, 102, 103};
   int b[4];
-  int x;
   
-  memcpy(b, a, sizeof(int) * 4);
-  
+  //memcpy(b, a, sizeof(int) * 4);
+  memmove(&a[1],a, sizeof(int) * 4);
+  putchar('\n');
   for(x = 0; x < 4; x++)
   {
     printf("%d. -> %d = %d\n",x, a[x], b[x]);
   }
-  */
+  //*/
   return(0);
 }
