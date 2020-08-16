@@ -98,6 +98,7 @@ Intermediate Concepts in C:
 - Double-linked lists
 - Saving and reading linked-lists to and from a file
 - Examples of union-member access by reference
+- Using the memcpy() and memmove() string functions
 - 
 
 What I have learned in C++:
