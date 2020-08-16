@@ -9,9 +9,12 @@ int main(void)
     char name[8];
     int age;
   } man = {"Vincent", 34};
+  void *buffer;
+  int *bufint;
+  char *bufchar;
   // Output the structure
   printf("Name -> %s, Age -> %d\n", man.name, man.age);
-  unsigned char *buffer;
+  //unsigned char *buffer;
   int x;
   // Allocate the unsigned buffer
   buffer = (unsigned char *)malloc(sizeof(struct person));
@@ -23,12 +26,18 @@ int main(void)
   }
   // Copy memory
   memcpy(buffer, &man, sizeof(struct person));
+  // Initialize the data pointers
+  bufchar = (char *)buffer;
+  bufint = (int *)(buffer + 8);
+  // The string referenced by bufchar is a pointer, but the contents of bufint
+  // are required, so it's prefixed with the asterisk* operator
+  printf("%s is %d years old\n", bufchar, *bufint);
   // Dump the buffer
   puts("\nBuffer dump...\n");
   
   for(x = 0; x < (int)sizeof(struct person); x++)
   {
-    printf(" %02X", *(buffer + x));
+    printf(" %02p", (buffer + x));
   }
   putchar('\n');
 
