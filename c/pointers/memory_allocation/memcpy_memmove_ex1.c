@@ -21,6 +21,16 @@ int main(void)
     fprintf(stderr, "Unable to allocate memory.\n");
     exit(1);
   }
+  // Copy memory
+  memcpy(buffer, &man, sizeof(struct person));
+  // Dump the buffer
+  puts("\nBuffer dump...\n");
+  
+  for(x = 0; x < (int)sizeof(struct person); x++)
+  {
+    printf(" %02X", *(buffer + x));
+  }
+  putchar('\n');
 
   /* First example of copying an array of integers
   int a[] = {100, 101, 102, 103};
