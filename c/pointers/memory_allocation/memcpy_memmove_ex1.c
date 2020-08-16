@@ -4,6 +4,17 @@
 
 int main(void)
 {
+  struct person
+  {
+    char name[8];
+    int age;
+  } man = {"Vincent", 34};
+  // Output the structure
+  printf("Name -> %s, Age -> %d\n", man.name, man.age);
+  unsigned char *buffer;
+  int x;
+  
+
   /* First example of copying an array of integers
   int a[] = {100, 101, 102, 103};
   int b[4];
