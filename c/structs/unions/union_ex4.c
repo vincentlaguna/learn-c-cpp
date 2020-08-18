@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 #define TITLE_LEN 40
 #define AUTHOR_LEN 20
 #define DESIGN_LEN 10
