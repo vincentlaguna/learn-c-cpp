@@ -50,10 +50,10 @@ int main(void)
   };
   
   struct catalog_item c1;
-  c1.item.book.title; 
+   
+  strcpy(c1.item.mug.design, "Cats");
   
-  puts("\nNested structure members inside a union that is a structure member TEST\n");
-  
-  printf("%s\n", c1.item.book.title);
+  puts("\nTEST -> Nested structure members inside a union that is a structure member\n");
+  printf("%s\n\n", c1.item.mug.design);
   return(0);
 }
