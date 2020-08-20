@@ -32,7 +32,7 @@ int main(void)
     for(i = 0; i < num_remind; i++)
       if(strcmp(day_str, reminders[i]) < 0)
         break;
-    for()
+    for(j = num_remind; j > i; j--)
   }
   
   return(0);
