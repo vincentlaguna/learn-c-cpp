@@ -29,7 +29,10 @@ int main(void)
     sprintf(day_str, "%2d", day);
     read_line(msg_str, MSG_LEN);
     
-    
+    for(i = 0; i < num_remind; i++)
+      if(strcmp(day_str, reminders[i]) < 0)
+        break;
+    for()
   }
   
   return(0);
