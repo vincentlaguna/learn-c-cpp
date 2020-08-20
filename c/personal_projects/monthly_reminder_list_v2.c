@@ -22,6 +22,14 @@ int main(void)
       printf("-- No Space Left! --\n");
       break;
     }
+    printf("Enter day and reminder: ");
+    scanf("%2d", &day);
+    if(day == 0)
+      break;
+    sprintf(day_str, "%2d", day);
+    read_line(msg_str, MSG_LEN);
+    
+    
   }
   
   return(0);
