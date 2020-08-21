@@ -12,7 +12,7 @@ int main(void)
 {
   char *reminders[MAX_REMIND];
   char day_str[3];
-  char msg_str[MSG_LEN + 1];
+  char msg_str[MSG_LEN+1];
   int day, i, j, num_remind = 0;
   
   for(;;)
@@ -33,7 +33,7 @@ int main(void)
       if(strcmp(day_str, reminders[i]) < 0)
         break;
     for(j = num_remind; j > i; j--)
-      reminders[j] = reminders[j -1];
+      reminders[j] = reminders[j-1];
       
     reminders[i] = malloc(2 + strlen(msg_str) + 1);
     
@@ -58,9 +58,9 @@ int read_line(char str[], int n)
 {
   int ch, i = 0;
   
-  while(ch = getchar() != '\n')
+  while((ch = getchar()) != '\n')
     if(i < n)
       str[i++] = ch;
-    str[i] = '\0';
-    return i;
+  str[i] = '\0';
+  return i;
 }
