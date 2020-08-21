@@ -125,4 +125,5 @@ What I have learned in C++:
 - Using pointer to pointers inside an array to sort min/max elements
 - Memory management
 - Callback implementation
+- Function overloading and function templating
 - 
