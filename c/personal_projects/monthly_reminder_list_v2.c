@@ -33,6 +33,17 @@ int main(void)
       if(strcmp(day_str, reminders[i]) < 0)
         break;
     for(j = num_remind; j > i; j--)
+      reminders[j] = reminders[j -1];
+      
+    reminders[i] = malloc(2 + strlen(msg_str) + 1);
+    
+    if(reminders[i] == NULL)
+    {
+      printf("-- No Space Left! --\n");
+      break;
+    }
+    strcpy(reminders[i], day_str);
+    strcpy(reminders[i], msg_str);
   }
   
   return(0);
