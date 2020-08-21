@@ -43,7 +43,7 @@ int main(void)
       break;
     }
     strcpy(reminders[i], day_str);
-    strcpy(reminders[i], msg_str);
+    strcat(reminders[i], msg_str);
     num_remind++;
   }
   printf("\nDay Reminder\n");
