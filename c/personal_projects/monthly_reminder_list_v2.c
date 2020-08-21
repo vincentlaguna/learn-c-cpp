@@ -44,12 +44,23 @@ int main(void)
     }
     strcpy(reminders[i], day_str);
     strcpy(reminders[i], msg_str);
+    num_remind++;
   }
+  printf("\nDay Reminder\n");
+  
+  for(i = 0; i < num_remind; i++)
+    printf(" %s\n", reminders[i]);
   
   return(0);
 }
 
 int read_line(char str[], int n)
 {
+  int ch, i = 0;
   
+  while(ch = getchar() != '\n')
+    if(i < n)
+      str[i++] = ch;
+    str[i] = '\0';
+    return i;
 }
