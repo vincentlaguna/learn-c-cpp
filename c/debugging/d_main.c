@@ -49,4 +49,11 @@ int main(int argc, char *argv[])
     fprintf(stderr, "j = %d\n", j);
   #endif
   
+  k = atoi(argv[3]);
+  
+  #endif
+    fprintf(stderr, "k = %d\n", k);
+  #endif
+  
+  
 }
