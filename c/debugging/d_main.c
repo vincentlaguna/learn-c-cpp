@@ -7,8 +7,8 @@ int sum(int x, int y, int z)
   int *a = NULL;
   
   #ifdef DEBUG
-    fprintf(stderr, " = %d\n", );
-    fprintf(stderr, " = %d\n", );
-    fprintf(stderr, " = %d\n", );
-    fprintf(stderr, " = %d\n", );
+    fprintf(stderr, "x = %x\n", x);
+    fprintf(stderr, "y = %d\n", y);
+    fprintf(stderr, "z = %d\n", z);
+    fprintf(stderr, "a = %ld\n", (long)a);
 }
