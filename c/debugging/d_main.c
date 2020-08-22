@@ -11,4 +11,11 @@ int sum(int x, int y, int z)
     fprintf(stderr, "y = %d\n", y);
     fprintf(stderr, "z = %d\n", z);
     fprintf(stderr, "a = %ld\n", (long)a);
+  #endif
+  
+  *a = 5;
+  
+  #ifdef DEBUG
+    fprintf(stderr, "*a = %d\n", *a);
+  #endif
 }
