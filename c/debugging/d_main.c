@@ -55,5 +55,8 @@ int main(int argc, char *argv[])
     fprintf(stderr, "k = %d\n", k);
   #endif
   
+  result = sum(i, j, 12) + sum(j, k, 19) + sum(i, k, 13);
+  printf("%d\n", result);
   
+  return(0);
 }
