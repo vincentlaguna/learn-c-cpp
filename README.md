@@ -86,6 +86,7 @@ Intermediate Concepts in C:
 - More on conditional compilation: #ifdef, #ifndef, #else, #elif, #undef
 - Implementing logical operators for using "defined"
 - Using #error/#warning for compilation termination with error/warning messages
+- Using #pragma for compiler-specific directives
 - Advanced char functions
 - Text Formatting using multiple source and header files
 - Using Makefiles and Make utility for multiple src/.h/.o files
