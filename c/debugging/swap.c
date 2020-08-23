@@ -1,7 +1,8 @@
 #include <stdio.h>
+#define SWAP
 
 int main(void)
 {
-  puts("test swap program");
+  puts("Testing SWAP program -->-->-->");
   return(0);
 }
