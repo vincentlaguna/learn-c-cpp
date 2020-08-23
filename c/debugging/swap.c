@@ -1,5 +1,6 @@
 #include <stdio.h>
 #define SWAP
+//#define TEXT
 
 int main(void)
 {
@@ -16,6 +17,14 @@ int main(void)
   #endif
   
   printf("After swap: %d, %d\n\n", x, y);
+  
+  puts("\nTesting TEXT program -->-->-->");
+  
+  #ifndef TEXT
+    printf("TEXT is #defined\n");
+  #else
+    printf("TEXT is #undefined\n");
+  #endif
   
   return(0);
 }
