@@ -18,12 +18,12 @@ int main(void)
   
   printf("After swap: %d, %d\n\n", x, y);
   
-  puts("\nTesting TEXT program -->-->-->");
+  puts("Testing TEXT program -->-->-->");
   
   #ifndef TEXT
-    printf("TEXT is #defined\n");
+    printf("\nTEXT is not #defined\n\n");
   #else
-    printf("TEXT is #undefined\n");
+    printf("\nTEXT is #defined\n\n");
   #endif
   
   return(0);
