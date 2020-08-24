@@ -4,7 +4,8 @@
 void foo(int *ptr)
 {
   int a = 5;
-  ptr = &a;
+  //ptr = &a; // This is just a LOCAL copy, it will not work
+  *ptr = a;
 }
 
 int main(void)
