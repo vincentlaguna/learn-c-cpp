@@ -21,6 +21,8 @@ int main(void)
   puts("Function pointer test!");
   int choice = 0;
   unsigned int size = 0; // Size of the array
+  int *result = NULL;
+  size = sizeof(array1); // Set size to minimum size of the two arrays
   
   return(0);
 }
