@@ -9,6 +9,8 @@ int add(int a, int b) { return a + b; }
 int sub(int a, int b) { return a - b; }
 int mlt(int a, int b) { return a * b; }
 int div(int a, int b) { return a / b; }
+// Array of pointers to functions (Task #1)
+int (*fpArray[]) (int, int) = {&add, &sub, &mlt, &div};
 
 int main(void)
 {
