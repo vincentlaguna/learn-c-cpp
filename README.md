@@ -102,6 +102,7 @@ Intermediate Concepts in C:
 - Using the memcpy() and memmove() string functions
 - Manipulating pointer arrays
 - (@union_ex4.c -> needs validation)
+- Learning how to use function pointers with exercise challenge on function pointers
 - 
 
 What I have learned in C++:
