@@ -15,9 +15,12 @@ int (*fpArray[]) (int, int) = {&add, &sub, &mlt, &div}; // Note* it must match f
 int *performOp(int *a, int *b, int size, int (*f)(int, int)) // <-Adding func ptr params (Task #2)
 // Displays the elements of the array
 void display(int *x, int size);
-
+// Main Method
 int main(void)
 {
   puts("Function pointer test!");
+  int choice = 0;
+  unsigned int size = 0; // Size of the array
+  
   return(0);
 }
