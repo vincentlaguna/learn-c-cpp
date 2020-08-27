@@ -27,5 +27,23 @@ int main(void)
   if(sizeof(array2) < size)
     size = sizeof(array2)
   size = sizeof(int);
+  
+  while(choice != 5)
+  {
+    printf("\n\nWhich operation would you like to perform? \n");
+    printf("1. Add\n");
+    printf("2. Subtract\n");
+    printf("3. Multiply\n");
+    printf("4. Divide\n");
+    printf("5. None ...\n");
+    printf("Enter choice: ");
+    scanf("%d", &choice);
+    
+    if(choice == 5)
+      break;
+    if(choice < 1 || > 5)
+      continue;
+    int j = choice - 1;
+  }
   return(0);
 }
