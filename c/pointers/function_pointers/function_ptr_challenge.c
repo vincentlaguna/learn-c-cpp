@@ -43,7 +43,21 @@ int main(void)
       break;
     if(choice < 1 || > 5)
       continue;
+    
     int j = choice - 1;
+    // Passing in the function pointer from array (Task #3)
+    result = performOp(array1, array2, size, fpArray[j]);
+    
+    printf("\n\nThe Results are ...\n");
+    display(result, size);
+    
+    if(result == NULL)
+      free(result);
   }
   return(0);
+}
+
+int *performOp(int *a, int *b, size, (*f)(int, int))
+{
+  
 }
