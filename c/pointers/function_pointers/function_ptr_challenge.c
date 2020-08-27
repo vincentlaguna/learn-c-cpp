@@ -24,5 +24,8 @@ int main(void)
   int *result = NULL;
   size = sizeof(array1); // Set size to minimum size of the two arrays
   
+  if(sizeof(array2) < size)
+    size = sizeof(array2)
+  size = sizeof(int);
   return(0);
 }
