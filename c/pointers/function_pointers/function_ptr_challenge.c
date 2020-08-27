@@ -56,8 +56,24 @@ int main(void)
   }
   return(0);
 }
-
-int *performOp(int *a, int *b, size, (*f)(int, int))
+// Function definition of *performOp (Task #4)
+int *performOp(int *a, int *b, int size, (*f)(int, int))
 {
+  int *c = malloc(sizeof(int) * size);
   
+  for(int i = 0; i < size; i++)
+  {
+    c[i] = (f)(a[i], b[i]);
+  }
+  return c;
+}
+
+void display(int *x, int size)
+{
+  if(x == NULL)
+    return;
+    
+  for(int i = 0; i < size; i++)
+    printf("%d  ", x[i]);
+  printf("\n");
 }
