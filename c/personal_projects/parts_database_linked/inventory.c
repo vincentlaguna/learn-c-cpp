@@ -64,9 +64,9 @@ int main(void)
 /*************************************************************************
  * find_part: Looks up a part number in the inventory array.             *  
  *            Returns the array index if the part number is found,       *
- *            otherwise, returns -1                                      *
+ *            otherwise, returns -1 (Array Version)                      *
  * ***********************************************************************/
-
+/*
 int find_part(int number)
 {
   int i;
@@ -78,15 +78,41 @@ int find_part(int number)
   }
   return(-1);
 }
+*/
+/*************************************************************************
+ * find_part: Looks up a part number in the inventory list.              *  
+ *            Returns a pointer to the node containing the part number;  *
+ *            if the part number is not found, returns NULL.             *
+ *            (Linked-list Version)                                      *
+ * ***********************************************************************/
+ 
+struct part *find_part(int number)
+{
+  struct part *p;
+  
+  for(p = inventory; p != NULL && number > p->number; p = p->next)
+    ;
+  if(p != NULL && number == p->number)
+    return p;
+  return NULL;
+}
 
 /*************************************************************
  * insert: Prompts the user for information about a new part *
  *         and then inserts the part into the database.      *
  *         Prints an error message and returns prematurely   *
  *         if the part already exists or the database is     *
- *         full.                                             *
+ *         full. (Array Version)                             *
  *************************************************************/
- 
+
+/*************************************************************
+ * insert: Prompts the user for information about a new part *
+ *         and then inserts the part into the database.      *
+ *         Prints an error message and returns prematurely   *
+ *         if the part already exists or the database is     *
+ *         full. (Array Version)                             *
+ *************************************************************/
+  
 void insert(void)
 {
   int part_number;
