@@ -1,5 +1,6 @@
-// Maintains a parts database (array version)
+// Maintains a parts database (linked-list version)
 #include <stdio.h>
+#include <stdlib.h> // Linked-list version
 #include "readline.h"
 
 #define NAME_LEN 25
@@ -10,7 +11,9 @@ struct part
   int number;
   char name[NAME_LEN + 1];
   int on_hand;
-} inventory[MAX_PARTS];
+  struct part *next;
+}; // inventory[MAX_PARTS]; // Array version
+struct part *inventory = NULL;
 // Number of parts currently stored
 int num_parts = 0;
 
