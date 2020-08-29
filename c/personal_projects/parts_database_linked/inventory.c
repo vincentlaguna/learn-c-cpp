@@ -2,10 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h> // Linked-list version
 #include "readline.h"
-
-#define NAME_LEN 25
-#define MAX_PARTS 100
-
+#define NAME_LEN 25 
+//#define MAX_PARTS 100 // Array version
 struct part
 {
   int number;
@@ -13,11 +11,11 @@ struct part
   int on_hand;
   struct part *next;
 }; // inventory[MAX_PARTS]; // Array version
-struct part *inventory = NULL;
+struct part *inventory = NULL; // Points to first part
 // Number of parts currently stored
-int num_parts = 0;
-
-int find_part(int number);
+//int num_parts = 0; // Array version
+//int find_part(int number); // Array version
+struct part *find_part(int number); // Linked-list version
 void insert(void);
 void search(void);
 void update(void);
