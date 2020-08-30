@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+// Node struct
 struct node
 {
   int value; // Data stored in the node
   struct node *next; //Pointer to the next node
 };
 struct node *new_node;
-
+// Function declarations
 struct node *add_to_list(struct node *list, int n);
 struct node *read_numbers(void);
-
+// Main Function
 int main(void)
 {
   /*
