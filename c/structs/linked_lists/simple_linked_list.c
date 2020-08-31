@@ -13,24 +13,6 @@ struct node *read_numbers(void);
 // Main Function
 int main(void)
 {
-  /*
-  struct node
-  {
-    int value; // Data stored in the node
-    struct node *next; //Pointer to the next node
-  };
-  struct node *first = NULL; // To later point to the first node in the list
-  struct node *new_node; // Variable that points to the node temporarily, until inserted 
-  new_node = malloc(sizeof(struct node)); // Allocation of memory for new node
-  new_node->value = 10;
-  new_node->next = first;
-  first = new_node;
-  // Repeat for next node with different value
-  new_node = malloc(sizeof(struct node)); // Allocation of memory for new node
-  new_node->value = 20;
-  new_node->next = first;
-  first = new_node;
-  */
   struct node *first = NULL;
   first = add_to_list(first, 100);
   first = add_to_list(first, 200);
@@ -70,3 +52,22 @@ struct node *read_numbers(void)
     first = add_to_list(first, n);
   }
 }
+
+/* // Was inserted at line 16
+  struct node
+  {
+    int value; // Data stored in the node
+    struct node *next; //Pointer to the next node
+  };
+  struct node *first = NULL; // To later point to the first node in the list
+  struct node *new_node; // Variable that points to the node temporarily, until inserted 
+  new_node = malloc(sizeof(struct node)); // Allocation of memory for new node
+  new_node->value = 10;
+  new_node->next = first;
+  first = new_node;
+  // Repeat for next node with different value
+  new_node = malloc(sizeof(struct node)); // Allocation of memory for new node
+  new_node->value = 20;
+  new_node->next = first;
+  first = new_node;
+  */
