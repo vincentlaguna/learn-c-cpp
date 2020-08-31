@@ -58,11 +58,16 @@ struct node *read_numbers(void)
 struct node *search_list(struct node *list, int n)
 {
   struct node *p;
-  
+  /*
   for(p = list; p != NULL; p = p->next)
     if(p->value == n)
       return p;
   return NULL;
+  */
+  // Using a while loop for better readability
+  while(list != NULL && list->value != n)
+    list = list->next;
+  return list;
 }
 
 /* // Was inserted at line 16
