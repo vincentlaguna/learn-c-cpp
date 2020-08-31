@@ -10,6 +10,7 @@ struct node *new_node;
 // Function declarations
 struct node *add_to_list(struct node *list, int n);
 struct node *read_numbers(void);
+struct node *search_list(struct node *list, int n);
 // Main Function
 int main(void)
 {
@@ -19,6 +20,7 @@ int main(void)
 
   puts("Simple linked-list example TEST");
   read_numbers();
+  search_list(first, 100);
   
   return(0);
 }
@@ -51,6 +53,16 @@ struct node *read_numbers(void)
       return first;
     first = add_to_list(first, n);
   }
+}
+
+struct node *search_list(struct node *list, int n)
+{
+  struct node *p;
+  
+  for(p = list; p != NULL; p = p->next)
+    if(p->value == n)
+      return p;
+  return NULL;
 }
 
 /* // Was inserted at line 16
