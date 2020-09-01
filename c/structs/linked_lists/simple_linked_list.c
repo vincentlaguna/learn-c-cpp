@@ -12,6 +12,7 @@ struct node *add_to_list(struct node *list, int n);
 struct node *read_numbers(void);
 struct node *search_list(struct node *list, int n);
 struct node *delete_from_list(struct node *list, int n);
+void display_list(void);
 // Main Function
 int main(void)
 {
@@ -87,6 +88,11 @@ struct node *delete_from_list(struct node *list, int n)
     previous->next = current->next; // n is in some other node
   free(current);
   return list;
+}
+
+void display_list(void)
+{
+  
 }
 
 /* // Was inserted at line 16
