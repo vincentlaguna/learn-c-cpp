@@ -11,6 +11,7 @@ struct node *new_node;
 struct node *add_to_list(struct node *list, int n);
 struct node *read_numbers(void);
 struct node *search_list(struct node *list, int n);
+struct node *delete_from_list(struct node *list, int n);
 // Main Function
 int main(void)
 {
@@ -68,6 +69,20 @@ struct node *search_list(struct node *list, int n)
   while(list != NULL && list->value != n)
     list = list->next;
   return list;
+}
+
+struct node *delete_from_list(struct node *list, int n)
+{
+  struct node *current, *previous;
+  
+  for(current = list, previous = NULL; 
+      current != NULL && current->value != n;
+      previous = current, current->next)
+      ;
+  if(current == NULL) // n was not found
+    return list;
+  if(previous == NULL)
+    list = list->next // n is in the first node
 }
 
 /* // Was inserted at line 16
