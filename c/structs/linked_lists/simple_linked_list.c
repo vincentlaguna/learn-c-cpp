@@ -82,7 +82,11 @@ struct node *delete_from_list(struct node *list, int n)
   if(current == NULL) // n was not found
     return list;
   if(previous == NULL)
-    list = list->next // n is in the first node
+    list = list->next; // n is in the first node
+  else
+    previous->next = current->next;
+  free(current);
+  return list;
 }
 
 /* // Was inserted at line 16
