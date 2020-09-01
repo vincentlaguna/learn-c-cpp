@@ -84,7 +84,7 @@ struct node *delete_from_list(struct node *list, int n)
   if(previous == NULL)
     list = list->next; // n is in the first node
   else
-    previous->next = current->next;
+    previous->next = current->next; // n is in some other node
   free(current);
   return list;
 }
