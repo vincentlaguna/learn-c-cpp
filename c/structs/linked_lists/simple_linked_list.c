@@ -92,7 +92,7 @@ struct node *delete_from_list(struct node *list, int n)
 
 void display_list(void)
 {
-  
+  struct node *p;
 }
 
 /* // Was inserted at line 16
