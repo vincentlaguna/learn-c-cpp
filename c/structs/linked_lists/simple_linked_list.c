@@ -95,7 +95,7 @@ void display_list(struct node *list)
   struct node *p;
   
   for(p = list; p != NULL; p = p->next)
-    printf("Node %d. value -> %d\n", *p, p->value);
+    printf("Node value -> %d\n", p->value);
 }
 
 /* // Was inserted at line 16
