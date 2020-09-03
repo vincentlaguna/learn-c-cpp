@@ -90,9 +90,12 @@ struct node *delete_from_list(struct node *list, int n)
   return list;
 }
 
-void display_list(void)
+void display_list(*list)
 {
   struct node *p;
+  
+  for(p = list; p != NULL; p = p->next)
+    printf("Node %d. value -> %d\n", *p, p->value);
 }
 
 /* // Was inserted at line 16
