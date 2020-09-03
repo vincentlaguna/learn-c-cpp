@@ -56,6 +56,7 @@ struct node *read_numbers(void)
       return first;
     first = add_to_list(first, n);
   }
+  return first;
 }
 
 struct node *search_list(struct node *list, int n)
