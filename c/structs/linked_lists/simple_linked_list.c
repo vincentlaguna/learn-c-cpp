@@ -12,7 +12,7 @@ struct node *add_to_list(struct node *list, int n);
 struct node *read_numbers(void);
 struct node *search_list(struct node *list, int n);
 struct node *delete_from_list(struct node *list, int n);
-void display_list(void);
+void display_list(struct node *list);
 // Main Function
 int main(void)
 {
@@ -90,7 +90,7 @@ struct node *delete_from_list(struct node *list, int n)
   return list;
 }
 
-void display_list(*list)
+void display_list(struct node *list)
 {
   struct node *p;
   
