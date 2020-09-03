@@ -23,6 +23,7 @@ int main(void)
   puts("Simple linked-list example TEST");
   read_numbers();
   search_list(first, 100);
+  display_list(first);
   
   return(0);
 }
