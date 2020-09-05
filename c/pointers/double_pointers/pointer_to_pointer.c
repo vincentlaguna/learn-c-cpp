@@ -27,7 +27,7 @@ void MinMax(int *begin, int *end, int **smallest, int **largest)
 
 int main(void)
 {
-  int values [] = {5, 2, 4, 3, 6};
+  int values[] = {5, 2, 4, 3, 6};
   int size = sizeof(values) / sizeof(values[0]);
   int *smallest = 0;
   int *largest = 0;
