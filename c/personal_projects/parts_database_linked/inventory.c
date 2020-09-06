@@ -178,9 +178,9 @@ void insert(void)
  * search: Prompts the user to enter a part number, then     *
  *         looks up the part in the database. If the part    *
  *         exists, prints the name and quantity on hand; if  *
- *         not, prints an error message.                     *
+ *         not, prints an error message. (Array Version)     *
  *************************************************************/
-
+/*
 void search(void)
 {
   int i;
@@ -200,7 +200,33 @@ void search(void)
     printf("Part not found.\n");
   }
 }
+*/
+/*************************************************************
+ * search: Prompts the user to enter a part number, then     *
+ *         looks up the part in the database. If the part    *
+ *         exists, prints the name and quantity on hand; if  *
+ *         not, prints an error message.                     *
+ *         (Linked-List Version)                             *
+ *************************************************************/
 
+void search(void)
+{
+  struct part *p;
+  int number;
+  
+  printf("Enter part number: ");
+  scanf("%d", &number);
+  p = find_part(number);
+  
+  if(p != NULL)
+  {
+    printf("Part name: %s\n", p->name);
+    printf("Quantity on hand: %d\n", p->on_hand);
+  }
+  else
+    printf("Part not found.\n");
+}
+ 
 /*************************************************************
  * update: Prompts the user to enter a part number, prints   *
  *         an error message if part doesn't exists;          *
