@@ -31,6 +31,7 @@ void print(void);
 int main(void)
 {
   char code;
+  
   for(;;)
   {
     printf("Enter operation code: ");
@@ -104,15 +105,7 @@ struct part *find_part(int number)
  *         if the part already exists or the database is     *
  *         full. (Array Version)                             *
  *************************************************************/
-
-/*************************************************************
- * insert: Prompts the user for information about a new part *
- *         and then inserts the part into the database.      *
- *         Prints an error message and returns prematurely   *
- *         if the part already exists or the database is     *
- *         full. (Array Version)                             *
- *************************************************************/
-  
+/* 
 void insert(void)
 {
   int part_number;
@@ -137,6 +130,15 @@ void insert(void)
   scanf("%d", &inventory[num_parts].on_hand);
   num_parts++;
 }
+*/
+/*************************************************************
+ * insert: Prompts the user for information about a new part *
+ *         and then inserts the part into the inventory      *
+ *         list; the list remains sorted by part number.     * 
+ *         Prints an error message and returns prematurely   *
+ *         if the part already exists or space could not be  *
+ *         allocated for the part. (Linked-List Version)     *
+ *************************************************************/
 
 /*************************************************************
  * search: Prompts the user to enter a part number, then     *
