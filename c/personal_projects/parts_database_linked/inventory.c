@@ -162,7 +162,17 @@ void insert(void)
     free(new_node);
     return;
   }
- }
+  printf("Enter part name: ");
+  read_line(new_node->name, NAME_LEN);
+  printf("Enter quantity on hand: ");
+  scanf("%d", &new_node->on_hand);
+  new_node->next = current;
+  
+  if(previous == NULL)
+    inventory = new_node;
+  else
+    previous->next = new_node;
+}
 
 /*************************************************************
  * search: Prompts the user to enter a part number, then     *
