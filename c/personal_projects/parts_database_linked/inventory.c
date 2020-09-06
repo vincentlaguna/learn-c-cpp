@@ -34,7 +34,7 @@ int main(void)
   
   for(;;)
   {
-    printf("Enter operation code: ");
+    printf("Enter operation code (i, s, u, p, q): ");
     scanf("%c", &code);
     // Skips to the end of line
     while(getchar() != '\n')
@@ -312,4 +312,14 @@ void print(void)
  *        order. (Linked-List Version)                       *
  *************************************************************/
  
- 
+void print(void)
+{
+  struct part *p;
+   
+  printf(" Part Number Part Name            "
+         "Quantity on Hand\n");
+  for(p = inventory; p != NULL; p = p->next)
+  {
+    printf("%7d       %-25s%lld\n", p->number, p->name, p->on_hand);
+  }
+}
