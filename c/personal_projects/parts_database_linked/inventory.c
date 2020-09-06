@@ -289,8 +289,9 @@ void update(void)
  *        showing the part number, part name, and quantity   *
  *        on hand. Parts are printed in the order in which   *
  *        they were entered into the database.               *
+ *        (Array Version)                                    *
  *************************************************************/
-
+/*
 void print(void)
 {
   int i;
@@ -303,3 +304,12 @@ void print(void)
            inventory[i].name, inventory[i].on_hand);
   }
 }
+*/
+/*************************************************************
+ * print: Prints a listing of all the parts in the database, *
+ *        showing the part number, part name, and quantity   *
+ *        on hand. Parts numbers will appear in ascending    *
+ *        order. (Linked-List Version)                       *
+ *************************************************************/
+ 
+ 
