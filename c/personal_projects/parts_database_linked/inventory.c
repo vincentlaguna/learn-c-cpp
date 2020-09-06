@@ -139,6 +139,30 @@ void insert(void)
  *         if the part already exists or space could not be  *
  *         allocated for the part. (Linked-List Version)     *
  *************************************************************/
+ 
+void insert(void)
+{
+  struct part *current, *previous, *new_node;
+   
+  if(new_node == NULL)
+  {
+    fprintf(stderr, "Database is full; cannot add any more parts\n");
+    exit(1);
+  }
+  printf("Enter part number: ");
+  scanf("%d", &new_node->number);
+   
+  for(current = inventory, previous = NULL;
+      current != NULL && new_node->number > current->number;
+      previous = current, current = current->next)
+    ;
+  if(current == NULL && new_node->number == current->number)
+  {
+    printf("Part already exists.\n");
+    free(new_node);
+    return;
+  }
+ }
 
 /*************************************************************
  * search: Prompts the user to enter a part number, then     *
