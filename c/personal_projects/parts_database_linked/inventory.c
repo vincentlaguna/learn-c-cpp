@@ -143,7 +143,9 @@ void insert(void)
 void insert(void)
 {
   struct part *current, *previous, *new_node;
-   
+  
+  new_node = (struct part *) malloc(sizeof(struct part));
+  
   if(new_node == NULL)
   {
     fprintf(stderr, "Database is full; cannot add any more parts\n");
@@ -156,7 +158,7 @@ void insert(void)
       current != NULL && new_node->number > current->number;
       previous = current, current = current->next)
     ;
-  if(current == NULL && new_node->number == current->number)
+  if(current != NULL && new_node->number == current->number)
   {
     printf("Part already exists.\n");
     free(new_node);
