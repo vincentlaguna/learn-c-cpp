@@ -231,9 +231,10 @@ void search(void)
  * update: Prompts the user to enter a part number, prints   *
  *         an error message if part doesn't exists;          *
  *         otherwise, prompts the user to enter change in    *
- *         quantity, updates the database.                   *
+ *         quantity on hand, updates the database.           *
+ *         (Array Version)                                   *
  *************************************************************/
-
+/*
 void update(void)
 {
   int i;
@@ -255,7 +256,34 @@ void update(void)
     printf("Part not found.\n");
   }
 }
-
+*/
+/*************************************************************
+ * update: Prompts the user to enter a part number, prints   *
+ *         an error message if part doesn't exists;          *
+ *         otherwise, prompts the user to enter change in    *
+ *         quantity on hand, updates the database.           *
+ *         (Linked-List Version)                             *
+ *************************************************************/
+ 
+void update(void)
+{
+  struct part *p;
+  int number, change;
+  
+  printf("Enter part number: ");
+  scanf("%d", &number);
+  p = find_part(number);
+  
+  if(p != NULL)
+  {
+    printf("Enter change in quantity: ");
+    scanf("%d", &change);
+    p->on_hand += change;
+  }
+  else
+    printf("Part not found.\n");
+}
+ 
 /*************************************************************
  * print: Prints a listing of all the parts in the database, *
  *        showing the part number, part name, and quantity   *
