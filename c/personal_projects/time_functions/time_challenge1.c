@@ -33,14 +33,7 @@ int main(void)
   puts("\nSorted List: ");
   showArray(vals, NUM);
   putchar('\n');
-  /*
-  4.Sort an array of doubles from lowest to highest
-  9.Main should contain: create array, fill it with random numbers,
-  display it, sort it using qsort, display the sorted array (0-15 doubles)
-  10.Write a program that displays the current time
-  11.Write a program to compute the number of seconds passed since
-  the beginning of the current month
-  */
+  // Challenge #3
   return(0);
 }
 // Create a function that takes a double array and a size parameter
