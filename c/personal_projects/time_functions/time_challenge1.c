@@ -57,7 +57,16 @@ void fillArray(double ar[], int n)
 
 void showArray(const double ar[], int n)
 {
+  int index;
   
+  for(index = 0; index < n; index++)
+  {
+    printf("%9.4f ", ar[index]);
+    if(index % 6 == 5)
+      putchar('\n');
+  }
+  if(index % 6 != 0)
+    putchar('\n');
 }
 
 int myComp(const void *p1, const void *p2)
