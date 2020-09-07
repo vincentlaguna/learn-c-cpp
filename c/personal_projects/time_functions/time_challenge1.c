@@ -26,12 +26,13 @@ int main(void)
   // Challenge #2
   double vals[NUM];
   fillArray(vals, NUM);
-  puts("Random List: ");
+  puts("\nRandom List: ");
   showArray(vals, NUM);
   // Use of qsort();
   qsort(vals, NUM, sizeof(double), myComp);
-  puts("Sorted List: ");
+  puts("\nSorted List: ");
   showArray(vals, NUM);
+  putchar('\n');
   /*
   4.Sort an array of doubles from lowest to highest
   9.Main should contain: create array, fill it with random numbers,
@@ -68,5 +69,14 @@ void showArray(const double ar[], int n)
 
 int myComp(const void *p1, const void *p2)
 {
+  // Type cast the void pointers to doubles in order to access the values
+  const double *a1 = (const double *)p1;
+  const double *a2 = (const double *)p2;
   
+  if(*a1 < *a2)
+    return -1;
+  else if(*a1 == *a2)
+    return 0;
+  else
+    return 1;
 }
