@@ -24,6 +24,7 @@ int main(void)
   */
   // Challenge #2
   double vals[NUM];
+  fillArray(vals, NUM);
   
   /*
   0.Use srand() with seed
@@ -44,4 +45,22 @@ int main(void)
   */
   puts("Time challenge 1 TEST");
   return(0);
+}
+
+void fillArray(double ar[], int n)
+{
+  int index = 0;
+  
+  for(index = 0; index < n; index++)
+    ar[index] = (double)rand() / ((double) rand() + 0.1);
+}
+
+void showArray(const double ar[], int n)
+{
+  
+}
+
+int myComp(const void *p1, const void *p2)
+{
+  
 }
