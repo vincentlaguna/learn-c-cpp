@@ -28,6 +28,27 @@ int main(void)
     fprintf(stderr, "Operation Failed.\n");
     return -1;
   }
+  switch(birthday.tm_mday)
+  {
+    case 1:
+    case 21:
+    case 31:
+      sufsel = st;
+      break;
+    case 2:
+    case 22:
+      sufsel = nd;
+      break;
+    case 3:
+    case 23:
+      sufsel = rd;
+      break;
+    default:
+      sufsel = th;
+      break;
+  }
+  printf("%s was born on %d %d %d, which was a %s\n", 
+          name, birthday.tm_mday, birthday.tm_mon, birthday.tm_year, day[0]);
   
   return(0);
 }
