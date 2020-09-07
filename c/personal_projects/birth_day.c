@@ -9,12 +9,16 @@ int main(void)
                            "May", "June", "July", "August",
                            "September", "October", "November", "December"};
   const char *suffix[] = {"st", "nd", "rd", "th"};
-  enum suffindex = {st, nd, rd, th};
-  struct tm birthday {0};
+  enum suffindex {st, nd, rd, th} sufsel = th; // Suffix selector
+  struct tm birthday = {0}; // A birthday time structure
   char name[30] = {'\0'};
   
   printf("Enter a name: ");
   scanf("%s", name);
+  
+  printf("Enter the birthday for %s as: day month year, "
+         "e.g. Enter 7th of May 1986 as 7 5 1986 : ", name);
+  scanf("%d %d %d", &birthday.tm_mday, &birthday.tm_mon, &birthday.tm_year);
   
   return(0);
 }
