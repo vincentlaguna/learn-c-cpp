@@ -20,5 +20,14 @@ int main(void)
          "e.g. Enter 7th of May 1986 as 7 5 1986 : ", name);
   scanf("%d %d %d", &birthday.tm_mday, &birthday.tm_mon, &birthday.tm_year);
   
+  birthday.tm_mon -= 1; // Month is zero-based
+  birthday.tm_year -= 1900; // Year is relative to 1900
+  
+  if(mktime(&birthday) == - 1)
+  {
+    fprintf(stderr, "Operation Failed.\n");
+    return -1;
+  }
+  
   return(0);
 }
