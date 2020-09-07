@@ -1,9 +1,21 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
+
+#define N 50
 
 int main(void)
 {
+  int i = 0;
+  char str = '\0';
+  // Use srand with seed
+  srand(time(NULL));
+  printf("%d\n", N);
   
+  for(i = 1; i <= N; i++)
+  {
+    
+  }
   /*
   0.Use srand() with seed
   1.Generate 50 random number (-0.5 to 0.5)
