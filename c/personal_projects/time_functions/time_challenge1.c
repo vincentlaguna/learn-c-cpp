@@ -34,6 +34,31 @@ int main(void)
   showArray(vals, NUM);
   putchar('\n');
   // Challenge #3
+  time_t current_time = 0;
+  char *current_t_string;
+  current_time = time(NULL);
+  
+  if(current_time == ((time_t) - 1))
+  {
+    (void) fprintf(stderr, "Failed to get the current time.\n");
+    exit(EXIT_FAILURE);
+  }
+  // Convert to local time format
+  current_t_string = ctime(&current_time);
+  
+  if(current_t_string == NULL)
+  {
+    (void) fprintf(stderr, "Failed to convert the current time.\n");
+    exit(EXIT_FAILURE);
+  }
+  (void) printf("\n The Current Time is: %s \n", current_t_string);
+  exit(EXIT_SUCCESS);
+  // Challenge #4
+  time_t now = 0;
+  time(&now);
+  struct tm beg_month;
+  beg_month = *localtime(&now);
+  
   return(0);
 }
 // Create a function that takes a double array and a size parameter
