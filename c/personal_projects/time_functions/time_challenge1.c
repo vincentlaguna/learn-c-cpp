@@ -11,14 +11,14 @@ int main(void)
   // Use srand with seed
   srand(time(NULL));
   printf("%d\n", N);
-  
+  // Generate 50 random numbers (-0.5 to 0.5)
   for(i = 1; i <= N; i++)
   {
-    
+    printf("%0.4lf\n", (rand() % 2001 - 1000) / 2.e3);
   }
   /*
   0.Use srand() with seed
-  1.Generate 50 random number (-0.5 to 0.5)
+  
   2.First line of output: number of data
   3.Next 50 lines should be the 50 random numbers
   4.Sort an array of doubles from lowest to highest
