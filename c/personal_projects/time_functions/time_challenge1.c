@@ -1,11 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
-#define N 50
-
+//#define N 50
+#define NUM 40
+// Function Proto-types
+void fillArray(double ar[], int n);
+void showArray(const double ar[], int n);
+int myComp(const void *p1, const void *p2);
+// MAin Function
 int main(void)
 {
+  /* // Challenge #1
   int i = 0;
   char str = '\0';
   // Use srand with seed
@@ -16,6 +21,10 @@ int main(void)
   {
     printf("%0.4lf\n", (rand() % 2001 - 1000) / 2.e3);
   }
+  */
+  // Challenge #2
+  double vals[NUM];
+  
   /*
   0.Use srand() with seed
   
