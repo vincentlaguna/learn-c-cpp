@@ -10,7 +10,7 @@ int myComp(const void *p1, const void *p2);
 // MAin Function
 int main(void)
 {
-  puts("Time challenge 1 TEST");
+  puts("Time challenges -> TEST");
   /* // Challenge #1
   int i = 0;
   char str = '\0';
@@ -52,12 +52,21 @@ int main(void)
     exit(EXIT_FAILURE);
   }
   (void) printf("\n The Current Time is: %s \n", current_t_string);
-  exit(EXIT_SUCCESS);
+  //exit(EXIT_SUCCESS);
   // Challenge #4
   time_t now = 0;
   time(&now);
   struct tm beg_month;
   beg_month = *localtime(&now);
+  beg_month.tm_hour = 0;
+  beg_month.tm_min = 0;
+  beg_month.tm_sec = 0;
+  beg_month.tm_mday = 1;
+
+  double seconds = difftime(now, mktime(&beg_month));
+  
+  printf(" %.f seconds passed since the beginning of the month.\n\n", seconds);
+  exit(EXIT_SUCCESS);
   
   return(0);
 }
