@@ -20,6 +20,7 @@ void insert(void);
 void search(void);
 void update(void);
 void print(void);
+int compare_parts(const void *p, const void *q);
 
 /****************************************************************************
  * main: Prompts the user to enter an operation code, then calls a function *
@@ -324,4 +325,9 @@ void print(void)
   {
     printf("%7d       %-25s%lld\n", p->number, p->name, p->on_hand);
   }
+}
+
+int compare_parts(const void *p, const void *q)
+{
+  return ((struct part *)p)->number - ((struct part *)q)->number;
 }
