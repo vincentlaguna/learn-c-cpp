@@ -32,6 +32,7 @@ int compare_parts(const void *p, const void *q);
 int main(void)
 {
   char code;
+  int num_parts = 0;
   
   for(;;)
   {
@@ -53,6 +54,7 @@ int main(void)
         break;
       case 'p':
         print();
+        qsort(inventory, num_parts, sizeof(struct part), compare_parts);
         break;
       case 'q':
         return(0);
