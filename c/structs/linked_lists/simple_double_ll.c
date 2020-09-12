@@ -113,6 +113,27 @@ int main(void)
 // Function Definitions
 void insert(pListNode *head, char value)
 {
+  pListNode pNew; // Pointer to the new node
+  pListNode pPrevious; // Pointer to the previous pointer in the list
+  pListNode pCurrent; // Pointer to the current pointer in the list
+  // Allocate memory to the new node pointer
+  pNew = malloc(sizeof(node_t)); // Creation of node
+  if(pNew != NULL) // Is space available?
+  {
+    pNew->data = value; // Place the value in the node
+    pNew->pNext = NULL; // Node does not link to another node
+    // Initialize the pointers
+    pPrevious = NULL;
+    pCurrent = *head;
+    // Loop to find the correct location on the list
+    while(pCurrent != NULL && value > pCurrent->data)
+    {
+      pPrevious = pCurrent; // Walk to...
+      pCurrent = pCurrent->pNext; // Next node in the list
+    } // End the while loop
+    // Insert the new node at the beginning of the list
+    
+  }
   
 }
 void insertAtStart(pListNode *head, char value)
