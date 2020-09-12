@@ -129,7 +129,7 @@ void insert(pListNode *head, char value)
     while(pCurrent != NULL && value > pCurrent->data)
     {
       pPrevious = pCurrent; // Walk to...
-      pCurrent = pCurrent->pNext; // Next node in the list
+      pCurrent = pCurrent->pNext; // ...The next node in the list
     } // End the while loop
     // Insert the new node at the beginning of the list
     if(pPrevious == NULL)
@@ -182,8 +182,40 @@ void insertAtEnd(pListNode *head, char value)
 
 char delete(pListNode *head, char value)
 {
-  
-}
+  pListNode pPrevious; // Pointer to the previous node in the list
+  pListNode pCurrent; // Pointer to the current node in the list
+  pListNode pTemp; // Temporary node pointer
+  // Delete the first node
+  if(value == (*head)->data)
+  {
+    pTemp = *head; // Hold onto the node being removed
+    *head = (*head)->pNext; // De-thread the node
+    free(pTemp); // Free the de-threaded node
+    return value;
+  } // End if
+  else
+  {
+    pPrevious = *head;
+    pCurrent = (*head)->pNext;
+    // Loop to find the correct location on the list
+    while(pCurrent != NULL && pCurrent->data != value)
+    {
+      pPrevious = pCurrent; // Walk to...
+      pCurrent = pCurrent->pNext; // ...The next node in the list
+    } // End of the while-loop
+    // Found it, delete node at pCurrent pointer
+    if(pCurrent != NULL)
+    {
+      pTemp = pCurrent;
+      pPrevious->pNext = pCurrent->pNext;
+      free(pTemp);
+      return value;
+    } // End if
+  } // End else
+  // Not found
+  return '\0';
+} // End function delete function
+
 void deleteAtStart(pListNode *head)
 {
   pListNode pTemp = NULL; // Temporary node pointer
@@ -194,7 +226,7 @@ void deleteAtStart(pListNode *head)
   }
   else
   {
-    pTemp = *head; // Hold unto the node being removed
+    pTemp = *head; // Hold onto the node being removed
     *head = (*head)->pNext; // De-thread the node
     free(pTemp); // Free the de-threaded node
   }
