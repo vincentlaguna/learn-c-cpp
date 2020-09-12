@@ -186,12 +186,25 @@ char delete(pListNode *head, char value)
 }
 void deleteAtStart(pListNode *head)
 {
-  
+  pListNode pTemp = NULL; // Temporary node pointer
+  // Check for NULL first
+  if(head == NULL)
+  {
+    return;
+  }
+  else
+  {
+    pTemp = *head; // Hold unto the node being removed
+    *head = (*head)->pNext; // De-thread the node
+    free(pTemp); // Free the de-threaded node
+  }
 }
+
 int isEmtpy(pListNode head)
 {
   
 }
+
 void printList(pListNode pCurrent)
 {
   
