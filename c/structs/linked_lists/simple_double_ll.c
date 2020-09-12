@@ -105,6 +105,45 @@ int main(void)
     printf("? ");
     scanf("%d", &choice);
   } // End while-loop
-  
+  printf("End of run.\n");
+  // Indicate successful termination of the program
   return(0);
 }
+// Function Definitions
+void insert(pListNode *head, char value)
+void insertAtStart(pListNode *head, char value)
+{
+  pListNode new_node = malloc(sizeof(node_t));
+  new_node->data = value;
+  new_node->pNext = *head;
+  *head = new_node;
+}
+
+void insertAtEnd(pListNode *head, char value)
+{
+  pListNode pCurrent = *head;
+  // If the current pointer is not at the end of the list (NULL)
+  if(pCurrent != NULL)
+  {
+    while(pCurrent->pNext != NULL)
+    {
+      pCurrent = pCurrent->pNext;
+    } // Now we can add a new variable
+    pCurrent->pNext = malloc(sizeof(node_t));
+    pCurrent->pNext->data = value;
+    pCurrent->pNext->pNext = NULL;
+  }
+  else  // We are at the end of the list (pCurrent reached the end NULL pointer)
+  {
+    pCurrent = malloc(sizeof(n));
+    pCurrent->data = value;
+    pCurrent->pNext = NULL;
+    *head = pCurrent;
+  }
+}
+
+char delete(pListNode *head, char value);
+void deleteAtStart(pListNode *head);
+int isEmtpy(pListNode head);
+void printList(pListNode pCurrent);
+//
