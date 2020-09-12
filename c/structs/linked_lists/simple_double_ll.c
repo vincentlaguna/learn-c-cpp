@@ -44,18 +44,21 @@ int main(void)
         insert(&head, item); // Insert the item into the list
         printList(head);
         break;
+        
       case 2:
         printf("Enter a character: ");
         scanf("\n%c", &item);
         insertAtEnd(&head, item); // Insert the item into the list
         printList(head);
         break;
+        
       case 3:
         printf("Enter a character: ");
         scanf("\n%c", &item);
         insertAtStart(&head, item);
         printf(head);
         break;
+        
       case 4: // Delete an element
         if(!isEmtpy(head)) // If the list is not empty
         {
@@ -77,8 +80,31 @@ int main(void)
         } // End else
         break;
       
-    }
-  }
+      case 5: // Delete an element at the beginning
+        if(!isEmtpy(head)) // If the list is not empty
+        {
+          deleteAtStart(&head); // If character is found, remove it
+          printf("%c deleted.\n", item);
+          printList(head);
+        } // End if
+        else
+        {
+          printf("The list is empty.\n\n");
+        } // End else
+        break;
+      
+      default:
+        printf("Invalid choice.\n\n");
+        // Display the menu
+        printf("Enter your choice:\n"
+               "1. To inset an element into the list.\n"
+               "2. To delete an element from the list.\n"
+               "3. To End.\n");
+        break;
+    } // End switch
+    printf("? ");
+    scanf("%d", &choice);
+  } // End while-loop
   
   return(0);
 }
