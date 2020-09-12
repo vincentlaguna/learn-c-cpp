@@ -111,6 +111,37 @@ int main(void)
   return(0);
 }
 // Function Definitions
+void insertAtStart(pListNode *head, char value)
+{
+  pListNode new_node = malloc(sizeof(node_t));
+  new_node->data = value;
+  new_node->pNext = *head;
+  *head = new_node;
+}
+
+void insertAtEnd(pListNode *head, char value)
+{
+  pListNode pCurrent = *head;
+  // If the current pointer is not at the end of the list (NULL)
+  if(pCurrent != NULL)
+  {
+    while(pCurrent->pNext != NULL)
+    {
+      pCurrent = pCurrent->pNext;
+    } // Now we can add a new variable
+    pCurrent->pNext = malloc(sizeof(node_t));
+    pCurrent->pNext->data = value;
+    pCurrent->pNext->pNext = NULL;
+  }
+  else  // We are at the end of the list (pCurrent reached the end NULL pointer)
+  {
+    pCurrent = malloc(sizeof(node_t));
+    pCurrent->data = value;
+    pCurrent->pNext = NULL;
+    *head = pCurrent;
+  }
+}
+
 void insert(pListNode *head, char value)
 {
   pListNode pNew; // Pointer to the new node
@@ -149,34 +180,19 @@ void insert(pListNode *head, char value)
   }
 }
 
-void insertAtStart(pListNode *head, char value)
+void deleteAtStart(pListNode *head)
 {
-  pListNode new_node = malloc(sizeof(node_t));
-  new_node->data = value;
-  new_node->pNext = *head;
-  *head = new_node;
-}
-
-void insertAtEnd(pListNode *head, char value)
-{
-  pListNode pCurrent = *head;
-  // If the current pointer is not at the end of the list (NULL)
-  if(pCurrent != NULL)
+  pListNode pTemp = NULL; // Temporary node pointer
+  // Check for NULL first
+  if(head == NULL)
   {
-    while(pCurrent->pNext != NULL)
-    {
-      pCurrent = pCurrent->pNext;
-    } // Now we can add a new variable
-    pCurrent->pNext = malloc(sizeof(node_t));
-    pCurrent->pNext->data = value;
-    pCurrent->pNext->pNext = NULL;
+    return;
   }
-  else  // We are at the end of the list (pCurrent reached the end NULL pointer)
+  else
   {
-    pCurrent = malloc(sizeof(node_t));
-    pCurrent->data = value;
-    pCurrent->pNext = NULL;
-    *head = pCurrent;
+    pTemp = *head; // Hold onto the node being removed
+    *head = (*head)->pNext; // De-thread the node
+    free(pTemp); // Free the de-threaded node
   }
 }
 
@@ -215,28 +231,7 @@ char delete(pListNode *head, char value)
   // Not found
   return '\0';
 } // End function delete function
-
-void deleteAtStart(pListNode *head)
-{
-  pListNode pTemp = NULL; // Temporary node pointer
-  // Check for NULL first
-  if(head == NULL)
-  {
-    return;
-  }
-  else
-  {
-    pTemp = *head; // Hold onto the node being removed
-    *head = (*head)->pNext; // De-thread the node
-    free(pTemp); // Free the de-threaded node
-  }
-}
 // Return 1 if the list is empty, 0 if otherwise
-int isEmtpy(pListNode head)
-{
-  return head == NULL;
-} // End function isEmpty()
-
 void printList(pListNode pCurrent)
 {
   // Check for empty list
@@ -256,3 +251,8 @@ void printList(pListNode pCurrent)
     printf("NULL\n\n");
   } // End else
 } // End of the function printList()
+
+int isEmtpy(pListNode head)
+{
+  return head == NULL;
+} // End function isEmpty()
