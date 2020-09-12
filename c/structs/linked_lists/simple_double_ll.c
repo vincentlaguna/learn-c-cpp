@@ -132,10 +132,23 @@ void insert(pListNode *head, char value)
       pCurrent = pCurrent->pNext; // Next node in the list
     } // End the while loop
     // Insert the new node at the beginning of the list
-    
+    if(pPrevious == NULL)
+    {
+      pNew->pNext = *head;
+      *head = pNew;
+    } // End if
+    else // Insert new node between pPrevious and pCurrent pointer
+    {
+      pPrevious->pNext = pNew;
+      pNew->pNext = pCurrent;
+    } // End else
+  } // End if
+  else
+  {
+    printf("%c not inserted. No memory available.\n", value);  
   }
-  
 }
+
 void insertAtStart(pListNode *head, char value)
 {
   pListNode new_node = malloc(sizeof(node_t));
