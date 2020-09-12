@@ -33,7 +33,52 @@ int main(void)
          "6. To END.\n");
   printf(":: ");
   scanf("%d", &choice);
-  
+  // While loop while user does not choose
+  while(choice != 6)
+  {
+    switch(choice)
+    {
+      case 1:
+        printf("Enter a character: ");
+        scanf("\n%c", &item);
+        insert(&head, item); // Insert the item into the list
+        printList(head);
+        break;
+      case 2:
+        printf("Enter a character: ");
+        scanf("\n%c", &item);
+        insertAtEnd(&head, item); // Insert the item into the list
+        printList(head);
+        break;
+      case 3:
+        printf("Enter a character: ");
+        scanf("\n%c", &item);
+        insertAtStart(&head, item);
+        printf(head);
+        break;
+      case 4: // Delete an element
+        if(!isEmtpy(head)) // If the list is not empty
+        {
+          printf("Enter character to be deleted: ");
+          scanf("\n%c", &item);
+          // If the character is found, remove it
+          if(delete(&head, item)) // Remove item
+          {
+            printf("%c deleted.\n", item);
+            printList(head);
+          }
+          else // End if
+          {
+            printf("%c not found.\n\n", item);
+          } // End else
+        else // End if
+        {
+          printf("The list is empty.\n\n");
+        } // End else
+        break;
+      
+    }
+  }
   
   return(0);
 }
