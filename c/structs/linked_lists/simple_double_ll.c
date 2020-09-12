@@ -56,7 +56,7 @@ int main(void)
         printf("Enter a character: ");
         scanf("\n%c", &item);
         insertAtStart(&head, item);
-        printf(head);
+        printList(head);
         break;
         
       case 4: // Delete an element
@@ -74,6 +74,7 @@ int main(void)
           {
             printf("%c not found.\n\n", item);
           } // End else
+        }
         else // End if
         {
           printf("The list is empty.\n\n");
@@ -111,6 +112,9 @@ int main(void)
 }
 // Function Definitions
 void insert(pListNode *head, char value)
+{
+  
+}
 void insertAtStart(pListNode *head, char value)
 {
   pListNode new_node = malloc(sizeof(node_t));
@@ -135,15 +139,26 @@ void insertAtEnd(pListNode *head, char value)
   }
   else  // We are at the end of the list (pCurrent reached the end NULL pointer)
   {
-    pCurrent = malloc(sizeof(n));
+    pCurrent = malloc(sizeof(node_t));
     pCurrent->data = value;
     pCurrent->pNext = NULL;
     *head = pCurrent;
   }
 }
 
-char delete(pListNode *head, char value);
-void deleteAtStart(pListNode *head);
-int isEmtpy(pListNode head);
-void printList(pListNode pCurrent);
-//
+char delete(pListNode *head, char value)
+{
+  
+}
+void deleteAtStart(pListNode *head)
+{
+  
+}
+int isEmtpy(pListNode head)
+{
+  
+}
+void printList(pListNode pCurrent)
+{
+  
+}
