@@ -231,11 +231,11 @@ void deleteAtStart(pListNode *head)
     free(pTemp); // Free the de-threaded node
   }
 }
-
+// Return 1 if the list is empty, 0 if otherwise
 int isEmtpy(pListNode head)
 {
-  
-}
+  return head == NULL;
+} // End function isEmpty()
 
 void printList(pListNode pCurrent)
 {
