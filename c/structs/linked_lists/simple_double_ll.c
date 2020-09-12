@@ -13,7 +13,7 @@ void insert(pListNode *head, char value);
 void insertAtStart(pListNode *head, char value);
 void insertAtEnd(pListNode *head, char value);
 char delete(pListNode *head, char value);
-void deleteAtStart(pListNode *head)
+void deleteAtStart(pListNode *head);
 int isEmtpy(pListNode head);
 void printList(pListNode pCurrent);
 // Main functions
