@@ -1,20 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+// Self-referential structure
 typedef struct node
 {
   char data;
-  struct node *next;
+  struct node *pNext;
 } node_t;
 
 typedef node_t *pListNode;
 // Prototypes
-void insert();
-void insertAtStart();
-void insertAtEnd();
-char delete();
-int isEmtpy();
-void printList();
+void insert(pListNode *head, char value);
+void insertAtStart(pListNode *head, char value);
+void insertAtEnd(pListNode *head, char value);
+char delete(pListNode *head, char value);
+void deleteAtStart(pListNode *head)
+int isEmtpy(pListNode head);
+void printList(pListNode pCurrent);
 
 int main(void)
 {
