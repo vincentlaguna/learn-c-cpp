@@ -239,5 +239,20 @@ int isEmtpy(pListNode head)
 
 void printList(pListNode pCurrent)
 {
-  
-}
+  // Check for empty list
+  if(pCurrent == NULL)
+  {
+    printf("The list is empty.\n\n");
+  } // End if
+  else
+  {
+    printf("The list is:\n");
+    // While not the end of the list
+    while(pCurrent != NULL)
+    {
+      printf("%c --> ", pCurrent->data);
+      pCurrent = pCurrent->pNext;
+    } // End of the while-loop
+    printf("NULL\n\n");
+  } // End else
+} // End of the function printList()
