@@ -43,7 +43,10 @@ typedef struct _node
 } NODE;
 
 NODE *pHead = NULL;
-// Create a new list element of type THING from the supplied text string
+// Function Prototypes
+NODE *pNewElement(char *text);
+NODE *delElement(NODE *pHead, char *text);
+// Create a new list element of type NODE from the supplied text string
 NODE *pNewElement(char *text)
 {
   NODE *pNew;
@@ -52,6 +55,20 @@ NODE *pNewElement(char *text)
   strcpy(pNew->item, text);
   pNew->pNext = NULL;
   return pNew;
+}
+// delElement: remove from list the first instance of an element containing
+// a given text string. *Note!! delete requests for elements not in the list
+// are silently ignored
+NODE *delElement(NODE *pHead, char *text)
+{
+  
+}
+// Add element into the middle of a list of NODES based on alphabetical order
+// of the 'item' strings within the NODE structures
+NODE *addMiddle(NODE *pHead, NODE *pNew)
+{
+  BOOL found = FALSE;
+  NODE 
 }
 
 int main(void)
