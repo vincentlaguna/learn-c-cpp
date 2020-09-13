@@ -10,7 +10,10 @@ struct Node
 struct Node *pTop;
 // Function Prototypes
 int push(int data);
-
+int isEmpty();
+void pop();
+void display();
+// Main Function
 int main(void)
 {
   puts("Example of a stack implementation using a linked-list - TEST");
@@ -29,4 +32,27 @@ int push(int data)
     pTemp->pLink = pTop;
     pTop = pTemp;
   }
+}
+
+int isEmpty()
+{
+  return pTop == NULL;
+}
+
+void pop()
+{
+  struct Node *pTemp;
+  
+  if(pTop != NULL)
+  {
+    pTemp = pTop;
+    pTop = pTop->pLink;
+    pTemp->pLink = NULL;
+    free(pTemp);
+  }
+}
+
+void display()
+{
+  
 }
