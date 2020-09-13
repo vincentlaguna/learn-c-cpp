@@ -66,7 +66,7 @@ int main(void)
         display();
         break;
       case 8:
-        printf(" <<< Exiting >>> \n");
+        printf("\n <<< Exiting >>> \n\n");
         return(0);
         break;
       default:
