@@ -117,12 +117,76 @@ void insertNodeAtBeginning(void)
 
 void insertNodeAtEnd(void)
 {
+  int value = 0;
   
+  printf("Enter the value for the new node: ");
+  scanf("%d", &value);
+  pNewNode = createNode(value);
+  
+  if(pHead == pTail && pTail == NULL)
+  {
+    pHead = pTail = pNewNode;
+    pHead->pNext = NULL;
+    pTail->pNext = NULL;
+  }
+  else
+  {
+    pTail->pNext = pNewNode;
+    pTail = pNewNode;
+    pTail->pNext = NULL;
+  }
+  printf("\n-----------------INSERTED-----------------\n");
 }
 
 void insertNodeAtPosition(void)
 {
+  int position, value, count = 0, i;
   
+  printf("\nEnter the value for the node: ");
+  scanf("%d", &value);
+  pNewNode = createNode(value);
+  printf("\nEnter the position: ");
+  scanf("%d", &position);
+  pCurrent = pHead;
+  // While loop
+  while(pCurrent != NULL)
+  {
+    pCurrent = pCurrent->pNext;
+    count++;
+  }
+  if(position == 1)
+  {
+    if(pHead == pTail && pHead != NULL)
+    {
+      pHead = pTail = pNewNode;
+      pHead->pNext = NULL;
+      pTail->pNext = NULL;
+    }
+    else
+    {
+      pTemp = pHead;
+      pHead = pNewNode;
+      pHead->pNext = pTemp;
+    }
+    printf("\n-----------------INSERTED-----------------\n");
+  }
+  else if(position > 1 && position <= count)
+  {
+    pCurrent = pHead;
+    // For-loop
+    for(i = 1; i < position; i++)
+    {
+      pPrevious = pCurrent;
+      pCurrent = pCurrent->pNext;
+    }
+    pPrevious->pNext = pNewNode;
+    pNewNode->pNext = pCurrent;
+    printf("\n-----------------INSERTED-----------------\n");
+  }
+  else
+  {
+    printf("The position is out of range.\n");
+  }
 }
 
 void deletePosition(void)
