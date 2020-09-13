@@ -191,7 +191,49 @@ void insertNodeAtPosition(void)
 
 void deletePosition(void)
 {
+  int position, count = 0, i;
   
+  if(pHead == NULL)
+  {
+    printf("The list is empty.\n");
+    printf(":No node to delete >>>\n");
+  }
+  else
+  {
+    printf("Enter the position of the value to be deleted:\n");
+    scanf("%d", &position);
+    pCurrent = pHead;
+    
+    if(position == 1)
+    {
+      pHead = pCurrent->pNext;
+      printf("\nElement deleted");
+    }
+    else
+    {
+      while(pCurrent != NULL)
+      {
+        pCurrent = pCurrent->pNext;
+        count = count + 1;
+      }
+      if(position > 0 && position <= count)
+      {
+        pCurrent = pHead;
+        for(i = 1; i < position; i++)
+        {
+          pPrevious = pCurrent;
+          pCurrent = pCurrent->pNext;
+        }
+        pPrevious->pNext = pCurrent->pNext;
+      }
+      else
+      {
+        printf("Position is out of range.");
+      }
+    free(pCurrent);
+    printf("\nElement deleted");
+    }
+  }
 }
 
 void search(void)
