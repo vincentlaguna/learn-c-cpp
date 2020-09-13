@@ -96,14 +96,53 @@ NODE *addStart(NODE *pHead, NODE *pNew)
 // Usage example: pStart = (addEnd(pStart, pNewElement("wine")));
 NODE *addEnd(NODE *pHead, *pNew)
 {
+  NODE *p2;
   
+  if(pHead == NULL)
+  {
+    return pNew;
+  }
+  // Now find the end of the list
+  for(p2 = pHead; p2->pNext != NULL; p2 = p2->pNext)
+    ;
+  p2->pNext = pNew;
+  return pHead;
 }
 // Add element into the middle of a list of NODES based on alphabetical order
 // of the 'item' strings within the NODE structures
 NODE *addMiddle(NODE *pHead, NODE *pNew)
 {
   BOOL found = FALSE;
-  NODE 
+  NODE *p1, *p2;
+  
+  if(pHead == NULL) // *Special case
+  {
+    printf("Initial list was NULL.\n");
+    pHead = addStart(pHead, pNew);
+    return pHead;
+  }
+  // Main loop. use p2 to remember previous p1
+  p2 = p1 = pHead;
+  
+  while(!found)
+  {
+    if(found = strcmp(p1->item, pNew->item) >= 1)
+    {
+      if(p1 == pHead)
+      {
+        printf("Adding at head.\n");
+        p2->pNext = pNew;
+        pNew->pNext = p1;
+        return pHead;
+      }
+    }
+    // Match not found before the end of the list, so insert at end
+    if(p1->pNext == NULL)
+    {
+      pHead = addEnd(pHead, pNew);
+      return(pHead);
+    }
+  }
 }
 
 int main(void)
