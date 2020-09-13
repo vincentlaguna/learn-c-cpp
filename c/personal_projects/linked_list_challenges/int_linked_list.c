@@ -274,7 +274,36 @@ void updateValue(void)
 
 void search(void)
 {
+  int flag = 0, key, position = 0;
   
+  if(pHead == NULL)
+  {
+    printf("The list is empty.\n");
+    printf(":No nodes in the list.\n");
+  }
+  else
+  {
+    printf("\nEnter the value to search: ");
+    scanf("%d", &key);
+    
+    for(pCurrent = pHead; pCurrent != NULL; pCurrent = pCurrent->pNext)
+    {
+      position = position + 1;
+      if(pCurrent->value == key)
+      {
+        flag = 1;
+        break;
+      }
+    }
+    if(flag == 1)
+    {
+      printf("\nElement %d found at %d position.\n", key, position);
+    }
+    else
+    {
+      printf("\nElement %d not found in the list.\n", key);
+    }
+  }
 }
 
 void display(void)
