@@ -42,10 +42,13 @@ typedef struct _node
   struct _node *pNext;
 } NODE;
 
-NODE *pHead = NULL;
+NODE *pStart = NULL;
 // Function Prototypes
 NODE *pNewElement(char *text);
 NODE *delElement(NODE *pHead, char *text);
+NODE *addStart(NODE *pHead, NODE *pNew);
+NODE *addEnd(NODE *pHead, *pNew);
+
 // Create a new list element of type NODE from the supplied text string
 NODE *pNewElement(char *text)
 {
@@ -60,6 +63,38 @@ NODE *pNewElement(char *text)
 // a given text string. *Note!! delete requests for elements not in the list
 // are silently ignored
 NODE *delElement(NODE *pHead, char *text)
+{
+  NODE *pCurrent, *pPrevious;
+  pPrevious = NULL;
+  for(pCurrent = pHead; pCurrent != NULL; pCurrent = pCurrent->pNext)
+  {
+    if(strcmp(text, pCurrent->item) == 0)
+    {
+      if(pPrevious == NULL)
+      {
+        pHead = pPrevious->pNext;
+      }
+      else
+      {
+        pPrevious->pNext = pCurrent->pNext;
+      }
+      free(pCurrent->item); // Free off the string field
+      free(pCurrent); // Remove rest of NODE
+      return pHead;
+    }
+    pPrevious = pCurrent;
+  }
+}
+// addStart: add new NODE at the start of the list
+// Example usage: pStart = (addStart(pStart, pNewElement("burgers")));
+NODE *addStart(NODE *pHead, NODE *pNew)
+{
+  pNew->pNext = pHead;
+  return pNew;
+}
+// addEnd: add new NODE to the end of a list
+// Usage example: pStart = (addEnd(pStart, pNewElement("wine")));
+NODE *addEnd(NODE *pHead, *pNew)
 {
   
 }
