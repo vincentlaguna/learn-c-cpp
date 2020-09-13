@@ -7,7 +7,7 @@ struct Node
   struct Node *pLink;
 };
 
-struct Node *pTop;
+struct Node *pTop = NULL;
 // Function Prototypes
 int push(int data);
 int isEmpty();

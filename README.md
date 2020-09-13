@@ -102,6 +102,7 @@ Intermediate Concepts in C:
 - Using the memcpy() and memmove() string functions
 - Manipulating pointer arrays
 - Learning how to use function pointers with exercise challenge on function pointers
+- Stack implementation using a linked-list
 - (@union_ex4.c -> needs validation)
 - 
 
