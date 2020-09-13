@@ -54,5 +54,16 @@ void pop()
 
 void display()
 {
+  struct Node *pTemp;
   
+  if(pTop != NULL)
+  {
+    pTemp = pTop;
+    
+    while(pTemp != NULL)
+    {
+      printf("%d:\n", pTemp->data);
+      pTemp = pTemp->pLink;
+    }
+  }
 }
