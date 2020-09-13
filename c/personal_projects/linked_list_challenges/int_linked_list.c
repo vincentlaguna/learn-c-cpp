@@ -236,12 +236,43 @@ void deletePosition(void)
   }
 }
 
-void search(void)
+void updateValue(void)
 {
+  int oldValue, newValue, flag = 0;
   
+  if(pHead == NULL)
+  {
+    printf("The list is empty.\n");
+    printf(":No nodes in the list to update.\n");
+  }
+  else
+  {
+    printf("\nEnter the value to be updated: ");
+    scanf("%d", &oldValue);
+    printf("\nEnter the new value: ");
+    scanf("%d", &newValue);
+    
+    for(pCurrent = pHead; pCurrent != NULL; pCurrent = pCurrent->pNext)
+    {
+      if(pCurrent->value == oldValue)
+      {
+        pCurrent->value = newValue;
+        flag = 1;
+        break;
+      }
+    }
+    if(flag == 1)
+    {
+      printf("\nUpdated Successfully.\n");
+    }
+    else
+    {
+      printf("\nValue not found in the list.\n");
+    }
+  }
 }
 
-void updateValue(void)
+void search(void)
 {
   
 }
