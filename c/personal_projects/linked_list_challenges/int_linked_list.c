@@ -14,6 +14,11 @@ void insertAtEnd();
 void insertNodeAtPosition();
 void deletePosition();
 void search();
+void updateValue();
+void display();
+// Global Variables
+struct node *pNewNode, *ptr, *pPrevious, *pTemp;
+struct node *pHead = NULL, *pTail = NULL;
 // Main Function
 int main(void)
 {
