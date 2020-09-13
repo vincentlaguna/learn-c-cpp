@@ -8,7 +8,7 @@ struct node
   struct node *pNext;
 };
 // Function Prototypes
-struct node* createNode(int); // Returns node pointer
+struct node* createNode(int value);
 void insertNodeAtBeginning(void);
 void insertNodeAtEnd(void);
 void insertNodeAtPosition(void);
@@ -75,6 +75,23 @@ int main(void)
     }
   }
   return(0);
+}
+// Returns node pointer (saves on malloc() duplication)
+struct node* createNode(int value)
+{
+  pNewNode = (struct node *) malloc(sizeof(struct node));
+  // Validate memory allocation
+  if(pNewNode == NULL)
+  {
+    fprintf(stderr, "\n Failed to allocate memory.\n");
+    exit(EXIT_FAILURE);
+  }
+  else
+  {
+    pNewNode->value = value;
+    pNewNode->pNext = NULL;
+    return pNewNode;
+  }
 }
 
 void insertNodeAtBeginning(void)
