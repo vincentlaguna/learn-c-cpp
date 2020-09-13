@@ -308,5 +308,16 @@ void search(void)
 
 void display(void)
 {
-  
+  if(pHead == NULL)
+  {
+    printf("The list is empty.\n");
+    printf(":No nodes in the list to display.\n");
+  }
+  else
+  {
+    for(pCurrent = pHead; pCurrent != NULL; pCurrent = pCurrent->pNext)
+    {
+      printf("%d\t", pCurrent->value);
+    }
+  }
 }
