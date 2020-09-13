@@ -17,7 +17,22 @@ void display();
 int main(void)
 {
   puts("Example of a stack implementation using a linked-list - TEST");
+  puts("Pushing 4 elements unto the stack -> \n");
   
+  push(1);
+  push(2);
+  push(3);
+  push(4);
+  
+  display();
+  
+  puts("\nPopping 2 elements off the stack -> \n");
+  
+  pop();
+  pop();
+  
+  display();
+  putchar('\n');
   
   return(0);
 }
