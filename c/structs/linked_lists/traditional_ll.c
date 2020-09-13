@@ -47,8 +47,18 @@ NODE *pStart = NULL;
 NODE *pNewElement(char *text);
 NODE *delElement(NODE *pHead, char *text);
 NODE *addStart(NODE *pHead, NODE *pNew);
-NODE *addEnd(NODE *pHead, *pNew);
-
+NODE *addEnd(NODE *pHead, NODE *pNew);
+NODE *addMiddle(NODE *pHead, NODE *pNew);
+void printList(NODE **pHead);
+// Main Function
+int main(void)
+{
+  puts("Traditional linked list using single-level pointers - TEST");
+  
+  
+  
+  return(0);
+}
 // Create a new list element of type NODE from the supplied text string
 NODE *pNewElement(char *text)
 {
@@ -94,7 +104,7 @@ NODE *addStart(NODE *pHead, NODE *pNew)
 }
 // addEnd: add new NODE to the end of a list
 // Usage example: pStart = (addEnd(pStart, pNewElement("wine")));
-NODE *addEnd(NODE *pHead, *pNew)
+NODE *addEnd(NODE *pHead, NODE *pNew)
 {
   NODE *p2;
   
@@ -142,11 +152,19 @@ NODE *addMiddle(NODE *pHead, NODE *pNew)
       pHead = addEnd(pHead, pNew);
       return(pHead);
     }
-  }
+    // Go round the while loop one more time
+    p2 = p1;
+    p1 = p1->pNext;
+  } // End of while-loop
 }
-
-int main(void)
+// printList
+void printList(NODE **pHead)
 {
-  puts("Traditional linked list using single-level pointers - TEST");
-  return(0);
+  NODE **pTracer = pHead;
+  
+  while((*pTracer) != NULL)
+  {
+    printf("%s \n", (*pTracer)->item);
+    pTracer = &(*pTracer)->pNext;
+  }
 }
