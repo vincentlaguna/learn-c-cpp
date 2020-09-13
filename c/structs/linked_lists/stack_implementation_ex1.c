@@ -7,10 +7,26 @@ struct Node
   struct Node *pLink;
 };
 
+struct Node *pTop;
+// Function Prototypes
+int push(int data);
+
 int main(void)
 {
   puts("Example of a stack implementation using a linked-list - TEST");
   
   
   return(0);
+}
+
+int push(int data)
+{
+  struct Node *pTemp = malloc(sizeof(struct Node));
+  
+  if(pTemp != NULL)
+  {
+    pTemp->data = data;
+    pTemp->pLink = pTop;
+    pTop = pTemp;
+  }
 }
