@@ -96,7 +96,23 @@ struct node* createNode(int value)
 
 void insertNodeAtBeginning(void)
 {
+  int value = 0;
   
+  printf("Enter the value of the new node: ");
+  scanf("%d", &value);
+  pNewNode = createNode(value);
+  if(pHead == pTail && pHead == NULL)
+  {
+    pHead = pTail = pNewNode;
+    pHead->pNext = NULL;
+    pTail->pNext = NULL;
+  }
+  else
+  {
+    pTemp = pHead;
+    pHead = pNewNode;
+    pHead->pNext = pTemp;
+  }
 }
 
 void insertNodeAtEnd(void)
