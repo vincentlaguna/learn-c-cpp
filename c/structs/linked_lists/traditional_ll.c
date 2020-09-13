@@ -36,135 +36,129 @@ Exercise: modify `addmiddle so that this duplication is NOT allowed.
 
 typedef int BOOL;
 
-typedef struct _node
-{
-  char *item;
-  struct _node *pNext;
-} NODE;
+typedef struct _thing 
+{ 
+	char *item;
+	struct _thing *next;
+} THING;
 
-NODE *pStart = NULL;
-// Function Prototypes
-NODE *pNewElement(char *text);
-NODE *delElement(NODE *pHead, char *text);
-NODE *addStart(NODE *pHead, NODE *pNew);
-NODE *addEnd(NODE *pHead, NODE *pNew);
-NODE *addMiddle(NODE *pHead, NODE *pNew);
-void printList(NODE **pHead);
-// Main Function
-int main(void)
+THING *start = NULL;
+// create new list element of type THING from the supplied text string
+THING *newelement(char *text)
 {
-  puts("Traditional linked list using single-level pointers - TEST");
-  
-  
-  
-  return(0);
+	THING *newp;
+	newp = (THING *) malloc (sizeof(THING));
+	newp->item = (char *)malloc(strlen(text) + 1);
+        strcpy(newp->item, text);
+        newp -> next = NULL;
+	return newp;
 }
-// Create a new list element of type NODE from the supplied text string
-NODE *pNewElement(char *text)
+// delelement: remove from list the first instance of an element 
+// containing a given text string
+// NOTE!! delete requests for elements not in the list are silently ignored 
+THING *delelement(THING *head, char *text)
 {
-  NODE *pNew;
-  pNew = (NODE *) malloc(sizeof(NODE));
-  pNew->item = (char *) malloc(strlen(text) + 1);
-  strcpy(pNew->item, text);
-  pNew->pNext = NULL;
-  return pNew;
+	THING *p, *prev;
+	prev = NULL;
+	for (p = head; p != NULL; p = p -> next) {
+            if (strcmp(text, p -> item) == 0) {
+		if(prev == NULL)
+		   head = p-> next;
+		else
+		   prev -> next = p -> next;
+		free(p -> item); //free off the the string field
+		free(p);	// remove rest of THING
+		return head;
+	   }
+	   prev = p;	
+	}
 }
-// delElement: remove from list the first instance of an element containing
-// a given text string. *Note!! delete requests for elements not in the list
-// are silently ignored
-NODE *delElement(NODE *pHead, char *text)
+/* addfront: add new THING to front of list  */
+/* example usage: start = (addfront(start, newelement("burgers")); */
+THING *addfront(THING *head, THING *newp)
 {
-  NODE *pCurrent, *pPrevious;
-  pPrevious = NULL;
-  for(pCurrent = pHead; pCurrent != NULL; pCurrent = pCurrent->pNext)
-  {
-    if(strcmp(text, pCurrent->item) == 0)
-    {
-      if(pPrevious == NULL)
-      {
-        pHead = pPrevious->pNext;
-      }
-      else
-      {
-        pPrevious->pNext = pCurrent->pNext;
-      }
-      free(pCurrent->item); // Free off the string field
-      free(pCurrent); // Remove rest of NODE
-      return pHead;
-    }
-    pPrevious = pCurrent;
-  }
+	newp -> next = head;
+	return newp;
 }
-// addStart: add new NODE at the start of the list
-// Example usage: pStart = (addStart(pStart, pNewElement("burgers")));
-NODE *addStart(NODE *pHead, NODE *pNew)
+/* addend: add new THING to the end of a list  */
+/* usage example: start = (addend(start, newelement("wine")); */
+THING *addend (THING *head, THING *newp)
 {
-  pNew->pNext = pHead;
-  return pNew;
+	THING *p2; 	
+	if (head == NULL)
+		return newp;
+// now find the end of list
+	for (p2 = head; p2 -> next != NULL; p2 = p2 -> next)
+		;
+	p2 -> next = newp;
+	return head;
 }
-// addEnd: add new NODE to the end of a list
-// Usage example: pStart = (addEnd(pStart, pNewElement("wine")));
-NODE *addEnd(NODE *pHead, NODE *pNew)
+// add element into middle of a list of THINGs based on alphabetical order 
+// of the `item' strings within the THING structures 
+THING *addmiddle (THING *head, THING *newp)
 {
-  NODE *p2;
-  
-  if(pHead == NULL)
-  {
-    return pNew;
-  }
-  // Now find the end of the list
-  for(p2 = pHead; p2->pNext != NULL; p2 = p2->pNext)
-    ;
-  p2->pNext = pNew;
-  return pHead;
+	BOOL found = FALSE;
+	THING *p1, *p2; 	
+	if (head == NULL) { //special case
+//		printf("initial list was NULL\n");
+		head = addfront(head, newp);
+		return head;
+	}
+// Main loop. Use p2 to remember previous p1
+	p2 = p1 = head ; 
+	while (!found) {
+  		if (found = strcmp(p1 -> item, newp -> item) >= 1) {
+			if (p1 == head) { 
+//					printf("adding at head\n");
+					head = addfront(head, newp); 
+					return(head);
+		        }
+			else { //general case - insert the item
+//        		        printf("General case entered\n");
+				p2 -> next = newp;;
+				newp -> next = p1;
+				return head;
+	  		}
+	  	}
+// match not found before end of list so insert at end 
+	if  (p1 -> next == NULL) {
+		head = addend(head, newp); 
+		return (head);
+	}
+// go round while loop one more time
+	p2 = p1; p1 = p1 -> next; 
+	
+	}// end of while 
+	
 }
-// Add element into the middle of a list of NODES based on alphabetical order
-// of the 'item' strings within the NODE structures
-NODE *addMiddle(NODE *pHead, NODE *pNew)
+
+void printlist(THING **head)
+// this routine uses pointer-to-pointer techniques :-)
 {
-  BOOL found = FALSE;
-  NODE *p1, *p2;
-  
-  if(pHead == NULL) // *Special case
-  {
-    printf("Initial list was NULL.\n");
-    pHead = addStart(pHead, pNew);
-    return pHead;
-  }
-  // Main loop. use p2 to remember previous p1
-  p2 = p1 = pHead;
-  
-  while(!found)
-  {
-    if(found = strcmp(p1->item, pNew->item) >= 1)
-    {
-      if(p1 == pHead)
-      {
-        printf("Adding at head.\n");
-        p2->pNext = pNew;
-        pNew->pNext = p1;
-        return pHead;
-      }
-    }
-    // Match not found before the end of the list, so insert at end
-    if(p1->pNext == NULL)
-    {
-      pHead = addEnd(pHead, pNew);
-      return(pHead);
-    }
-    // Go round the while loop one more time
-    p2 = p1;
-    p1 = p1->pNext;
-  } // End of while-loop
+	THING **tracer = head;
+	while ((*tracer) != NULL) {
+		printf("%s \n",(*tracer)->item);
+		tracer = &(*tracer)->next;
+	}
 }
-// printList
-void printList(NODE **pHead)
+
+
+int main(int argc, char **argv)
 {
-  NODE **pTracer = pHead;
-  
-  while((*pTracer) != NULL)
-  {
-    printf("%s \n", (*pTracer)->item);
-    pTracer = &(*pTracer)->pNext;
-  }
+	start = addmiddle(start, newelement("chips")); 
+	start = addmiddle(start, newelement("wine")); 
+	start = addmiddle(start, newelement("beer")); 
+	start = addmiddle(start, newelement("pizza")); 
+	start = addmiddle(start, newelement("zucchini"));
+	start = addmiddle(start, newelement("burgers"));
+	start = addmiddle(start, newelement("burgers"));
+	start = addmiddle(start, newelement("slaw"));
+	printf("\nINITIAL LIST\n");
+	printlist (&start);
+	delelement(start, "pizza");
+	delelement(start, "zucchini");
+	delelement(start, "burgers");
+	printf("\nALTERED LIST\n");
+	printlist(&start);
+	
 }
