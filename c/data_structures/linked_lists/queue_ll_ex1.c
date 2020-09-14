@@ -43,5 +43,14 @@ struct Queue* createQueue(void)
 
 void enQueue(struct Queue *pQ, int k)
 {
-  
+  struct QNode *pTemp = newNode(k);
+  // If the queue is empty, then new node is front and rear both
+  if(pQ->pRear == NULL)
+  {
+    pQ->pFront = pQ->pRear = pTemp;
+    return;
+  }
+  // Add new node at the end of the queue and change rear
+  pQ->pRear->pNext = pTemp;
+  pQ->pRear = pTemp;
 }
