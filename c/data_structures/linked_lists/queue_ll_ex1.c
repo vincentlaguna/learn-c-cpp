@@ -14,6 +14,7 @@ struct Queue
 // Function Prototypes
 struct QNode* newNode(int k);
 struct Queue* createQueue(void);
+void enQueue(struct Queue *pQ, int k);
 // Main Function
 int main(void)
 {
@@ -33,6 +34,14 @@ struct QNode* newNode(int k)
 }
 
 struct Queue* createQueue(void)
+{
+  struct Queue *pQ = (struct Queue *) malloc(sizeof(struct Queue));
+  
+  pQ->pFront = pQ->pRear = NULL;
+  return pQ;
+}
+
+void enQueue(struct Queue *pQ, int k)
 {
   
 }
