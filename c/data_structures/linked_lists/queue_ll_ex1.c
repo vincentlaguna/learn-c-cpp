@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+// Structures
 struct QNode
 {
   int key;
@@ -11,9 +11,10 @@ struct Queue
 {
   struct QNode *pFront, *pRear;
 };
-
+// Function Prototypes
 struct QNode* newNode(int k);
-
+struct Queue* createQueue(void);
+// Main Function
 int main(void)
 {
   puts("Queue implementation using a linked-list\n");
@@ -29,4 +30,9 @@ struct QNode* newNode(int k)
   pTemp->key = k;
   pTemp->pNext = NULL;
   return pTemp;
+}
+
+struct Queue* createQueue(void)
+{
+  
 }
