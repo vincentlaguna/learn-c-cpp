@@ -19,8 +19,22 @@ struct QNode* deQueue(struct Queue *pQ);
 // Main Function
 int main(void)
 {
+  struct Queue *pQ = createQueue();
+  
   puts("Queue implementation using a linked-list\n");
   
+  enQueue(pQ, 1);
+  enQueue(pQ, 2);
+  deQueue(pQ);
+  deQueue(pQ);
+  enQueue(pQ, 3);
+  enQueue(pQ, 4);
+  enQueue(pQ, 5);
+  
+  struct QNode *pN = deQueue(pQ);
+  
+  if(pN != NULL)
+    printf("Dequeued item is %d", pN->key);
   
   return(0);
 }
