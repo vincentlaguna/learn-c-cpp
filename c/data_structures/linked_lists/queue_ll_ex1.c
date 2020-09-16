@@ -15,6 +15,7 @@ struct Queue
 struct QNode* newNode(int k);
 struct Queue* createQueue(void);
 void enQueue(struct Queue *pQ, int k);
+struct QNode* deQueue(struct Queue *pQ);
 // Main Function
 int main(void)
 {
@@ -53,4 +54,18 @@ void enQueue(struct Queue *pQ, int k)
   // Add new node at the end of the queue and change rear
   pQ->pRear->pNext = pTemp;
   pQ->pRear = pTemp;
+}
+
+struct QNode* deQueue(struct Queue *pQ)
+{
+  // If queue is empty, return NULL
+  if(pQ->pFront == NULL)
+    return NULL;
+  // Store previous front and move front one node ahead
+  struct QNode *pTemp = pQ->pFront;
+  pQ->pFront = pQ->pFront->pNext;
+  // If front becomes NULL, then change the rear also to NULL
+  if(pQ->pFront == NULL)
+    pQ->pRear = NULL;
+  return pTemp;
 }
