@@ -34,7 +34,7 @@ int main(void)
   struct QNode *pN = deQueue(pQ);
   
   if(pN != NULL)
-    printf("Dequeued item is %d", pN->key);
+    printf("Dequeued item is %d\n", pN->key);
   
   return(0);
 }
