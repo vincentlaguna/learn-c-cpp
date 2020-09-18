@@ -41,15 +41,22 @@ int main(void)
       default:
         prtinf("Wrong choice!\n");
     } // End of switch
-  }
-  
-  
+  } // End of while
   return(0);
-}
+} // End of Main
 
 void enQueue()
 {
+  int add_item;
   
+  if(rear == MAX)
+    printf("Queue overflow.\n");
+  else
+  {
+    if(front == -1)
+      front = 0;
+  }
+  printf("Inset the element in the queue.\n");
 }
 
 void deQueue()
