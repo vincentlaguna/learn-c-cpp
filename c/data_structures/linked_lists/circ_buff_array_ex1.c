@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #define MAX 50
 // Function Prototypes
@@ -25,7 +26,7 @@ int main(void)
     printf("Enter your choice: ");
     scanf("%d", &choice);
     
-    case(choice)
+    switch(choice)
     {
       case 1:
         enQueue();
@@ -39,10 +40,9 @@ int main(void)
       case 4:
         exit(1);
       default:
-        prtinf("Wrong choice!\n");
+        printf("Wrong choice!\n");
     } // End of switch
   } // End of while
-  return(0);
 } // End of Main
 
 void enQueue()
