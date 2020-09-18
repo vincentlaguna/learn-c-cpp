@@ -49,19 +49,31 @@ void enQueue()
 {
   int add_item;
   
-  if(rear == MAX)
+  if(rear == MAX - 1)
     printf("Queue overflow.\n");
   else
   {
     if(front == -1)
       front = 0;
   }
-  printf("Inset the element in the queue.\n");
+  printf("Inset the element in the queue: ");
+  scanf("%d", &add_item);
+  rear = rear + 1;
+  queue_array[rear] = add_item;
 }
 
 void deQueue()
 {
-  
+  if(front == -1 || front > rear)
+  {
+    printf("Queue underflow.\n");
+    return;
+  }
+  else
+  {
+    printf("Element deleted from queue is -> %d\n", queue_array[front]);
+    front = front + 1;
+  }
 }
 
 void display()
