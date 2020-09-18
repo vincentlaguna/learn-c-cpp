@@ -16,7 +16,17 @@ int main(void)
   
   int choice;
   
-  while
+  while(1)
+  {
+    printf("1. Insert an element in the queue.\n");
+    printf("2. Delete an element in the queue.\n");
+    printf("3. Display all the elements of the queue.\n");
+    printf("4. EXIT.\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+    
+    
+  }
   
   
   return(0);
