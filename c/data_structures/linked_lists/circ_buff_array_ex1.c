@@ -25,7 +25,22 @@ int main(void)
     printf("Enter your choice: ");
     scanf("%d", &choice);
     
-    
+    case(choice)
+    {
+      case 1:
+        enQueue();
+        break;
+      case 2:
+        deQueue();
+        break;
+      case 3:
+        display();
+        break;
+      case 4:
+        exit(1);
+      default:
+        prtinf("Wrong choice!\n");
+    } // End of switch
   }
   
   
