@@ -10,6 +10,7 @@ int score = 0;
 // Function Prototypes
 void endGame();
 int catchSignal(int sig, void (*handler) (int));
+void timesUp();
 void error(char *msg);
 // Main Functions
 int main(void)
@@ -35,6 +36,12 @@ int catchSignal(int sig, void (*handler) (int))
   action.sa_flags = 0;
   
   return sigaction(sig, &action, NULL);
+}
+
+void timesUp()
+{
+  puts("\nTIME's UP!");
+  raise(SIGINT);
 }
 
 void error(char *msg)
