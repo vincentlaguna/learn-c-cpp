@@ -105,6 +105,7 @@ Intermediate Concepts in C:
 - Stack implementation using a linked-list
 - Queue linked-list and array implementation
 - Binary search trees and recursion
+- 
 - (@union_ex4.c -> needs validation)
 - 
 
