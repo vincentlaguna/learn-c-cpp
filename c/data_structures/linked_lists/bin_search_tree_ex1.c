@@ -61,11 +61,33 @@ void insertNode(pTreeNode *pTree, int value)
       printf("%d not inserted. No memory available.\n", value);
     } // End else
   } // End if
+  else // Tree is not empty
+  {
+    // Data to insert is less than data in current node
+    if(value < (*pTree)->data)
+    {
+      insertNode(&((*pTree)->pLeft), value);
+    }
+    // Data to insert is greater than data in current mode
+    else if(value > (*pTree)->data)
+    {
+      insertNode(&((*pTree)->pRight), value);
+    }
+    else // Duplicate data ignored
+    {
+      printf("dup");
+    }
+  }
 }
 
 void inOrder(pTreeNode pTree)
 {
-  
+  if(pTree != NULL)
+  {
+    inOrder(pTree->pLeft);
+    printf("%3d", pTree->data);
+    inOrder(pTree->pRight);
+  }
 }
 
 void preOrder(pTreeNode pTree)
