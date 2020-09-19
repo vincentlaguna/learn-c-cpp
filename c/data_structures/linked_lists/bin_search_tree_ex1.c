@@ -92,10 +92,20 @@ void inOrder(pTreeNode pTree)
 
 void preOrder(pTreeNode pTree)
 {
-  
+  if(pTree != NULL)
+  {
+    printf("%3d", pTree->data);
+    preOrder(pTree->pLeft);
+    preOrder(pTree->pRight);
+  }
 }
 
 void postOrder(pTreeNode pTree)
 {
-  
+  if(pTree != NULL)
+  {
+    postOrder(pTree->pLeft);
+    postOrder(pTree->pRight);
+    printf("%3d", pTree->data);
+  }
 }
