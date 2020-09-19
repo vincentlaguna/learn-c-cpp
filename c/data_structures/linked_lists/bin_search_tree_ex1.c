@@ -24,7 +24,7 @@ int main(void)
   pTreeNode pRoot = NULL; // Tree is initially empty
   
   srand(time(NULL));
-  printf("The numbers being placed in the tree are: \n");
+  printf("\nThe numbers being placed in the tree are: \n");
   // Insert random values between 0 and 14 in the tree
   for(i = 1; i <= 10; i++)
   {
@@ -41,6 +41,7 @@ int main(void)
   // Traverse the tree postOrder
   printf("\n\nThe pre-order traversal is: \n");
   postOrder(pRoot);
+  printf("\n\n");
   
   return(0);
 }
