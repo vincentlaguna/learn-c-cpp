@@ -47,7 +47,20 @@ int main(void)
 // Function Definitions
 void insertNode(pTreeNode *pTree, int value)
 {
-  
+  if(*pTree == NULL)
+  {  *pTree = malloc(sizeof(TreeNode));
+    // If memory was allocated then assign data
+    if(*pTree != NULL)
+    {
+      (*pTree)->data = value;
+      (*pTree)->pLeft = NULL;
+      (*pTree)->pRight = NULL;
+    } // End if
+    else
+    {
+      printf("%d not inserted. No memory available.\n", value);
+    } // End else
+  } // End if
 }
 
 void inOrder(pTreeNode pTree)
