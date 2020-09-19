@@ -22,7 +22,22 @@ int main(void)
   return(0);
 }
 // Function Definitions
-void insertNode(pTreeNode *pTree, int value);
-void inOrder(pTreeNode pTree);
-void preOrder(pTreeNode pTree);
-void postOrder(pTreeNode pTree);
+void insertNode(pTreeNode *pTree, int value)
+{
+  
+}
+
+void inOrder(pTreeNode pTree)
+{
+  
+}
+
+void preOrder(pTreeNode pTree)
+{
+  
+}
+
+void postOrder(pTreeNode pTree)
+{
+  
+}
