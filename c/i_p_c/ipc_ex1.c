@@ -8,9 +8,9 @@
 // Globals
 int score = 0;
 // Function Prototypes
-void endGame();
+void endGame(); // Function handler for SIGINT
 int catchSignal(int sig, void (*handler) (int));
-void timesUp();
+void timesUp(); // Function handler for SIGALRM
 void error(char *msg);
 // Main Functions
 int main(void)
@@ -18,6 +18,25 @@ int main(void)
   puts("\n<<< Inter-Process Communication example >>> \n");
   
   srand(time(0));
+  
+  catchSignal(SIGALRM, timesUp);
+  catchSignal(SIGINT, endGame);
+  
+  while(1)
+  {
+    int a = rand() % 11;
+    int b = rand() % 11;
+    
+    alarm(5);
+    
+    char txt[4];
+    
+    printf("\nWhat is %d times %d: ", a, b);
+    fgets(txt, 4, stdin);
+    
+    int answer = atoi(txt);
+    
+  }
   
   return(0);
 }
