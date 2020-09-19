@@ -36,8 +36,11 @@ int main(void)
     
     int answer = atoi(txt);
     
+    if(answer == a * b)
+      score++;
+    else
+      printf("\nWrong! Score: %d\n", score);
   }
-  
   return(0);
 }
 // Function Definitions
