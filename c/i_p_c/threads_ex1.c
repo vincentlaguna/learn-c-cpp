@@ -4,8 +4,16 @@
 #define NTHREADS 10
 // Globals
 int counter = 0;
-// Function Protoypes
-void *func1(void *data);
+// Functions
+void *func1(void *data)
+{
+  int *x = (int *)data;
+  counter++;
+  printf("Message is %d, thread id = %lud modified the counter to %d\n",
+          *x, pthread_self(), counter);
+  printf("Message is %d, thread id = %lud read the counter %d\n",
+          *x, pthread_self(), counter);
+}
 // Main Function
 int main(void)
 {
@@ -14,17 +22,19 @@ int main(void)
   pthread_t thread_id[NTHREADS];
   int values[NTHREADS];
   // Thread creation
-  for(int i = 0; i< NTHREADS; i++)
+  for(int k = 0; k < 150; k++)
   {
-    values[i] = i;
-    pthread_create(&thread_id[i], NULL, func1, &values[i]);
+    for(int i = 0; i< NTHREADS; i++)
+    {
+      values[i] = i;
+      pthread_create(&thread_id[i], NULL, func1, &values[i]);
+    }
+    // Joins
+    for(int j = 0; j < NTHREADS; j++)
+    {
+      pthread_join(thread_id[j], NULL);
+      pthread_exit(&thread_id[j]);
+    }
   }
-  // Joins
-  for(int j = 0; j < NTHREADS; j++)
-  {
-    pthread_join(thread_id[j], NULL);
-    pthread_exit(&thread_id[j]);
-  }
-  
   return(0);
 }
