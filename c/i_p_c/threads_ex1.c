@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 #include <pthread.h>
 
 #define NTHREADS 10
@@ -46,12 +47,24 @@ int main(void)
       values[i] = i;
       pthread_create(&thread_id[i], NULL, func1, &values[i]);
     }
+    sleep(1);
+    
+    while(1)
+    {
+      if(numEvensFinished == NTHREADS / 2)
+      {
+        pthread_cond_broadcast(&evensDone);
+        break;
+      }
+    }
     // Joins
     for(int j = 0; j < NTHREADS; j++)
     {
       pthread_join(thread_id[j], NULL);
-      pthread_exit(&thread_id[j]);
+      //pthread_exit(&thread_id[j]);
     }
+    counter = 0;
+    numEvensFinished = 0;
   }
   return(0);
 }
