@@ -2,17 +2,22 @@
 #include <pthread.h>
 
 #define NTHREADS 10
+// Mutex lock
+pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
 // Globals
 int counter = 0;
 // Functions
 void *func1(void *data)
 {
   int *x = (int *)data;
+  
+  pthread_mutex_lock(&lock);
   counter++;
   printf("Message is %d, thread id = %lud modified the counter to %d\n",
           *x, pthread_self(), counter);
   printf("Message is %d, thread id = %lud read the counter %d\n",
           *x, pthread_self(), counter);
+  pthread_mutex_unlock(&lock);
 }
 // Main Function
 int main(void)

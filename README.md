@@ -134,4 +134,5 @@ What I have learned in C++:
 - Memory management
 - Callback implementation
 - Function overloading and function templating
+- Introduction to POSIX Threads
 - 
