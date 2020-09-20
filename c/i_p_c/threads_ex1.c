@@ -4,7 +4,10 @@
 #define NTHREADS 10
 // Mutex lock
 pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
+// Conditional variable for pthread
+pthread_cond_t evensDone = PTHREAD_COND_INITIALIZER;
 // Globals
+int numEvensFinished = 0;
 int counter = 0;
 // Functions
 void *func1(void *data)
@@ -12,6 +15,15 @@ void *func1(void *data)
   int *x = (int *)data;
   
   pthread_mutex_lock(&lock);
+  
+  if(*x % 2 == 0)
+  {
+    numEvensFinished++;
+  }
+  else
+  {
+    pthread_cond_wait(&evensDone, &lock);
+  }
   counter++;
   printf("Message is %d, thread id = %lud modified the counter to %d\n",
           *x, pthread_self(), counter);
