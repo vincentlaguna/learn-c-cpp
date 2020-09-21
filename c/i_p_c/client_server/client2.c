@@ -8,6 +8,7 @@
 short socketCreate(void);
 int socketConnect(int hsocket);
 int socketSend(int hsocket, char *Rqst, short lenRqst);
+int socketReceive(int hsocket, char *Rsp, short RvcSize);
 // Main Driver Program
 int main(int argc, char *argv[])
 {
@@ -29,10 +30,9 @@ int main(int argc, char *argv[])
         return 1;
     }
     printf("<<< Successfully Connected with Server >>>\n");
-    printf("Enter the message: ");
-    fgets(sendToServer, 100, stdin);
-    // Send the data to the server
-    socketSend(hsocket, sendToServer, strlen(sendToServer));
+    // Received the data from the server
+    read_size = socketReceive(hsocket, server_reply, 200);
+    printf(">>> Server Response: %s: read_size %d\n\n", server_reply,);
     close(hsocket);
     
     return(0);
@@ -72,4 +72,21 @@ int socketSend(int hsocket, char *Rqst, short lenRqst)
     }
     shortRetVal = send(hsocket, Rqst, lenRqst, 0);
     return shortRetVal;
+}
+// Receive the data from the server
+int socketReceive(int hsocket, char *Rsp, short RvcSize)
+{
+  int shortRetVal = -1;
+  struct timeval tv;
+  tv.tv_sec = 20; // 20 Second Time-Out
+  tv.tv_usec = 0;
+  
+  if(setsockopt(hsocket, SOL_SOCKET, SO_RCVTIMEO, (char *)&tv, sizeof))
+  {
+    printf(">>> Time Out.\n");
+    return -1;
+  }
+  shortRetVal = recv(hsocket, Rsp, RvcSize, 0);
+  printf(">>> Response %s\n", Rsp);
+  return shortRetVal;
 }
