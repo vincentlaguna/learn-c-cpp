@@ -72,6 +72,7 @@ int main(int argc, char *argv[])
     printf(">>> Send Failed.\n");
     return 1;
   }
+  close(sock);
   return(0);
 }
 // Function Definitions
