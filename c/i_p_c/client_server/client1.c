@@ -12,6 +12,26 @@ int socketSend(int hsocket, char *Rqst, short lenRqst);
 int main(int argc, char *argv[])
 {
     int hsocket = 0;
+    char sendToServer[100] = {0};
+    // Create Socket
+    hsocket = socketCreate();
+    
+    if(hsocket == -1)
+    {
+        printf(">>> Could not create socket.\n");
+        return 1;
+    }
+    printf("<<< Socket Created >>>\n");
+    // Connect to Remote Server
+    if(socketConnect(hsocket) < 0)
+    {
+        perror(">>> Connection Failed.\n");
+        return 1;
+    }
+    printf("<<< Successfully Connected with Server >>>\n");
+    printf("Enter the message: ");
+    fgets(sendToServer, 100, stdin);
+    // Send the data to the server
     
 }
 // Create a socket for server connection
