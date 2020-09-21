@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     printf("<<< Successfully Connected with Server >>>\n");
     // Received the data from the server
     read_size = socketReceive(hsocket, server_reply, 200);
-    printf(">>> Server Response: %s: read_size %d\n\n", server_reply,);
+    printf(">>> Server Response: %s: read_size %d\n\n", server_reply, read_size);
     close(hsocket);
     
     return(0);
