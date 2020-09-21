@@ -55,6 +55,23 @@ int main(int argc, char *argv[])
   int i = atoi(client_message);
   i--;
   sprintf(message, "%d", i);
+  close(sock);
+  printf(">>> Waiting for inconming connections...\n");
+  // Accept connection from an incoming client
+  sock = accept(socket_desc, (struct sockaddr *)&client, (socklen_t*)&clientLen);
+  
+  if(sock < 0)
+  {
+    perror(">>> Accept Failed.\n");
+    return 1;
+  }
+  printf("<<< Connection Accepted >>>\n");
+  // Send some data
+  if(send(sock, message, strlen(message), 0) < 0)
+  {
+    printf(">>> Send Failed.\n");
+    return 1;
+  }
   return(0);
 }
 // Function Definitions
