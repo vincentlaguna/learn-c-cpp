@@ -22,6 +22,15 @@ int main(int argc, char *argv[])
     printf("Could not create socket...\n");
     return 1;
   }
+  printf("<<< Socket Created >>>\n");
+  // Bind
+  if(bindCreatedSocket(socket_desc) < 0)
+  {
+    perror(">>> Bind Failed...\n");
+    return 1;
+  }
+  printf("<<< Bind Done >>>\n");
+  
   return(0);
 }
 // Function Definitions
