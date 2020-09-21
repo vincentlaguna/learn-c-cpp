@@ -8,6 +8,12 @@
 short socketCreate(void);
 int socketConnect(int hsocket);
 int socketSend(int hsocket, char *Rqst, short lenRqst);
+// Main Driver Program
+int main(int argc, char *argv[])
+{
+    int hsocket = 0;
+    
+}
 // Create a socket for server connection
 short socketCreate(void)
 {
@@ -42,4 +48,5 @@ int socketSend(int hsocket, char *Rqst, short lenRqst)
         return -1;
     }
     shortRetVal = send(hsocket, Rqst, lenRqst, 0);
+    return shortRetVal;
 }
