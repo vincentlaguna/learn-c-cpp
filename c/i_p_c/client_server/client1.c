@@ -32,7 +32,10 @@ int main(int argc, char *argv[])
     printf("Enter the message: ");
     fgets(sendToServer, 100, stdin);
     // Send the data to the server
+    socketSend(hsocket, sendToServer, strlen(sendToServer));
+    close(hsocket);
     
+    return(0);
 }
 // Create a socket for server connection
 short socketCreate(void)
