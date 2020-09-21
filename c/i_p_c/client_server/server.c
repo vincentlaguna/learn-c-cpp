@@ -10,7 +10,18 @@ int bindCreatedSocket(int hsocket);
 // Main Function
 int main(int argc, char *argv[])
 {
+  int socket_desc = 0, sock = 0, clientLen = 0;
+  struct sockaddr_in client;
+  char client_message[200] = {0};
+  char message[100] = {0};
+  // Create Socket
+  socket_desc = socketCreate();
   
+  if(socket_desc == -1)
+  {
+    printf("Could not create socket...\n");
+    return 1;
+  }
   return(0);
 }
 // Function Definitions
