@@ -30,7 +30,31 @@ int main(int argc, char *argv[])
     return 1;
   }
   printf("<<< Bind Done >>>\n");
+  // Listen
+  listen(socket_desc, 3);
   
+  printf(">>> Waiting for incoming connections...\n");
+  clientLen = sizeof(struct sockaddr_in);
+  // Accept connection from an incoming client
+  sock = accept(socket_desc, (struct sockaddr *)&client, (socklen_t*)&clientLen);
+  if(sock < 0)
+  {
+    perror(">>> Accept Failed.\n");
+    return 1;
+  }
+  printf("<<< Connection Accepted >>>\n");
+  memset(client_message, '\0', sizeof client_message);
+  memset(message, '\0', sizeof message);
+  // Receive a reply from the client
+  if(recv(sock, client_message, 200, 0) < 0)
+  {
+    printf(">>> Recieve Failed.\n");
+  }
+  printf("Received from Client: %s\n", client_message);
+  
+  int i = atoi(client_message);
+  i--;
+  sprintf(message, "%d", i);
   return(0);
 }
 // Function Definitions
