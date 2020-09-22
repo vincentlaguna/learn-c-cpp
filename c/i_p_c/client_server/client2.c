@@ -7,13 +7,12 @@
 // Function Prototypes
 short socketCreate(void);
 int socketConnect(int hsocket);
-int socketSend(int hsocket, char *Rqst, short lenRqst);
 int socketReceive(int hsocket, char *Rsp, short RvcSize);
 // Main Driver Program
 int main(int argc, char *argv[])
 {
-    int hsocket = 0;
-    char sendToServer[100] = {0};
+    int hsocket = 0, read_size = 0;
+    char server_reply[200] = {0};
     // Create Socket
     hsocket = socketCreate();
     
@@ -53,25 +52,9 @@ int socketConnect(int hsocket)
     struct sockaddr_in remote = {0};
     remote.sin_addr.s_addr = inet_addr("127.0.0.1"); // Local Host
     remote.sin_family = AF_INET;
-    remote.sin_port = htons(ServerPort);
+    remote.sin_port = htons(serverPort);
     iRetval = connect(hsocket, (struct sockaddr *)&remote, sizeof(struct sockaddr_in));
     return iRetval;    
-}
-// Send the data to the server and set the timeout of 20 seconds
-int socketSend(int hsocket, char *Rqst, short lenRqst)
-{
-    int shortRetVal = -1;
-    struct timeval tv;
-    tv.tv_sec = 20; // 20 second timeout
-    tv.tv_usec = 0;
-    
-    if(setsockopt(hsocket, SOL_SOCKET, SNDTIMEO, (char *)&tv, sizeof))
-    {
-        printf(">>> Time Out.\n");
-        return -1;
-    }
-    shortRetVal = send(hsocket, Rqst, lenRqst, 0);
-    return shortRetVal;
 }
 // Receive the data from the server
 int socketReceive(int hsocket, char *Rsp, short RvcSize)
@@ -81,7 +64,7 @@ int socketReceive(int hsocket, char *Rsp, short RvcSize)
   tv.tv_sec = 20; // 20 Second Time-Out
   tv.tv_usec = 0;
   
-  if(setsockopt(hsocket, SOL_SOCKET, SO_RCVTIMEO, (char *)&tv, sizeof))
+  if(setsockopt(hsocket, SOL_SOCKET, SO_RCVTIMEO, (char *)&tv, sizeof(tv)) < 0)
   {
     printf(">>> Time Out.\n");
     return -1;
