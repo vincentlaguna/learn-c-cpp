@@ -53,7 +53,7 @@ int socketConnect(int hsocket)
     struct sockaddr_in remote = {0};
     remote.sin_addr.s_addr = inet_addr("127.0.0.1"); // Local Host
     remote.sin_family = AF_INET;
-    remote.sin_port = htons(ServerPort);
+    remote.sin_port = htons(serverPort);
     iRetval = connect(hsocket, (struct sockaddr *)&remote, sizeof(struct sockaddr_in));
     return iRetval;    
 }
@@ -65,7 +65,7 @@ int socketSend(int hsocket, char *Rqst, short lenRqst)
     tv.tv_sec = 20; // 20 second timeout
     tv.tv_usec = 0;
     
-    if(setsockopt(hsocket, SOL_SOCKET, SNDTIMEO, (char *)&tv, sizeof(tv)) < 0)
+    if(setsockopt(hsocket, SOL_SOCKET, SO_SNDTIMEO, (char *)&tv, sizeof(tv)) < 0)
     {
         printf(">>> Time Out.\n");
         return -1;
