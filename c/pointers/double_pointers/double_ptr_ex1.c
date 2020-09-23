@@ -42,12 +42,20 @@ int main(int argc, char **argv)
   int *ptr = NULL;
   ptr = (int *) malloc(sizeof(int));
   *ptr = 10;
-  int *pi
+  // Next Section
+  int *pi   // A simple pointer to an integer
+  int **ppi // A pointer to a pointer to an integer 
   
   printf("De-referernced pointer value -> %d\n", *ptr);
   
   foo(&ptr); // Passing in a double pointer instead of a single one (ptr)
   printf("De-Referenced pointer value after foo() function -> %d\n", *ptr);
-  
+  // Next Section
+  printf("Multiple indirection example:\n");
+  // Initialize our integer array
+  for(int i = 0; i < LENGTH; i++)
+  {
+    
+  }
   return(0);
 }
