@@ -55,7 +55,12 @@ int main(int argc, char **argv)
   // Initialize our integer array
   for(int i = 0; i < LENGTH; i++)
   {
-    
+    data[i] = i;
+  }
+  // Display our integer array
+  for(int i = 0; i < LENGTH; i++)
+  {
+    printf("%d\n", data[i]);
   }
   return(0);
 }
