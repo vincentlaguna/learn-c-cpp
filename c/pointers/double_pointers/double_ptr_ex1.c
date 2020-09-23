@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#define LENGTH 3
+
+int data[LENGTH]; // Some integers
 /*
 void foo(int **ptr) // Making use of double pointer = **ptr instead of *ptr
 {
@@ -33,11 +37,12 @@ void foo(char **ptr) // Making use of double pointer = **ptr instead of *ptr
   *ptr = &a;
 }
 
-int main(void)
+int main(int argc, char **argv)
 {
   int *ptr = NULL;
   ptr = (int *) malloc(sizeof(int));
   *ptr = 10;
+  int *pi
   
   printf("De-referernced pointer value -> %d\n", *ptr);
   
