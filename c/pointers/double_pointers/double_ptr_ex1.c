@@ -43,15 +43,15 @@ int main(int argc, char **argv)
   ptr = (int *) malloc(sizeof(int));
   *ptr = 10;
   // Next Section
-  int *pi   // A simple pointer to an integer
-  int **ppi // A pointer to a pointer to an integer 
+  int *pi;   // A simple pointer to an integer
+  int **ppi; // A pointer to a pointer to an integer 
   
   printf("De-referernced pointer value -> %d\n", *ptr);
   
   foo(&ptr); // Passing in a double pointer instead of a single one (ptr)
   printf("De-Referenced pointer value after foo() function -> %d\n", *ptr);
   // Next Section
-  printf("Multiple indirection example:\n");
+  printf("\nMultiple indirection example:\n");
   // Initialize our integer array
   for(int i = 0; i < LENGTH; i++)
   {
@@ -62,5 +62,19 @@ int main(int argc, char **argv)
   {
     printf("%d\n", data[i]);
   }
+  // A: simple pointer to a pointer to an integer
+  pi = data; // Set the pointer to an integer to the start of the data array
+  ppi = &pi; // and set the pointer to a pointer to pi itself
+  // Display
+  for(int i = 0; i < LENGTH; i++)
+  {
+    printf("\nLoop [%d] array address is -> %p\n", i, data);
+    printf("Item pointed to by pi is -> %d\n", *pi);
+    printf("Item pointed to by ppi is -> %p\n", *ppi);
+    printf("Item pointed to by double idirection of ppi is -> %d\n", **ppi);
+    printf("The address of pi is %p and the value of pi (what it points to) is -> %p\n", &pi, ppi);
+    pi += 1; // Advance the pointer to point to the next element of the data array
+  }
+  
   return(0);
 }
