@@ -19,5 +19,11 @@ int main(int argc, char **argv)
   }
   // Now copy the string into the newly allocated memory
   strncpy(pString, "Hello", stringSize);
+  // Now change the first character to show we can
+  printf("pString is %s\n", pString);
+  pString[0] = 'c';
+  pString[1] ='h';
+  printf("pString is %s\n", pString);
+  
   return(0);
 }
