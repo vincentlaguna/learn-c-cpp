@@ -4,5 +4,8 @@
 
 int main(int argc, char **argv)
 {
+  char *pString;
+  int stringSize;
+  
   return(0);
 }
