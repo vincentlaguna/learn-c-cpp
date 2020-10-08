@@ -7,7 +7,7 @@ int main(void)
   std::string line;
   std::ifstream file;
   
-  file.open(".../llorem.txt");
+  file.open("llorem.txt");
   
   if(file.is_open())
   {
