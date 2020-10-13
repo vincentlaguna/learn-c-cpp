@@ -15,21 +15,34 @@ int main(void)
 
 int findSum (int n)
 {
-  int multiples = 0;
+  int multiples_i = 0;
+  int multiples_j = 0;
   
-  for(int i = 0; i <= n; i++)
+  for(int i = 1; i <= n; i++)
   {
-    for(int j = 0; j <= n; j++)
+    for(int j = 1; j <= n; j++)
     {
       if(j % 3 == 0)
       {
-        multiples += j;
+        multiples_j += j;
+        printf(" %d", multiples_j);
+      }
+      else
+      {
+        multiples_j = 0;
       }
     }
+    printf("\n");
     if(i % 5 == 0)
     {
-      multiples += i;
+      multiples_i += i;
+      printf(" %d", multiples_i);
+    }
+    else
+    {
+      multiples_i = 0;
     }
   }
-  return multiples;
+  printf("\n");
+  return multiples_i + multiples_j;
 }
