@@ -1,4 +1,17 @@
+#include <stdio.h>
 
+int findSum(int n);
+
+int main(void)
+{
+  int multiples;
+  
+  multiples = findSum(5);
+  
+  printf("%d\n", multiples);
+  
+  return(0);
+}
 
 int findSum (int n)
 {
