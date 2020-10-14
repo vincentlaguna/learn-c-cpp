@@ -6,7 +6,7 @@ int main(void)
 {
   int multiples;
   
-  multiples = findSum(5);
+  multiples = findSum(10);
   
   printf("%d\n", multiples);
   
@@ -15,34 +15,14 @@ int main(void)
 
 int findSum (int n)
 {
-  int multiples_i = 0;
-  int multiples_j = 0;
+  int multiples = 0;
   
   for(int i = 1; i <= n; i++)
   {
-    for(int j = 1; j <= n; j++)
-    {
-      if(j % 3 == 0)
-      {
-        multiples_j += j;
-        printf(" %d", multiples_j);
-      }
-      else
-      {
-        multiples_j = 0;
-      }
-    }
-    printf("\n");
-    if(i % 5 == 0)
-    {
-      multiples_i += i;
-      printf(" %d", multiples_i);
-    }
-    else
-    {
-      multiples_i = 0;
-    }
+    if(i % 3 == 0 || i % 5 == 0)
+      multiples += i;
+      printf("%d ", multiples);
   }
   printf("\n");
-  return multiples_i + multiples_j;
+  return multiples;
 }
