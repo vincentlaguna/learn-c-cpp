@@ -137,4 +137,5 @@ What I have learned in C++:
 - Introduction to POSIX Threads
 - Using fstream for file I/O
 - Using Vectors and Maps
+- Basic use of Classes
 - 
