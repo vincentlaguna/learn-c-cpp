@@ -18,22 +18,31 @@ static void terminate(const char *message)
 
 void  makeEmpty(void)
 {
-  
+  while (!isEmpty())
+  {
+    pop();
+  }
 }
 
 bool  isEmpty(void)
 {
-  
+  return pTop == NULL;
 }
 
 bool  isFull(void)
 {
-  
+  return false;
 }
 
 void  push(int i)
 {
+  struct node *newNode = malloc(sizeof(struct node));
+  if (newNode == NULL)
+    terminate("Error in Push: Stack is Full.\n");
   
+  newNode->data = i;
+  newNode->pNext = pTop;
+  pTop = newNode;
 }
 
 int   pop(void)
