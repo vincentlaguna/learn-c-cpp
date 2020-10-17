@@ -12,8 +12,12 @@ protected:
     mNumOfWheels = wheels;
   }
   
-  void SetVehicleName(const)
-}
+  void SetVehicleName(const std::string &name)
+  {
+    mVehicleName = name;
+  }
+};
+
 int main(void)
 {
   return(0);
