@@ -7,14 +7,27 @@ protected:
   size_t mNumOfWheels;
   std::string mVehicleName;
   
-  void setWheels(const size_t &wheels)
+  void SetWheels(const size_t &wheels)
   {
     mNumOfWheels = wheels;
   }
-  
   void SetVehicleName(const std::string &name)
   {
     mVehicleName = name;
+  }
+public:
+  Vehicle()
+  {
+    SetVehicleName("Unknown");
+    SetWheels(0);
+  }
+  const size_t &GetWheels() const
+  {
+    return mNumOfWheels;
+  }
+  const std::string &GetVehicleName() const
+  {
+    return mVehicleName;
   }
 };
 
