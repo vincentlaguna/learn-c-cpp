@@ -4,7 +4,7 @@
 
 #define STACK_SIZE 100
 
-static int contents[STACK_SIZE];
+extern int contents[STACK_SIZE];
 static int top = 0;
 
 static void terminate(const char *message)
