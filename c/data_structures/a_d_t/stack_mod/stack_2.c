@@ -16,7 +16,7 @@ static void terminate(const char *message)
   exit(EXIT_FAILURE);
 }
 
-void  makeEmpty(void)
+void makeEmpty(void)
 {
   while (!isEmpty())
   {
@@ -24,17 +24,17 @@ void  makeEmpty(void)
   }
 }
 
-bool  isEmpty(void)
+bool isEmpty(void)
 {
   return pTop == NULL;
 }
 
-bool  isFull(void)
+bool isFull(void)
 {
   return false;
 }
 
-void  push(int i)
+void push(int i)
 {
   struct node *newNode = malloc(sizeof(struct node));
   if (newNode == NULL)
@@ -45,7 +45,17 @@ void  push(int i)
   pTop = newNode;
 }
 
-int   pop(void)
+int pop(void)
 {
+  struct node *oldTop = NULL;
+  int i;
   
+  if (isEmpty())
+    terminate("Error in Pop: Stack is Empty.\n");
+    
+  oldTop = pTop;
+  i = oldTop->data;
+  pTop = pTop->pNext;
+  free(oldTop);
+  return i;
 }
