@@ -21,5 +21,20 @@ int main(void)
   printf("\nPopped %d from s1\n", n);
   push(s2, n);
   
+  destroy(s1);
+  
+  while(!isEmpty(s2))
+    printf("\nPopped %d from s2\n", pop(s2));
+    
+  push(s2, 3);
+  makeEmpty(s2);
+  
+  if (isEmpty(s2))
+    printf("\ns2 is empty\n");
+  else
+    printf("\ns2 is not empty\n");
+    
+  destroy(s2);
+  
   return(0);
 }
