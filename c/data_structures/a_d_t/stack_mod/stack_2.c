@@ -36,10 +36,12 @@ bool isFull(void)
 
 void push(int i)
 {
-  struct node *newNode = malloc(sizeof(struct node));
+  struct node *newNode = NULL;
+  newNode = malloc(sizeof(struct node));
+  
   if (newNode == NULL)
     terminate("Error in Push: Stack is Full.\n");
-  
+    
   newNode->data = i;
   newNode->pNext = pTop;
   pTop = newNode;
@@ -47,15 +49,11 @@ void push(int i)
 
 int pop(void)
 {
-  struct node *oldTop = NULL;
+  struct node *oldNode = NULL;
   int i;
   
   if (isEmpty())
     terminate("Error in Pop: Stack is Empty.\n");
     
-  oldTop = pTop;
-  i = oldTop->data;
-  pTop = pTop->pNext;
-  free(oldTop);
-  return i;
+  
 }

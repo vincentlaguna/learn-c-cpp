@@ -13,29 +13,29 @@ static void terminate(const char *message)
   exit(EXIT_FAILURE);
 }
 
-void  makeEmpty(void)
+void makeEmpty(void)
 {
   top = 0;
 }
 
-bool  isEmpty(void)
+bool isEmpty(void)
 {
   return top == 0;
 }
 
-bool  isFull(void)
+bool isFull(void)
 {
   return top == STACK_SIZE;
 }
 
-void  push(int i)
+void push(int i)
 {
   if (isFull())
     terminate("Error in Push: Stack is Full.\n");
   contents[top++] = i;
 }
 
-int   pop(void)
+int pop(void)
 {
   if (isEmpty())
     terminate("Error in Pop: Stack is Empty.\n");
