@@ -3,5 +3,23 @@
 
 int main(void)
 {
+  Stack s1, s2;
+  int n;
+  
+  puts("Stack ADT implementation... >>> Creating s1, s2 Stack types >>>");
+  
+  s1 = create();
+  s2 = create();
+  
+  push(s1, 1);
+  push(s2, 2);
+  
+  n = pop(s1);
+  printf("\nPopped %d from s1\n", n);
+  push(s2, n);
+  n = pop(s1);
+  printf("\nPopped %d from s1\n", n);
+  push(s2, n);
+  
   return(0);
 }
