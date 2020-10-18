@@ -55,5 +55,9 @@ int pop(void)
   if (isEmpty())
     terminate("Error in Pop: Stack is Empty.\n");
     
-  
+  oldNode = pTop;
+  i = pTop->data;
+  pTop = pTop->pNext;
+  free(oldNode);
+  return i;
 }
