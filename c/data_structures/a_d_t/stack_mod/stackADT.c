@@ -41,3 +41,24 @@ bool isEmpty(Stack s)
 {
   return s->top == 0;
 }
+
+bool isFull(Stack s)
+{
+  return s->top == STACK_SIZE;
+}
+
+void push(Stack s, int i)
+{
+  if (isFull(s))
+    terminate("Error in push: stack is full.\n");
+    
+  s->contents[s->top++] = i;
+}
+
+int pop(Stack s)
+{
+  if (isEmpty(s))
+    terminate("Error in pop: stack is empty.\n");
+  
+  return s->contents[--s->top];
+}
