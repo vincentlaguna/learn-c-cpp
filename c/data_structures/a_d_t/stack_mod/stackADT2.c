@@ -29,4 +29,13 @@ Stack create(int size)
     free(s);
     terminate("Error in create: stack could not be created.\n");
   }
+  s->top = 0;
+  s->size = size;
+  return s;
+}
+
+void destroy(Stack s)
+{
+  free(s->pContents);
+  free(s);
 }
