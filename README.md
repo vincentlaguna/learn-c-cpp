@@ -63,6 +63,8 @@ What I have learned in C:
 - Started Raspberry Pi projects in C
 - Reverse array through the use of pointers
 - Pointer pass by reference
+- Abstract Data Types in C
+- 
 
 Intermediate Concepts in C:
 

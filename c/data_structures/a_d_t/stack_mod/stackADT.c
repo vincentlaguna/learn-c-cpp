@@ -47,7 +47,7 @@ bool isFull(Stack s)
   return s->top == STACK_SIZE;
 }
 
-void push(Stack s, int i)
+void push(Stack s, Item i)
 {
   if (isFull(s))
     terminate("Error in push: stack is full.\n");
@@ -55,7 +55,7 @@ void push(Stack s, int i)
   s->contents[s->top++] = i;
 }
 
-int pop(Stack s)
+Item pop(Stack s)
 {
   if (isEmpty(s))
     terminate("Error in pop: stack is empty.\n");
