@@ -39,3 +39,18 @@ void destroy(Stack s)
   free(s->pContents);
   free(s);
 }
+
+void makeEmpty(Stack s)
+{
+  s->top = 0;
+}
+
+bool isEmpty(Stack s)
+{
+  return s->top == 0;
+}
+
+bool isFull(Stack s)
+{
+  return s->top == s->size;
+}
