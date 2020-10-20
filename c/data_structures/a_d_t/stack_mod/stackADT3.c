@@ -63,3 +63,19 @@ void push(Stack s, Item i)
     newNode->pNext = s->pTop;
     s->pTop = newNode;
 }
+
+Item pop(Stack s)
+{
+  struct node *oldTop;
+  Item i;
+  
+  if (isEmpty(s))
+    terminate("Error in pop: stack is empty.\n");
+    
+  oldTop = s->pTop;
+  i = oldTop->data;
+  s->pTop = oldTop->pNext;
+  free(oldTop);
+  
+  return i;
+}
