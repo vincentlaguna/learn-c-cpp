@@ -29,3 +29,20 @@ Stack create(void)
   s->pTop = NULL;
   return s;
 }
+
+void destroy(Stack s)
+{
+  makeEmpty(s);
+  free(s);
+}
+
+void makeEmpty(Stack s)
+{
+  while (!isEmpty(s))
+    pop(s);
+}
+
+bool isEmpty(Stack s)
+{
+  
+}
