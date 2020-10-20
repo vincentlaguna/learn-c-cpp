@@ -44,5 +44,22 @@ void makeEmpty(Stack s)
 
 bool isEmpty(Stack s)
 {
+  return s->pTop == NULL;
+}
+
+bool isFull(Stack s)
+{
+  return false;
+}
+
+void push(Stack s, Item i)
+{
+  struct node *newNode = malloc(sizeof(struct node));
   
+  if (newNode == NULL)
+    terminate("Error in push: stack is full.\n");
+    
+    newNode->data = i;
+    newNode->pNext = s->pTop;
+    s->pTop = newNode;
 }
