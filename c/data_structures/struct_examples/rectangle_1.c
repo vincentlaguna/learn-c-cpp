@@ -9,5 +9,12 @@ struct rectangle
 
 int main(void)
 {
+  struct rectangle r;
+  
+  createRectangle(&r);
+  getRectangleArea(&r);
+  changeRectangleArea(&r);
+  getRectangleArea(&r);
+  
   return(0);
 }
