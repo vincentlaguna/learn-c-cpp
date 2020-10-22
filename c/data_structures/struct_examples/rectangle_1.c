@@ -7,13 +7,18 @@ struct rectangle
   float width;
 }
 
+void createRectangle(&r, 10.50, 20.75);
+float getRectangleArea(&r);
+changeRectangleArea(&r, 10, 50);
+getRectangleArea(&r);
+  
 int main(void)
 {
   struct rectangle r;
   
-  createRectangle(&r);
+  createRectangle(&r, 10.50, 20.75);
   getRectangleArea(&r);
-  changeRectangleArea(&r);
+  changeRectangleArea(&r, 10, 50);
   getRectangleArea(&r);
   
   return(0);
