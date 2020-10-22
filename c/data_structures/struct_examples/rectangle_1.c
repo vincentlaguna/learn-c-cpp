@@ -8,7 +8,7 @@ struct rectangle
 };
 
 void createRectangle(struct rectangle *pR, float h, float w);
-float getRectangleArea(struct rectangle *pR);
+void getRectangleArea(struct rectangle *pR);
 void changeRectangleArea(struct rectangle *pR, float h, float w);
 
 int main(void)
@@ -32,12 +32,16 @@ void createRectangle(struct rectangle *pR, float h, float w)
     fprintf(stderr, "Allocation error\n");
     exit(1);
   }
-    
+  pR->height = h;
+  pR->width = w;
 }
 
-float getRectangleArea(struct rectangle *pR)
+void getRectangleArea(struct rectangle *pR)
 {
+  float area;
+  area = pR->height * pR->width;
   
+  printf("The are of the rectangle is -> %f\n", area);
 }
 
 void changeRectangleArea(struct rectangle *pR, float h, float w)
