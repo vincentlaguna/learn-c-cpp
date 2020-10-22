@@ -5,7 +5,7 @@ struct rectangle
 {
   float height;
   float width;
-}
+};
 
 void createRectangle(struct rectangle *pR, float h, float w);
 float getRectangleArea(struct rectangle *pR);
@@ -25,7 +25,14 @@ int main(void)
 
 void createRectangle(struct rectangle *pR, float h, float w)
 {
+  pR = malloc(sizeof(struct rectangle));
   
+  if (pR == NULL)
+  {
+    fprintf(stderr, "Allocation error\n");
+    exit(1);
+  }
+    
 }
 
 float getRectangleArea(struct rectangle *pR)
