@@ -15,8 +15,8 @@ int main(void)
 {
   struct rectangle r;
   
-  // createRectangle(&r, 10.50, 20.75);
-  // getRectangleArea(&r);
+  createRectangle(&r, 10.50, 20.75);
+  getRectangleArea(&r);
   // changeRectangleArea(&r, 10, 50);
   // getRectangleArea(&r);
   
@@ -34,6 +34,8 @@ void createRectangle(struct rectangle *pR, float h, float w)
   }
   pR->height = h;
   pR->width = w;
+  
+  printf("h = %f, w = %f\n", pR->height, pR->width);
 }
 
 void getRectangleArea(struct rectangle *pR)
@@ -41,7 +43,7 @@ void getRectangleArea(struct rectangle *pR)
   float area;
   area = pR->height * pR->width;
   
-  printf("The are of the rectangle is -> %f\n", area);
+  printf("The area of the rectangle is -> %f\n", area);
 }
 
 void changeRectangleArea(struct rectangle *pR, float h, float w)
