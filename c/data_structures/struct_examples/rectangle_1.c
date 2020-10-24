@@ -3,13 +3,13 @@
 
 struct rectangle
 {
-  float height;
-  float width;
+  double height;
+  double width;
 };
 
-void createRectangle(struct rectangle *pR, float h, float w);
+void createRectangle(struct rectangle *pR, double h, double w);
 void getRectangleArea(struct rectangle *pR);
-void changeRectangleArea(struct rectangle *pR, float h, float w);
+void changeRectangleArea(struct rectangle *pR, double h, double w);
 
 int main(void)
 {
@@ -23,7 +23,7 @@ int main(void)
   return(0);
 }
 
-void createRectangle(struct rectangle *pR, float h, float w)
+void createRectangle(struct rectangle *pR, double h, double w)
 {
   pR = malloc(sizeof(struct rectangle));
   
@@ -40,13 +40,10 @@ void createRectangle(struct rectangle *pR, float h, float w)
 
 void getRectangleArea(struct rectangle *pR)
 {
-  float area;
-  area = pR->height * pR->width;
-  
-  printf("The area of the rectangle is -> %f\n", area);
+  printf("The area of the rectangle is -> %lf\n", pR->height); 
 }
 
-void changeRectangleArea(struct rectangle *pR, float h, float w)
+void changeRectangleArea(struct rectangle *pR, double h, double w)
 {
   
 }
