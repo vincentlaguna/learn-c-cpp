@@ -38,7 +38,7 @@ void createRectangle(struct rectangle *pR, double h, double w)
   printf("h = %f, w = %f\n", pR->height, pR->width);
 }
 
-void getRectangleArea(struct rectangle *pR)
+void getRectangleArea(struct rectangle *pR) // returning null values!!!
 {
   printf("The area of the rectangle is -> %lf\n", pR->height); 
 }
