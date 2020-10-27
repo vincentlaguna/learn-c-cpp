@@ -17,6 +17,7 @@ int main(void)
   
   createRectangle(&r, 10.50, 20.75);
   getRectangleArea(&r);
+  puts("\nChanging rectangle area >>>\n");
   // changeRectangleArea(&r, 10, 50);
   // getRectangleArea(&r);
   
@@ -31,7 +32,7 @@ void createRectangle(struct rectangle *pR, double h, double w)
   // {
   //   fprintf(stderr, "Allocation error\n");
   //   exit(1);
-  // }
+  // } taking this out fixed the Null value output from getRectangleArea() function...
   pR->height = h;
   pR->width = w;
   
@@ -40,8 +41,11 @@ void createRectangle(struct rectangle *pR, double h, double w)
 
 void getRectangleArea(struct rectangle *pR) // returning null values!!!... Still trying to figure out why...
 {
-  printf("The area of the rectangle is -> %lf\n", pR->height); 
-}
+  double area = 0;
+  area = pR->height * pR->width;
+  
+  printf("The area of the rectangle is -> %lf\n", area);
+} // ...I think it was because it tried to write on pre-allocated memory??? Need to investigate further...
 
 void changeRectangleArea(struct rectangle *pR, double h, double w)
 {
