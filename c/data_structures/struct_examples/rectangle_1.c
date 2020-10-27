@@ -36,7 +36,7 @@ void createRectangle(struct rectangle *pR, double h, double w)
   pR->height = h;
   pR->width = w;
   
-  printf("h = %f, w = %f\n", pR->height, pR->width);
+  printf("h = %f, w = %f\n\n", pR->height, pR->width);
 }
 
 void getRectangleArea(struct rectangle *pR) // returning null values!!!... Still trying to figure out why...
