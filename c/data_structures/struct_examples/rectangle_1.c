@@ -18,8 +18,8 @@ int main(void)
   createRectangle(&r, 10.50, 20.75);
   getRectangleArea(&r);
   puts("\nChanging rectangle area >>>\n");
-  // changeRectangleArea(&r, 10, 50);
-  // getRectangleArea(&r);
+  changeRectangleArea(&r, 10, 50);
+  getRectangleArea(&r);
   
   return(0);
 }
@@ -49,5 +49,6 @@ void getRectangleArea(struct rectangle *pR) // returning null values!!!... Still
 
 void changeRectangleArea(struct rectangle *pR, double h, double w)
 {
-  
+  pR->height = h;
+  pR->width = w;
 }
