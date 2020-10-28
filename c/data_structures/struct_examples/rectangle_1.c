@@ -13,7 +13,7 @@ void changeRectangleArea(struct rectangle *pR, double h, double w);
 
 int main(void)
 {
-  struct rectangle r;
+  struct rectangle r; // Try to implement with using malloc in function...
   
   createRectangle(&r, 10.50, 20.75);
   getRectangleArea(&r);
