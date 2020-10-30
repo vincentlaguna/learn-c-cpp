@@ -17,15 +17,19 @@ namespace MyArray
       }
       ~vector() // Destructor
       {
-        if (data) // Exception handling
+        if (data)
         {
           delete [] data;
           data = 0;
         }
       }
-      T &operator[] (const size_t &index) // Overloaded function
+      T &operator[] (const size_t &index) // Overloaded function, exception handler
       {
-        
+        if (index >= length)
+        {
+          throw std::out_of_range("vector::[] - index out of range");
+        }
+        return data[index];
       }
   };
 }
