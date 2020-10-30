@@ -1,5 +1,6 @@
 // Templated array class within it's own namespace
 #include <iostream>
+#include <stdexcept>
 
 namespace MyArray
 {
@@ -21,6 +22,10 @@ namespace MyArray
           delete [] data;
           data = 0;
         }
+      }
+      T &operator[] (const size_t &index) // Overloaded function
+      {
+        
       }
   };
 }
