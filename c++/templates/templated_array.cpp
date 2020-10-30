@@ -43,5 +43,13 @@ int main(void)
   myVector[1] = 2.5;
   std::cout << myVector[1] << std::endl;
   
+  try
+  {
+    std::cout << myVector[5] << std::endl;
+  }
+  catch(std::out_of_range &except)
+  {
+    std::cout << except.what() << std::endl;
+  }
   return(0);
 }
