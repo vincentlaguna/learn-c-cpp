@@ -14,6 +14,14 @@ namespace MyArray
       {
         data = new T[len];
       }
+      ~vector() // Destructor
+      {
+        if (data) // Exception handling
+        {
+          delete [] data;
+          data = 0;
+        }
+      }
   };
 }
 
