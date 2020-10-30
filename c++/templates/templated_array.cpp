@@ -35,8 +35,13 @@ namespace MyArray
 }
 
 using namespace std;
+//using namespace MyArray; // Option 1
 
 int main(void)
 {
+  MyArray::vector<double> myVector(2); // Option 2
+  myVector[1] = 2.5;
+  std::cout << myVector[1] << std::endl;
+  
   return(0);
 }
