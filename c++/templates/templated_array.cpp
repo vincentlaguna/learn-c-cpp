@@ -14,6 +14,7 @@ namespace MyArray
       vector(const size_t &len = 10) // Constructor
       {
         data = new T[len];
+        length = len;
       }
       ~vector() // Destructor
       {
@@ -27,7 +28,7 @@ namespace MyArray
       {
         if (index >= length)
         {
-          throw std::out_of_range("vector::[] - index out of range");
+          throw std::out_of_range("vector::operator[] - index out of range");
         }
         return data[index];
       }
