@@ -3,7 +3,13 @@
 
 namespace MyArray
 {
-  
+  template <typename T = int>
+  class vector // No conflict with <vector> class - namespace
+  {
+    protected:
+      T *data;
+      size_t length;
+  };
 }
 
 using namespace std;
