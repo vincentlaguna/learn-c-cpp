@@ -9,6 +9,11 @@ namespace MyArray
     protected:
       T *data;
       size_t length;
+    public:
+      vector(const size_t &len = 10) // Constructor
+      {
+        data = new T[len];
+      }
   };
 }
 
