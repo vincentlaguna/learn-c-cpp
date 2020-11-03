@@ -16,7 +16,8 @@ private:
 public:
   matrix(const size_t &rows, const size_t &cols)
   {
-    
+    mRows = rows;
+    mCols = cols;
   }
 };
 
