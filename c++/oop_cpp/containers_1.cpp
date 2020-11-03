@@ -5,6 +5,13 @@
 //         |--|--|--|
 //         |--|--|--|
 
+template <typename T = int>
+
+class matrix
+{
+  
+};
+
 int main(void)
 {
   
