@@ -6,5 +6,9 @@ int main(void)
 {
   puts("Testing the manipulation of something in the newly allocated memory >>> \n");
   
+  char *pS;
+  int stringSize;
+  
+  
   return(0);
 }
