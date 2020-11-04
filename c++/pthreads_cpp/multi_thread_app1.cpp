@@ -14,6 +14,8 @@ int main(void)
 {
   cout << "Example of a simple multi-threaded application using pthreads >>>" << endl;
   
+  pthread_t thread1, thread2, thread3;
+  
   pthread_create(&thread1, NULL, threadProc, NULL);
   pthread_create(&thread2, NULL, threadProc, NULL);
   pthread_create(&thread3, NULL, threadProc, NULL);
