@@ -18,6 +18,12 @@ public:
   {
     mRows = rows;
     mCols = cols;
+    rows.reserve(mRows); // Reserve memory for matrix rows
+    
+    for (int i = 0; i < mRows; i++)
+    {
+      rows.push_back(new std::std::vector<T>(mCols));
+    }
   }
 };
 
