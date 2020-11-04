@@ -33,6 +33,8 @@ public:
 
 int main(void)
 {
+  matrix<double> md(2, 3);
+  md[1][1] = 56.4;
   
   return(0);
 }
