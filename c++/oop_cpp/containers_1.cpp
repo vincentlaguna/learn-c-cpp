@@ -25,6 +25,10 @@ public:
       rows.push_back(new std::std::vector<T>(mCols));
     }
   }
+  std::std::vector<T> &operator[] (const size_t &row_id) // Operator overloading
+  {
+    return *(rows[row_id]) 
+  }
 };
 
 int main(void)
