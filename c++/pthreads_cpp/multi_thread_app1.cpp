@@ -9,3 +9,18 @@ void *threadProc(void *param)
     cout << "Message ->" << count << " from " << pthread_self() << endl;
   pthread_exit(0);
 }
+
+int main(void)
+{
+  cout << "Example of a simple multi-threaded application using pthreads >>>" << endl;
+  
+  pthread_create(&thread1, NULL, threadProc, NULL);
+  pthread_create(&thread2, NULL, threadProc, NULL);
+  pthread_create(&thread3, NULL, threadProc, NULL);
+  
+  pthread_join(thread1, NULL);
+  pthread_join(thread1, NULL);
+  pthread_join(thread1, NULL);
+  
+  return(0);
+}
