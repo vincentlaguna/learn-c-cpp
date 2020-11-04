@@ -141,4 +141,6 @@ What I have learned in C++:
 - Using Vectors and Maps
 - Basic use of Classes
 - Using namespace
+- Containers in C++
+- Introduction to POSIX threads (pThreads)
 - 
