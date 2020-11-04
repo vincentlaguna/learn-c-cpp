@@ -6,13 +6,13 @@ using namespace std;
 void *threadProc(void *param)
 {
   for (int count = 0; count < 3; ++count)
-    cout << "Message ->" << count << " from " << pthread_self() << endl;
+    cout << "Message -> " << count << " from " << pthread_self() << endl;
   pthread_exit(0);
 }
 
 int main(void)
 {
-  cout << "Example of a simple multi-threaded application using pthreads >>>" << endl;
+  cout << "Example of a simple multi-threaded application using pthreads >>>" << endl << endl;
   
   pthread_t thread1, thread2, thread3;
   
