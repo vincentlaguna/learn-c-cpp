@@ -15,6 +15,8 @@ void threadProc()
          << endl;
   }
 }
-this_thread::get_id()
 
-thread::join()
+int main(void)
+{
+  return(0);
+}
