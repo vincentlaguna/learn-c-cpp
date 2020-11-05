@@ -18,5 +18,15 @@ void threadProc()
 
 int main(void)
 {
+  cout << "Example of a simple mult-threaded application >>> " << endl << endl;
+  
+  thread thread1(threadProc);
+  thread thread2(threadProc);
+  thread thread3(threadProc);
+  
+  thread1.join();
+  thread2.join();
+  thread3.join();
+  
   return(0);
 }
