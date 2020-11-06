@@ -14,5 +14,18 @@ Thread::~Thread()
 
 void Thread::run()
 {
-  
+  while (!stopped)
+  {
+    cout << this_thread::get_id() << endl;
+    this_thread::sleep_for(1s);
+  }
+  cout << "\nThread " << this_thread::get_id()
+       << " stopped as requested." << endl;
+  return;
 }
+
+void Thread::stop()
+{
+  stopped = true;
+}
+
