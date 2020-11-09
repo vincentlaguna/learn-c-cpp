@@ -50,6 +50,11 @@ void threadProc(ThreadType typeOfThread)
 
 int main(void)
 {
+  thread depositor(threadProc, ThreadType::DEPOSITOR);
+  thread withdrawer(threadProc, ThreadType::WITHDRAWER);
+  
+  depositor.join();
+  withdrawer.join();
   
   return(0);
 }
