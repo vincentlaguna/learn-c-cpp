@@ -19,3 +19,8 @@ void Account::withdraw(double amount)
   }
   balance = balance - amount;
 }
+
+void Account::deposit(double amount)
+{
+  balance = balance + amount;
+}
