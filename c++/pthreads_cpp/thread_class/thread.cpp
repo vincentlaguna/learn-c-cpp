@@ -31,7 +31,7 @@ void Thread::stop()
 
 void Thread::start()
 {
-  pThread = new thread(Thread::run, this);
+  pThread = new thread(&Thread::run, this);
 }
 
 void Thread::join()

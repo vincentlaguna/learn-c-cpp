@@ -21,5 +21,7 @@ int main(void)
   thread2.stop();
   thread3.stop();
   
+  this_thread::sleep_for(3s);
+  
   return(0);
 }
