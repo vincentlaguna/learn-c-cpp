@@ -143,4 +143,6 @@ What I have learned in C++:
 - Using namespace
 - Containers in C++
 - Introduction to POSIX threads (pThreads)
+- G++ compiling example for simple pthread program: 
+- g++-7 thread.cpp thread_main.cpp -o threadclass1 -std=c++17 -lpthread
 - 
