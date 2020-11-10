@@ -63,5 +63,20 @@ void Thread::run()
 
 void Thread::start()
 {
-  
+  pThread = new thread(&Thread::run, this);
+}
+
+void Thread::stop()
+{
+  stopped = true;
+}
+
+void Thread::join()
+{
+  pThread->join();
+}
+
+void Thread::detach()
+{
+  pThread->detach();
 }
