@@ -42,6 +42,9 @@ void threadProc(ThreadType typeOfThread)
       
       case WITHDRAWER:
       {
+        
+        locker.lock(); // Added for Mutex Implementation
+        
         cout << "Withdrawer: Current balance is "
              << account.getBalance() << endl;
         
@@ -49,6 +52,8 @@ void threadProc(ThreadType typeOfThread)
         
         cout << "Withdrawer: Account balance after withdrawing is "
              << account.getBalance() << endl;
+             
+        locker.unlock(); // Added for Mutex Implementation     
              
         this_thread::sleep_for(1s);
       }
