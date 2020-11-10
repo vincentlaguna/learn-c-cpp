@@ -23,4 +23,14 @@ private:
   ThreadType threadtype;
   bool stopped;
   void run();
+
+public:
+  Thread(Account *pAccount, ThreadType typeOfThread);
+  ~Thread();
+  void start();
+  void stop();
+  void join();
+  void detach();
 };
+
+#endif // __THREAD_H
