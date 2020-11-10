@@ -1,5 +1,6 @@
 #include <iostream>
 #include <thread>
+#include <mutex>
 #include "account.h"
 
 using namespace std;
@@ -9,6 +10,8 @@ enum ThreadType
   DEPOSITOR,
   WITHDRAWER
 };
+
+mutex locker; // Added for Mutex Implementation
 
 Account account(5000.00);
 
