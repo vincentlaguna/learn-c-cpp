@@ -4,6 +4,7 @@
 #include <iostream>
 #include <thread>
 #include <mutex>
+#include <bool>
 #include "account.h"
 
 using namespace std;
@@ -20,7 +21,7 @@ private:
   thread *pThread;
   Account *pAccount;
   static mutex locker; // Added for Mutex Implementation
-  ThreadType threadtype;
+  ThreadType threadType;
   bool stopped;
   void run();
 
