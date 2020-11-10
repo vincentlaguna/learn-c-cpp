@@ -23,6 +23,9 @@ void threadProc(ThreadType typeOfThread)
     {
       case DEPOSITOR:
       {
+        
+        locker.lock(); // Added for Mutex Implementation
+        
         cout << "Depositor: Current balance is "
              << account.getBalance() << endl;
              
@@ -30,7 +33,9 @@ void threadProc(ThreadType typeOfThread)
         
         cout << "Depositor: Account balance after deposit is "
              << account.getBalance() << endl;
-
+        
+        locker.unlock(); // Added for Mutex Implementation
+        
         this_thread::sleep_for(1s);
       }
       break;
