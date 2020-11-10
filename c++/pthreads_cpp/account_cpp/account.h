@@ -1,3 +1,6 @@
+#ifndef __ACCOUNT_H
+#define __ACCOUNT_H
+
 #include <iostream>
 
 using namespace std;
@@ -14,3 +17,5 @@ public:
   void deposit(double amount);
   void withdraw(double amount);
 };
+
+#endif // __ACCOUNT_H
