@@ -1,10 +1,11 @@
-#include <iostream>
-#include <thread>
-#include <mutex>
+//#include <iostream>
+//#include <thread>
+//#include <mutex>
 #include "account.h"
+#include "thread.h"
 
 using namespace std;
-
+/*
 enum ThreadType
 {
   DEPOSITOR,
@@ -61,7 +62,7 @@ void threadProc(ThreadType typeOfThread)
     }
   }
 }
-
+*/
 int main(void)
 {
   thread depositor(threadProc, ThreadType::DEPOSITOR);
