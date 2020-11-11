@@ -4,7 +4,7 @@ mutex Thread::locker;
 
 Thread::Thread(Account *pAccount, ThreadType typeOfThread)
 {
-  this->pAccount = Account;
+  this->pAccount = pAccount;
   pThread = NULL;
   stopped = false;
   threadType = typeOfThread;
@@ -27,7 +27,7 @@ void Thread::run()
         locker.lock(); // Added for Mutex Implementation
         
         cout << "Depositor: Current balance is "
-             << account.getBalance() << endl;
+             << pAccount->getBalance() << endl;
              
         pAccount->deposit(2000.00);
         
@@ -45,7 +45,7 @@ void Thread::run()
         locker.lock();
         
         cout << "Withdrawer: Current balance is "
-             << pAccount.getBalance() << endl;
+             << pAccount->getBalance() << endl;
              
         pAccount->withdraw(1000);
         
