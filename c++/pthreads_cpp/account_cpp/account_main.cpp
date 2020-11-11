@@ -65,8 +65,16 @@ void threadProc(ThreadType typeOfThread)
 */
 int main(void)
 {
-  thread depositor(threadProc, ThreadType::DEPOSITOR);
-  thread withdrawer(threadProc, ThreadType::WITHDRAWER);
+  Account account(5000.00);
+  
+  // thread depositor(threadProc, ThreadType::DEPOSITOR);
+  // thread withdrawer(threadProc, ThreadType::WITHDRAWER);
+  
+  Thread depositor(&account, ThreadType::DEPOSITOR);
+  Thread withdrawer(&account, ThreadType::WITHDRAWER);
+  
+  depositor.start();
+  withdrawer.start();
   
   depositor.join();
   withdrawer.join();
