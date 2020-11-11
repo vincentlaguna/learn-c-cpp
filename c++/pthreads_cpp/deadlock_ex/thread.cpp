@@ -37,3 +37,24 @@ int Thread::updateCount()
   
   return count;
 }
+
+void Thread::run()
+{
+  while (1)
+  {
+    switch(threadType)
+    {
+      case READER:
+        cout << name << " => value of count from getCount() method is "
+        << getCount() << endl;
+        this_thread::sleep_for(1ms);
+      break;
+      
+      case WRITER:
+        cout << name << " => value of count from updateCount() method is "
+        << updateCount() << endl;
+        this_thread::sleep_for(1ms);
+      break;
+    }
+  }
+}
