@@ -23,7 +23,7 @@ int main(void)
     pTemp = malloc(sizeof(LISTITEM));
     pTemp->data = i;
     pTemp->pNext = head.pNext;
-    head->pNext = pTemp;
+    head.pNext = pTemp;
     pTemp->pPrevious = &head;
     pTemp->pNext->pPrevious = pTemp;
   }
