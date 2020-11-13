@@ -29,10 +29,11 @@ int Thread::getCount()
 
 int Thread::updateCount()
 {
+  int value = getCount(); // Refactored - was at line 37 = deadlock
   cout << name << " is waiting for lock in updateCount() method ..." << endl;
   lock_guard<mutex> locker(commonLock);
   cout << name << " has acquired lock in updateCount() method ..." << endl;
-  int value = getCount();
+  //int value = getCount();
   count = ++value;
   
   return count;
