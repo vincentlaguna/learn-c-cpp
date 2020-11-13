@@ -27,5 +27,27 @@ int main(void)
     pTemp->pPrevious = &head;
     pTemp->pNext->pPrevious = pTemp;
   }
+  
+  pTemp = head.pNext;
+  
+  while (pTemp != &head)
+  {
+    printf("Forward list item: current is -> %p, next is -> %p, previous is -> %p, data is -> %d\n",
+            pTemp, pTemp->pNext, pTemp->pPrevious, pTemp->data);
+    pTemp = pTemp->pNext;
+  }
+  // Going backwards
+  pTemp = head.pPrevious;
+  
+  puts("");
+  
+  while (pTemp != &head)
+  {
+    printf("Backward list item: current is -> %p, next is -> %p, previous is -> %p, data is -> %d\n",
+            pTemp, pTemp->pNext, pTemp->pPrevious, pTemp->data);
+    pTemp = pTemp->pPrevious;
+  }
+  puts("");
+  
   return(0);
 }
