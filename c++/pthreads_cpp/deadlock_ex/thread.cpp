@@ -32,7 +32,7 @@ int Thread::updateCount()
   cout << name << " is waiting for lock in updateCount() method ..." << endl;
   lock_guard<mutex> locker(commonLock);
   cout << name << " has acquired lock in updateCount() method ..." << endl;
-  int value - getCount();
+  int value = getCount();
   count = ++value;
   
   return count;
@@ -57,4 +57,24 @@ void Thread::run()
       break;
     }
   }
+}
+
+void Thread::start()
+{
+  pThread = new thread(&Thread::run, this);
+}
+
+void Thread::stop()
+{
+  stopped = true;
+}
+
+void Thread::join()
+{
+  pThread->join();
+}
+
+void Thread::detach()
+{
+  pThread->detach();
 }

@@ -35,3 +35,5 @@ public:
   int getCount();
   int updateCount();
 };
+
+#endif // __THREAD_H
