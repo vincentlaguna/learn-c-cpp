@@ -7,3 +7,14 @@
 
 using namespace std;
 
+enum ThreadType
+{
+  PRODUCER,
+  CONSUMER
+};
+
+class Thread
+{
+private:
+  static mutex locker;
+};
