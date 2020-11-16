@@ -17,4 +17,7 @@ class Thread
 {
 private:
   static mutex locker;
+  static condition_variable untilReady;
+  static bool ready;
+  static queue<int> appQueue;
 };
