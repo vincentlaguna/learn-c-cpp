@@ -20,4 +20,17 @@ private:
   static condition_variable untilReady;
   static bool ready;
   static queue<int> appQueue;
+  thread *pThread;
+  ThreadType threadType;
+  bool stopped;
+  string name;
+  void run();
+  
+public:
+  Thread(ThreadType typeOfThread);
+  ~Thread();
+  void start();
+  void stop();
+  void join();
+  void detach();
 };
