@@ -35,7 +35,43 @@ void Thread::run()
         unique_lock<mutex> uniqueLocker(locker);
         cout << name << " acquired mutex ..." << endl;
         
-        cout << name << 
+        cout << name << " waiting for conditional variable signal ..." << endl;
+        
+        untilReady.wait(uniqueLocker, [] {return ready;});
+        cout << name << " received conditional variable signal ..." << endl;
+        
+        data = appQueue.front();
+        cout << name << " received data " << data << endl;
+        
+        appQueue.pop();
+        ready = false;
+      }
+      cout << name << " released mutex ..." << endl;
+      break;
+      
+      case PRODUCER:
+      {
+        cout << name << "Waiting to acquire mutex ..." << endl;
+        
+        unique_lock<mutex> uniqueLocker(locker);
+        cout << name << " acquired mutex ..." << endl;
+        
+        if (32000 == count)
+          count = 0;
+        appQueue.push(++count);
+        
+        ready = true;
+        
+        cout << name << " waiting for conditional variable signal ..." << endl;
+        
+        untilReady.wait(uniqueLocker, [] {return ready;});
+        cout << name << " received conditional variable signal ..." << endl;
+        
+        data = appQueue.front();
+        cout << name << " received data " << data << endl;
+        
+        appQueue.pop();
+        ready = false;
       }
     }
   }
