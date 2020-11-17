@@ -21,7 +21,24 @@ Thread::~Thread()
 
 void Thread::run()
 {
+  int count = 0;
+  int data = 0;
   
+  while (1)
+  {
+    switch(threadType)
+    {
+      case CONSUMER:
+      {
+        cout << name << "Waiting to acquire mutex ..." << endl;
+        
+        unique_lock<mutex> uniqueLocker(locker);
+        cout << name << " acquired mutex ..." << endl;
+        
+        cout << name << 
+      }
+    }
+  }
 }
 
 void Thread::start()
