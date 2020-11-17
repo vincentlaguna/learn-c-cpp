@@ -62,37 +62,33 @@ void Thread::run()
         
         ready = true;
         
-        cout << name << " waiting for conditional variable signal ..." << endl;
+        uniqueLocker.unlock();
+        cout << name << " released mutex ..." << endl;
         
-        untilReady.wait(uniqueLocker, [] {return ready;});
-        cout << name << " received conditional variable signal ..." << endl;
-        
-        data = appQueue.front();
-        cout << name << " received data " << data << endl;
-        
-        appQueue.pop();
-        ready = false;
+        untilReady.notify_one();
+        cout << name << " notified conditional signal ... " << endl;
       }
+      break;
     }
   }
 }
 
 void Thread::start()
 {
-  
+  pThread = mew thread(&Thread::run, this);
 }
 
 void Thread::stop()
 {
-  
+  stopped = true;
 }
 
 void Thread::join()
 {
-  
+  pThread->join();
 }
 
 void Thread::detach()
 {
-  
+  pThread->detach();
 }
