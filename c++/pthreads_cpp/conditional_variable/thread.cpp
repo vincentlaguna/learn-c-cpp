@@ -75,7 +75,7 @@ void Thread::run()
 
 void Thread::start()
 {
-  pThread = mew thread(&Thread::run, this);
+  pThread = new thread(&Thread::run, this);
 }
 
 void Thread::stop()
