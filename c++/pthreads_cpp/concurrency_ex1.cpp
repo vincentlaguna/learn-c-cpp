@@ -3,9 +3,9 @@
 
 using namespace std;
 
-void sayHello(void)
+void sayHello(promise<string> promise_)
 {
-  cout << endl << "Hello Concurrency support library!" << endl;
+  promise_.set_value("Hello Concurrency support library!");
 }
 
 int main(void)
