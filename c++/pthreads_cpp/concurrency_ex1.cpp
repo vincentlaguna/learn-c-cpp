@@ -10,8 +10,11 @@ void sayHello(promise<string> promise_)
 
 int main(void)
 {
-  future<void> futureObj = async(launch::async, sayHello);
-  futureObj.wait();
+  promise<string> promiseObj;
+  
+  future<string> futureObj = promiseObj.get_future();
+  async(launch::async, sayHello, move(promiseObj));
+  cout << futureObj.get() << endl;
   
   return(0);
 }
