@@ -12,3 +12,41 @@
 * return you to your starting point. Return false otherwise.                       *
 *                                                                                  *
 * **********************************************************************************/
+#include <stdio.h>
+#include <stdbool.h>
+
+int main(void)
+{
+  
+  return(0);
+}
+
+bool isValidWalk(const char *walk) 
+{
+  if ((sizeof(walk) / sizeof(walk[0])) != 10)
+      return false;
+  
+}
+
+void displayBoard()
+{
+  system("clear");
+  printf("\n\n\tTic Tac Toe\n\n");
+  printf("Player 1 [x]  -  Player 2 [0]\n\n\n"); 
+  
+  printf("     |     |     \n");
+  printf("  %c  |  %c  |  %c  \n", square[1], square[2], square[3]);
+  
+  printf("_____|_____|_____\n");
+  printf("     |     |     \n");
+  
+  printf("  %c  |  %c  |  %c \n", square[4], square[5], square[6]);
+  
+  printf("_____|_____|_____\n");
+  printf("     |     |     \n");
+  
+  printf("  %c  |  %c  |  %c \n", square[7], square[8], square[9]);
+  
+  printf("     |     |      \n\n");
+  
+}

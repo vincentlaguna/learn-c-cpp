@@ -8,8 +8,8 @@ int main(void)
   
   puts("Stack ADT implementation... >>> Creating s1, s2 Stack types >>>");
   
-  s1 = create();
-  s2 = create();
+  s1 = create(100);
+  s2 = create(200);
   
   push(s1, 1);
   push(s2, 2);
