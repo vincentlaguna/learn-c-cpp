@@ -15,7 +15,21 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-char gridSquare[10][10];
+char gridSquare[10][10] = 
+{
+  {'0','0','0','0','0','0','0','0','0','0','0'},
+  {'0','0','0','0','0','0','0','0','0','0','0'},
+  {'0','0','0','0','0','0','0','0','0','0','0'},
+  {'0','0','0','0','0','0','0','0','0','0','0'},
+  {'0','0','0','0','0','0','0','0','0','0','0'},
+  {'0','0','0','0','0','H','0','0','0','0','0'},
+  {'0','0','0','0','0','0','0','0','0','0','0'},
+  {'0','0','0','0','0','0','0','0','0','0','0'},
+  {'0','0','0','0','0','0','0','0','0','0','0'},
+  {'0','0','0','0','0','0','0','0','0','0','0'},
+  {'0','0','0','0','0','0','0','0','0','0','0'},
+  
+};
 
 int main(void)
 {
@@ -30,25 +44,47 @@ bool isValidWalk(const char *walk)
   
 }
 
-void displayBoard()
+void displayBoard(void)
 {
-  system("clear");
+  //system("clear");
   printf("\n\n\tTen Minute walk grid\n\n");
-  printf("Player [x] - Home [0]\n\n\n"); 
+  printf("\n\n\tPlayer [x] - Home ['0']\n\n\n"); 
   
-  printf("     |     |     \n");
-  printf("  %c  |  %c  |  %c  \n", gridgridSquare[1], gridgridSquare[2], gridSquare[3]);
+  printf("\t _________________________________________________________________ \n");
+  printf("\t|     |     |     |     |     |     |     |     |     |     |     |\n");
+  printf("\t|  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |\n", gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[3][0], gridSquare[3][0]);
+  printf("\t|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|\n");
+  printf("\t|     |     |     |     |     |     |     |     |     |     |     |\n");
+  printf("\t|  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |\n", gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[3][0], gridSquare[3][0]);
+  printf("\t|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|\n");
+  printf("\t|     |     |     |     |     |     |     |     |     |     |     |\n");
+  printf("\t|  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |\n", gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[3][0], gridSquare[3][0]);
+  printf("\t|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|\n");
+  printf("\t|     |     |     |     |     |     |     |     |     |     |     |\n");
+  printf("\t|  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |\n", gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[3][0], gridSquare[3][0]);
+  printf("\t|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|\n");
+  printf("\t|     |     |     |     |     |     |     |     |     |     |     |\n");
+  printf("\t|  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |\n", gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[1][0], gridSquare[4][4], gridSquare[3][0], gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[3][0], gridSquare[3][0]);
+  printf("\t|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|\n");
+  printf("\t|     |     |     |     |     |     |     |     |     |     |     |\n");
+  printf("\t|  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |\n", gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[1][0], gridSquare[2][0], gridSquare[5][5], gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[3][0], gridSquare[3][0]);
+  printf("\t|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|\n");
+  printf("\t|     |     |     |     |     |     |     |     |     |     |     |\n");
+  printf("\t|  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |\n", gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[3][0], gridSquare[3][0]);
+  printf("\t|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|\n");
+  printf("\t|     |     |     |     |     |     |     |     |     |     |     |\n");
+  printf("\t|  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |\n", gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[3][0], gridSquare[3][0]);
+  printf("\t|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|\n");
+  printf("\t|     |     |     |     |     |     |     |     |     |     |     |\n");
+  printf("\t|  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |\n", gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[3][0], gridSquare[3][0]);
+  printf("\t|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|\n");
+  printf("\t|     |     |     |     |     |     |     |     |     |     |     |\n");
+  printf("\t|  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |\n", gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[3][0], gridSquare[3][0]);
+  printf("\t|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|\n");
+  printf("\t|     |     |     |     |     |     |     |     |     |     |     |\n");
+  printf("\t|  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |\n", gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[1][0], gridSquare[2][0], gridSquare[3][0], gridSquare[3][0], gridSquare[3][0]);
+  printf("\t|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|\n");
   
-  printf("_____|_____|_____\n");
-  printf("     |     |     \n");
-  
-  printf("  %c  |  %c  |  %c \n", gridSquare[4], gridSquare[5], gridSquare[6]);
-  
-  printf("_____|_____|_____\n");
-  printf("     |     |     \n");
-  
-  printf("  %c  |  %c  |  %c \n", gridSquare[7], gridSquare[8], gridSquare[9]);
-  
-  printf("     |     |      \n\n");
+  printf("\n\n");
   
 }
