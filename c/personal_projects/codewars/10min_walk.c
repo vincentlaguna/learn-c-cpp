@@ -15,9 +15,11 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+char gridSquare[10][10];
+
 int main(void)
 {
-  
+  displayBoard();
   return(0);
 }
 
@@ -31,21 +33,21 @@ bool isValidWalk(const char *walk)
 void displayBoard()
 {
   system("clear");
-  printf("\n\n\tTic Tac Toe\n\n");
-  printf("Player 1 [x]  -  Player 2 [0]\n\n\n"); 
+  printf("\n\n\tTen Minute walk grid\n\n");
+  printf("Player [x] - Home [0]\n\n\n"); 
   
   printf("     |     |     \n");
-  printf("  %c  |  %c  |  %c  \n", square[1], square[2], square[3]);
+  printf("  %c  |  %c  |  %c  \n", gridgridSquare[1], gridgridSquare[2], gridSquare[3]);
   
   printf("_____|_____|_____\n");
   printf("     |     |     \n");
   
-  printf("  %c  |  %c  |  %c \n", square[4], square[5], square[6]);
+  printf("  %c  |  %c  |  %c \n", gridSquare[4], gridSquare[5], gridSquare[6]);
   
   printf("_____|_____|_____\n");
   printf("     |     |     \n");
   
-  printf("  %c  |  %c  |  %c \n", square[7], square[8], square[9]);
+  printf("  %c  |  %c  |  %c \n", gridSquare[7], gridSquare[8], gridSquare[9]);
   
   printf("     |     |      \n\n");
   
