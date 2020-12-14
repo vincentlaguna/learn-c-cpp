@@ -34,12 +34,15 @@ char gridSquare[11][11] =
 
 int main(void)
 {
-  const char *walk = {"nsnsnsnsns"};
+  const char *walk = {"nsnsnsnsns\0"};
   
   displayBoard();
   //gridSquare[4][5];
-  
-  displayBoard();
+  // while (walk != '\0')
+  // {
+  //   printf("%s", walk);
+  // }
+  // displayBoard(); / This is FUTILE!!!
   return(0);
 }
 
