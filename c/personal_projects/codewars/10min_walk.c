@@ -34,17 +34,16 @@ char gridSquare[11][11] =
 
 int main(void)
 {
-  const char *walk = {"nsnsnsnsns\0"};
+  char *walk = {"nsnsnsnsns"};
   
   displayBoard();
   char direction;
-  char ch;
+  int size = 0;
+  char *s;
   
-  while ((ch = getchar()) != '\0')
-  {
-    ch = walk
-    printf("%c\n", ch);
-  }
+  for (s = walk; s != '\0'; s++)
+    size++;
+  printf("%d", size);//worthless... 
   //switch (direction)
   //gridSquare[4][5];
   // while (walk != '\0')
