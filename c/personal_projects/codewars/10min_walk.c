@@ -38,9 +38,14 @@ int main(void)
   
   displayBoard();
   char direction;
+  char ch;
   
-  while ()
-  switch (direction)
+  while ((ch = getchar()) != '\0')
+  {
+    ch = walk
+    printf("%c\n", ch);
+  }
+  //switch (direction)
   //gridSquare[4][5];
   // while (walk != '\0')
   // {
