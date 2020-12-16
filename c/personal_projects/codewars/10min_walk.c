@@ -37,6 +37,10 @@ int main(void)
   const char *walk = {"nsnsnsnsns\0"};
   
   displayBoard();
+  char direction;
+  
+  while ()
+  switch (direction)
   //gridSquare[4][5];
   // while (walk != '\0')
   // {
